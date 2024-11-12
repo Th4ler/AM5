@@ -3,6 +3,7 @@ import { Carousel } from 'react-bootstrap';
 
 function Servicios() {
   return (
+    <div className='row'>
     <div id="services" className="container">
       <h2>Servicios</h2>
       <Carousel>
@@ -15,6 +16,7 @@ function Servicios() {
           <Carousel.Caption><p>Descripción del servicio 2</p></Carousel.Caption>
         </Carousel.Item>
       </Carousel>
+    </div>
     </div>
   );
 }

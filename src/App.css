@@ -1,4 +1,25 @@
-#root {
+/* HEADER: LOGO + NAVBAR */
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  align-self: flex-start;
+}
+
+.logo img {
+  max-width: 100px;
+  height: auto;
+}
+
+#root .App nav div .custom-underline-color .nav-link.active {
+  border-bottom-color: var(--primary-color);
+  font-weight: normal;
+}
+#root .App nav div .custom-underline-color .nav-link:hover {
+  border-bottom-color: var(--primary-color);
+}
+
+/* Estilo default */
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -39,4 +60,4 @@
 
 .read-the-docs {
   color: #888;
-}
+} */

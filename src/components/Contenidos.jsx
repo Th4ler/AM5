@@ -1,6 +1,7 @@
 //Insertar las diferentes secciones + rutas (blog, contenidos, redes) + iconos redes
 function Contenidos() {
     return (
+        <div className='row'>
       <div id="contenidos" className="container">
         <h2>Contenidos</h2>
         <div className="d-flex">
@@ -14,6 +15,7 @@ function Contenidos() {
             <a href="#social" className="overlay">Redes</a>
           </div>
         </div>
+      </div>
       </div>
     );
   }

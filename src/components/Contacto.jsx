@@ -3,6 +3,7 @@ import { Form, Button } from 'react-bootstrap';
 
 function Contacto() {
   return (
+    <div className='row'>
     <div id="contact" className="container">
       <h2>Contacto</h2>
       <Form>
@@ -20,6 +21,7 @@ function Contacto() {
         </Form.Group>
         <Button variant="primary" type="submit" className="mt-3">Enviar</Button>
       </Form>
+    </div>
     </div>
   );
 }

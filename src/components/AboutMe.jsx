@@ -10,13 +10,14 @@ function AboutMe() {
   };
 
   return (
+    <div className='row'>
     <div className="about-me container d-flex">
       <img src="/path/to/foto.jpg" alt="Foto del cliente" className="img-fluid" />
       <div className="description ms-4">
-        <h2>About Me</h2>
+        <h2>Sobre Mí</h2>
         <p>Descripción del cliente...</p>
         {['Experiencia', 'Estudios', 'Idiomas', 'Membresía'].map((item, idx) => (
-          <div key={idx} className="mb-2">
+            <div key={idx} className="mb-2">
             <Button variant="primary" onClick={() => handleToggle(item)}>
               {item}
             </Button>
@@ -26,6 +27,7 @@ function AboutMe() {
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 }
