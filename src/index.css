@@ -30,6 +30,11 @@ h1, h2, h3 {
   text-align: center;
 }
 
+hr {
+  width: 100%;
+  margin: auto;
+}
+
 section {
   padding: 2rem 1rem;
   max-width: 1200px;
@@ -44,3 +49,6 @@ button {
   cursor: pointer;
   font-weight: 600;
 }
+/*
+Colores por defecto bootstrap-react: light (gris clar) / secondary (gris fosc) / dark (negre) / warning (groc fort) -> bg="color"
+*/

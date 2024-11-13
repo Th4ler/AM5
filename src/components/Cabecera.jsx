@@ -6,6 +6,7 @@ function Cabecera() {
                 <img src="/path/to/imagen.jpg" alt="Cabecera" className="w-100" />
                 <hr />
             </div>
+            <hr />
         </div>
     );
 }
