@@ -27,11 +27,12 @@ html, body {
 
 h1, h2, h3 {
   color: var(--dark-gray);
+  border: 5px solid var(--primary-color);
   text-align: center;
 }
-
+ /* Refactorizar estilo HR pendiente!! */
 hr {
-  width: 100%;
+  width: 40%;
   margin: auto;
 }
 

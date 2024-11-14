@@ -27,8 +27,3 @@ export default Header;
 
 //Pedir e insertar logo en SVG!
 //Añadida linia img - logo --> modificar!!
-//LAST WORKING - REACT BOOTSTRAP
-// import { Navbar, Nav } from 'react-bootstrap';
-// import logo from '../assets/am5-logo.png';
-// import '../App.css'
-
