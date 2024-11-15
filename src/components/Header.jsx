@@ -26,4 +26,3 @@ function Header() {
 export default Header;
 
 //Pedir e insertar logo en SVG!
-//Añadida linia img - logo --> modificar!!

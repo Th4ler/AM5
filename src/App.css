@@ -14,6 +14,7 @@
   border-bottom-color: var(--primary-color);
   font-weight: normal;
 }
+
 #root .App nav div .custom-underline-color .nav-link:hover {
   border-bottom-color: var(--primary-color);
 }
@@ -23,20 +24,34 @@
 /* ABOUT ME */
 /* Acordeón personalizado */
 .custom-accordion .accordion-button {
-  color: #4A4A4A; /* Color de texto gris */
+  color: #4A4A4A;
 }
 
 .custom-accordion .accordion-button:not(.collapsed) {
-  background-color: var(--background-color); /* Fondo blanco cuando el acordeón está abierto */
-  border-color: var(--primary-color); /* Borde amarillo */
+  background-color: var(--background-color);
+  /* Fondo blanco cuando el acordeón está abierto */
+  border-color: var(--primary-color);
+  /* Borde amarillo */
   color: #4A4A4A;
 }
 
 .custom-accordion .accordion-body {
-  color: #4A4A4A; /* Color del texto en el cuerpo ok */
+  color: #4A4A4A;
+  /* Color del texto en el cuerpo ok */
 }
 
 .custom-accordion ul {
-  list-style: none; /* Quitar los puntos de las listas ok */
-  padding-left: 0; /* Quitar espacio del lado izquierdo ok */ 
+  list-style: none;
+  /* Quitar los puntos de las listas ok */
+  padding-left: 0;
+  /* Quitar espacio del lado izquierdo ok */
+}
+
+/* SERVICIOS */
+.class-container h2 {
+  margin: 0;
+  padding: 0;
+}
+.card-title h5 {
+  text-align: center; /* Not working */
 }

@@ -1,5 +1,5 @@
-//insertar foto / titulo / descripcion (card -> only text) / 4 toggle buttons (dropdown) // Cambiar a ACORDEON
-//BS-react framework try --> container / row  / col (img-descripcio-botons)
+//insertar foto / titulo / descripcion (card: quitar bordes --> only text )
+//Optimizar: 2 arrays --> right & left (2 columnas desplegables + mb-2)
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
