@@ -1,4 +1,6 @@
-//insertar foto / titulo / descripcion (card: quitar bordes --> only text )
+//insertar foto / titulo / descripcion (card: quitar bordes --> only text +añadir underline bajo el nombre)
+//accordion-inner-border-radius? (primary)
+//Añadir disabled --> membresía
 //Optimizar: 2 arrays --> right & left (2 columnas desplegables + mb-2)
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
@@ -50,7 +52,7 @@ function AboutMe() {
       <Col xs={12} md={8}>
         <Card className="mb-4">
           <Card.Body>
-            <Card.Subtitle className="mb-2 text-muted">Andrés Madariaga</Card.Subtitle>
+            <Card.Subtitle className="mb-2 text-muted custom-underline-color">Andrés Madariaga</Card.Subtitle>
             <Card.Text>
               Soy Andrés Madariaga, abogado, profesor de derecho y emprendedor. Tras más
               de 10 años asesorando a empresas internacionales, descubrí una gran necesidad
@@ -68,7 +70,7 @@ function AboutMe() {
               {Object.keys(aboutEducacion).map((section, idx) => (
                 <Accordion.Item eventKey={String(idx)} key={idx}>
                   <Accordion.Header>{section}</Accordion.Header>
-                  <Accordion.Body>
+                  <Accordion.Body className='text-muted'>
                     <ul>
                       {aboutEducacion[section].map((text, index) => (
                         <li key={index}>{text}</li>
@@ -84,7 +86,7 @@ function AboutMe() {
               {Object.keys(aboutExperiencia).map((section, idx) => (
                 <Accordion.Item eventKey={String(idx + 2)} key={idx}>
                   <Accordion.Header>{section}</Accordion.Header>
-                  <Accordion.Body>
+                  <Accordion.Body className='text-muted'>
                     <ul>
                       {aboutExperiencia[section].map((text, index) => (
                         <li key={index}>{text}</li>
@@ -100,7 +102,7 @@ function AboutMe() {
               {Object.keys(aboutIdiomas).map((section, idx) => (
                 <Accordion.Item eventKey={String(idx)} key={idx}>
                   <Accordion.Header>{section}</Accordion.Header>
-                  <Accordion.Body>
+                  <Accordion.Body className='text-muted'>
                     <ul>
                       {aboutIdiomas[section].map((text, index) => (
                         <li key={index}>{text}</li>
@@ -116,7 +118,7 @@ function AboutMe() {
               {Object.keys(aboutMembresia).map((section, idx) => (
                 <Accordion.Item eventKey={String(idx + 2)} key={idx}>
                   <Accordion.Header>{section}</Accordion.Header>
-                  <Accordion.Body>
+                  <Accordion.Body className='text-muted'>
                     <ul>
                       {aboutMembresia[section].map((text, index) => (
                         <li key={index}>{text}</li>

@@ -1,5 +1,6 @@
 //Insertar carousel´slider de servicios + cards (imagen + texto)
 //Insertar background de sección --> figuras geométricas
+//Probar a sustituir con row + col los divs para centrar el borde / O provar disminuir box-shadow del div 
 
 //New trial
 import { useState } from 'react';
@@ -22,7 +23,7 @@ function ServiciosCarousel() {
   const [hoveredCard, setHoveredCard] = useState(null);
 
   const handleSelect = (selectedIndex) => setIndex(selectedIndex);
-  
+
   // Información de cada carta
   const services = [
     // {
@@ -65,12 +66,19 @@ function ServiciosCarousel() {
 
   return (
     <div className="container">
-      <h2 >Servicios</h2>
-      <div><p>En AM5 ofrecemos soluciones estratégicas para personas, startups y empresas que buscan apoyo integral en el mundo legal, de negocios y comunicación pública. Nos especializamos en:</p></div>
-      <Carousel activeIndex={index} onSelect={handleSelect}>
+      <h2 className='col-md-3 offset-md-5'>Servicios</h2>
+      <div className='text-center col-md-8 offset-md-2'>
+        <p className='text-muted'>En AM5 ofrecemos soluciones estratégicas para personas, startups y empresas que buscan
+        apoyo integral en el mundo legal, de negocios y comunicación pública. Nos especializamos en:</p>
+        </div>
+      <Carousel activeIndex={index} onSelect={handleSelect}
+        indicators={false} // Ocultar indicadores para usar solo flechas de navegación
+        nextIcon={<Button variant="outline-dark">➡️</Button>} //Cambiar flechas por img-flecha negra-amarilla!!
+        prevIcon={<Button variant="outline-dark">⬅️</Button>} //Cambiar flechas por img-flecha negra-amarilla!!
+      >
         {services.map((service, idx) => (
           <Carousel.Item key={idx}>
-            <Card
+            <Card className='text-center'
               style={{ width: '18rem' }}
               onMouseEnter={() => setHoveredCard(idx)}
               onMouseLeave={() => setHoveredCard(null)}

@@ -55,3 +55,8 @@
 .card-title h5 {
   text-align: center; /* Not working */
 }
+
+card-subtitle .custom-underline-color {
+  border-bottom-color: var(--primary-color);
+  font-weight: normal;
+} 

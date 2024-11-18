@@ -5,7 +5,7 @@ function Contacto() {
   return (
     <div className='row'>
     <div id="contact" className="container">
-      <h2>Contacto</h2>
+      <h2 className='col-md-3 offset-md-5'>Contacto</h2>
       <Form>
         <Form.Group controlId="formName">
           <Form.Label>Nombre</Form.Label>
