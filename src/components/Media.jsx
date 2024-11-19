@@ -2,8 +2,8 @@
 function Contenidos() {
     return (
         <div className='row'>
-      <div id="contenidos" className="container">
-        <h2 className='col-md-3 offset-md-5'>Contenidos</h2>
+      <div id="media" className="container">
+        <h2 className='col-md-3 offset-md-5'>Media</h2>
         <div className="d-flex">
           <div className="card me-3" style={{ backgroundImage: 'url(/path/to/blog.jpg)' }}>
             <a href="#blog" className="overlay">Blog</a>

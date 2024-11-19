@@ -35,10 +35,9 @@ h3 {
 }
 
 /* Refactorizar estilo HR pendiente!! */
-hr {
+/* hr {
   width: 40%;
-  margin: auto;
-}
+} */
 
 section {
   padding: 2rem 1rem;

@@ -41,9 +41,9 @@ function AboutMe() {
 
   return (
     <Row>
-      <Row>
+      <Row id='about'>
         <Col md={{span:3, offset:5}}>
-        <h2>Sobre Mí</h2>
+        <h2 className='mb-4'>Sobre Mí</h2>
         </Col>
       </Row>
       <Col xs={12} md={4}>

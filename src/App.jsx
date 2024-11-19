@@ -1,62 +1,52 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 
 import Header from './components/Header';
 import Cabecera from './components/Cabecera';
 import AboutMe from './components/AboutMe';
 import Servicios from './components/Servicios';
-import Contenidos from './components/Contenidos';
+import Contenidos from './components/Media';
 import Contacto from './components/Contacto';
 import Footer from './components/Footer';
 
 function App() {
   return (
     <div className={"App container"}>
-      <Header />
-      <Cabecera />
-      <AboutMe />
-      <Servicios />
-      <Contenidos />
-      <Contacto />
-      <Footer />
+<Router>
+  <Header />
+  <Routes>
+    <Route path="/" element={
+      <>
+        <Cabecera />
+        <AboutMe />
+        <Servicios />
+        <Contenidos />
+        <Contacto />
+      </>
+    } />
+    {/* <Route path="/blog" element={<Blog />} />
+    <Route path="/contenidos" element={<Contenidos />} />
+    <Route path="/podcast" element={<Podcast />} /> */}
+  </Routes>
+  <Footer />
+</Router>
     </div>
   );
 }
 
 export default App;
 
-//DEFAULT REACT TEMPLATE
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import './App.css'
-// function App() {
-//   const [count, setCount] = useState(0)
-
-//   return (
-//     <>
-//       <div>
-//         <a href="https://vite.dev" target="_blank">
-//           <img src={viteLogo} className="logo" alt="Vite logo" />
-//         </a>
-//         <a href="https://react.dev" target="_blank">
-//           <img src={reactLogo} className="logo react" alt="React logo" />
-//         </a>
-//       </div>
-//       <h1>Vite + React</h1>
-//       <div className="card">
-//         <button onClick={() => setCount((count) => count + 1)}>
-//           count is {count}
-//         </button>
-//         <p>
-//           Edit <code>src/App.jsx</code> and save to test HMR
-//         </p>
-//       </div>
-//       <p className="read-the-docs">
-//         Click on the Vite and React logos to learn more
-//       </p>
-//     </>
-//   )
-// }
-
-// export default App
+//Router working (Header)
+// return (
+//   <div className={"App container"}>
+//     <Header />
+//     <Cabecera />
+//     <AboutMe />
+//     <Servicios />
+//     <Contenidos />
+//     <Contacto />
+//     <Footer />
+//   </div>
+// );
