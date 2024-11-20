@@ -4,15 +4,15 @@
 ----- HEADER (22)
 ----- CABECERA (43)
 ----- ABOUT ME (52)
------ SERVICIOS ()
+----- SERVICIOS (106)
 ----- MEDIA () 
 ----- CONTACTO ()
 ----- FOOTER ()
 ]
------ SERVICES PAGES [
+***  SERVICES PAGES [
 ----- pending
 ]
------ MEDIA PAGES [
+***  MEDIA PAGES [
 ----- BLOG ()
 ----- CONTENIDOS ()
 ----- PODCAST
@@ -104,15 +104,12 @@
 
 
 /* SERVICIOS */
+
 .class-container h2 {
   margin: 0;
   padding: 0;
 }
+/* Cards inside slider */
 .card-title h5 {
-  text-align: center; /* Not working */
+  text-align: center;
 }
-
-card-subtitle .custom-underline-color {
-  border-bottom-color: var(--primary-color);
-  font-weight: normal;
-} 

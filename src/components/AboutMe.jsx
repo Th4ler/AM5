@@ -1,5 +1,4 @@
-//insertar foto / titulo / descripcion (card: quitar bordes --> only text +añadir underline bajo el nombre)
-//accordion-inner-border-radius? (primary)
+//insertar foto / titulo /
 //Añadir disabled --> membresía
 //Optimizar: 2 arrays --> right & left (2 columnas desplegables + mb-2)
 import Card from 'react-bootstrap/Card';

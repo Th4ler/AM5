@@ -1,4 +1,4 @@
-//Insertar imagen cabecera
+//Imagen cabecera (añadir efecto?)
 import Image from 'react-bootstrap/Image';
 import am5cabecera from '../images/am5cabecera.jpg';
 

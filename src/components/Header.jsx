@@ -1,7 +1,6 @@
-//Logo + NavMenu / Insertar rutas navegacion --> <Navbar> quitar el bg="light" cuando esté la cabecera
+//Logo + NavMenu /
 import { Navbar, Nav } from 'react-bootstrap';
 import logo from '../assets/am5-logo.png';
-// import '../App.css'
 
 function Header() {
     return (
