@@ -7,8 +7,9 @@ function Cabecera() {
         <div className='row'>
             <div className="cabecera">
                 <Image src={am5cabecera} fluid />
-                <div className='p-1 mb-4 bg-secondary opacity-50'></div>
-                {/* <hr /> */}
+                <div className='cabecera-hr'></div>
+                {/* <hr className='cabecera-hr' /> */}
+                {/* <div className='p-1 mb-4 bg-secondary opacity-50'></div> */}
             </div>
         </div>
     );

@@ -9,22 +9,22 @@
   --background-color: #f8f8f8;
 }
 
-body {
+/* body {
   font-family: 'Montserrat', sans-serif;
   color: var(--dark-gray);
   background-color: var(--background-color);
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-}
+} */
 
-html,
+/* html,
 body {
   height: 100%;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-}
+} */
 
 h1,
 h2,
@@ -34,25 +34,21 @@ h3 {
   text-align: center;
 }
 
-/* Refactorizar estilo HR pendiente!! */
-/* hr {
-  width: 40%;
-} */
-
+/* 
 section {
   padding: 2rem 1rem;
   max-width: 1200px;
   margin: auto;
-}
+} */
 
-button {
+/* button {
   background-color: var(--primary-color);
   color: var(--dark-gray);
   border: none;
   padding: 0.5rem 1rem;
   cursor: pointer;
   font-weight: 600;
-}
+} */
 
 /*
 Colores por defecto bootstrap-react: light (gris clar) / secondary (gris fosc) / dark (negre) / warning (groc fort) -> bg="color"

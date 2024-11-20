@@ -1,3 +1,24 @@
+/* STYLING SECTIONS DOCUMENTATION */
+/*
+*** LANDING PAGE [
+----- HEADER (22)
+----- CABECERA (43)
+----- ABOUT ME ()
+----- SERVICIOS ()
+----- MEDIA () 
+----- CONTACTO ()
+----- FOOTER ()
+]
+----- SERVICES PAGES [
+----- pending
+]
+----- MEDIA PAGES [
+----- BLOG ()
+----- CONTENIDOS ()
+----- PODCAST
+]
+*/
+
 /* HEADER: LOGO + NAVBAR */
 .logo {
   font-size: 1.5rem;
@@ -20,6 +41,13 @@
 }
 
 /* CABECERA */
+#root .App .cabecera .cabecera-hr {
+  margin-bottom: 1.5rem;
+  border: none;
+  height: 5px;
+  color: var(--light-gray);  /* old IE */
+  background-color: var(--light-gray);  /* Modern Browsers */
+}
 
 /* ABOUT ME */
 /* Acordeón personalizado */
