@@ -3,7 +3,7 @@
 *** LANDING PAGE [
 ----- HEADER (22)
 ----- CABECERA (43)
------ ABOUT ME ()
+----- ABOUT ME (52)
 ----- SERVICIOS ()
 ----- MEDIA () 
 ----- CONTACTO ()
@@ -50,6 +50,17 @@
 }
 
 /* ABOUT ME */
+#root .App div.row div.mb-4.card {
+  border: hidden; /* Ocultar el borde de la carta */
+}
+
+#root .App div.row div.mb-4.card div.card-body .custom-underline-color {
+  text-decoration: underline;
+  text-decoration-color: var(--primary-color);
+  text-decoration-thickness: 0.2rem;
+  text-decoration-skip-ink: none;
+}
+
 /* Acordeón personalizado */
 .custom-accordion .accordion-button {
   color: #4A4A4A;
@@ -65,7 +76,6 @@
 
 .custom-accordion .accordion-body {
   color: #4A4A4A;
-  /* Color del texto en el cuerpo ok */
 }
 
 .custom-accordion ul {
@@ -74,6 +84,24 @@
   padding-left: 0;
   /* Quitar espacio del lado izquierdo ok */
 }
+
+.custom-accordion li {
+  list-style-type: none;
+  text-align: start;
+}
+
+.custom-hr {
+  width: 50%;
+  margin-bottom: 1.5rem;
+  /* border: none; */
+  height: 5px;
+  color: var(--light-gray);  /* old IE */
+  background-color: var(--light-gray);  /* Modern Browsers */
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+
 
 /* SERVICIOS */
 .class-container h2 {

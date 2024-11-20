@@ -34,8 +34,7 @@ function AboutMe() {
   };
   const aboutMembresia = {
     'Membresía': [
-      '- Miembro del Colegio de Abogados.',
-      '- Miembro de la Asociación de Desarrolladores.'
+      '- Miembro del Colegio de Abogados.'
     ]
   }
 
@@ -52,8 +51,8 @@ function AboutMe() {
       <Col xs={12} md={8}>
         <Card className="mb-4">
           <Card.Body>
-            <Card.Subtitle className="mb-2 text-muted p-2 text-decoration-underline">Andrés Madariaga</Card.Subtitle>
-            <Card.Text>
+            <Card.Subtitle className="mb-2 p-2 custom-underline-color">Andrés Madariaga</Card.Subtitle>
+            <Card.Text className='text-muted'>
               Soy Andrés Madariaga, abogado, profesor de derecho y emprendedor. Tras más
               de 10 años asesorando a empresas internacionales, descubrí una gran necesidad
               en el mundo legal y de negocios: personas, startups y empresas que no
@@ -114,7 +113,7 @@ function AboutMe() {
             </Accordion>
           </Col>
           <Col xs={12} md={6} className="custom-accordion mb-4">
-            <Accordion>
+            <Accordion className='acordion-membresia'>
               {Object.keys(aboutMembresia).map((section, idx) => (
                 <Accordion.Item eventKey={String(idx + 2)} key={idx}>
                   <Accordion.Header>{section}</Accordion.Header>
@@ -131,8 +130,8 @@ function AboutMe() {
           </Col>
         </Row>
       </Col>
-      <hr />
-    </Row>
+      <div className='custom-hr rounded w-75 mb-4 mt-4'></div>
+      </Row>
   );
 }
 
