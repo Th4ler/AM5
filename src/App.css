@@ -104,7 +104,6 @@
 
 
 /* SERVICIOS */
-
 .class-container h2 {
   margin: 0;
   padding: 0;
@@ -112,4 +111,18 @@
 /* Cards inside slider */
 .card-title h5 {
   text-align: center;
+}
+/* Personalizar indicadores del Carousel */
+.custom-carousel .carousel-indicators button {
+  width: 12px; /* Tamaño del indicador */
+  height: 12px;
+  border-radius: 50%; /* Forma redonda */
+  border: 2px solid black; /* Borde negro */
+  background-color: white; /* Fondo blanco (inactivo) */
+  opacity: 1; /* Evita la transparencia predeterminada */
+}
+
+.custom-carousel .carousel-indicators .active {
+  background-color: black; /* Fondo negro (activo) */
+  border-color: black; /* Borde negro (activo) */
 }
