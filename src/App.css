@@ -4,7 +4,7 @@
 ----- HEADER (22)
 ----- CABECERA (43)
 ----- ABOUT ME (52)
------ SERVICIOS (106)
+----- SERVICIOS (109)
 ----- MEDIA () 
 ----- CONTACTO ()
 ----- FOOTER ()
@@ -62,6 +62,11 @@
 }
 
 /* Acordeón personalizado */
+#root .App div.row div.row .custom-accordion div.accordion-item {
+  border: 3px solid;
+  border-color: var(--primary-color);
+}
+
 .custom-accordion .accordion-button {
   color: #4A4A4A;
 }
@@ -93,7 +98,6 @@
 .custom-hr {
   width: 50%;
   margin-bottom: 1.5rem;
-  /* border: none; */
   height: 5px;
   color: var(--light-gray);  /* old IE */
   background-color: var(--light-gray);  /* Modern Browsers */
@@ -102,12 +106,61 @@
   right: 0;
 }
 
-
 /* SERVICIOS */
 .class-container h2 {
   margin: 0;
   padding: 0;
 }
+
+/* Personalización bordes descripción servicio */
+.custom-border-box {
+  position: relative;
+  padding: 20px;
+}
+
+.custom-border-box::before,
+.custom-border-box::after {
+  content: "";
+  position: absolute;
+  background-color: var(--primary-color);
+}
+
+/* Top Border (primer 25%) */
+.custom-border-box::before {
+  top: 0;
+  left: 0;
+  height: 5px; /* Ancho de la línea */
+  width: 25%; /* Longitud del borde superior */
+}
+
+/* Bottom Border (último 25%) */
+.custom-border-box::after {
+  bottom: 0;
+  right: 0;
+  height: 5px; /* Ancho de la línea */
+  width: 25%; /* Longitud del borde inferior */
+}
+
+/* Left Top Corner (primer 25% del borde izquierdo) */
+.custom-border-box .left-corner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px; /* Ancho de la línea */
+  height: 50%; /* Longitud del borde izquierdo */
+  background-color: var(--primary-color);
+}
+
+/* Right Bottom Corner (último 25% del borde derecho) */
+.custom-border-box .right-corner {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 5px; /* Ancho de la línea */
+  height: 50%; /* Longitud del borde derecho */
+  background-color: var(--primary-color);
+}
+
 /* Cards inside slider */
 .card-title h5 {
   text-align: center;

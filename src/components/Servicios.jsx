@@ -61,7 +61,7 @@ function ServiciosCarousel() {
     }
   ];
 
-//Tomar medidas de una carta como referencia (trial)
+  //Tomar medidas de una carta como referencia (trial)
   useEffect(() => {
     if (firstCardRef.current) {
       // Obtiene las dimensiones de la primera carta
@@ -77,18 +77,20 @@ function ServiciosCarousel() {
 
   return (
     <div id='services' className="container">
-      <h2 className='col-md-3 offset-md-5 '>Servicios</h2>
-      <div className='text-center col-md-8 offset-md-2'>
+      <h2 className='col-md-2 offset-md-5'>Servicios</h2>
+      <div className='custom-border-box text-center col-md-8 offset-md-2 mb-4'>
+        <div className="left-corner"></div>
+        <div className="right-corner"></div>
         <p className='text-muted'>En AM5 ofrecemos soluciones estratégicas para personas, startups y empresas que buscan
           apoyo integral en el mundo legal, de negocios y comunicación pública. Nos especializamos en:</p>
       </div>
 
       {/* Botones de navegación */}
-      <div className="d-flex justify-content-center align-items-center gap-3 mb-2">
+      <div className="d-flex justify-content-center align-items-center gap-3 mb-4">
         <Button variant="outline-dark" onClick={handlePrev} className="rounded-circle p-2">
           ⬅️
         </Button>
-        <Button variant="outline-dark" type='button' className="rounded-5 px-4 py-2"> Desliza </Button> {/* Estilar botón -> disabled */}
+        <div className='rounded-5 border border-black px-4 py-2 fw-semibold'>Desliza</div>
         <Button variant="outline-dark" onClick={handleNext} className="rounded-circle p-2">
           ➡️
         </Button>
@@ -106,7 +108,7 @@ function ServiciosCarousel() {
       >
         {services.map((service, idx) => (
           <Carousel.Item key={idx}>
-            <div className="d-flex justify-content-center  gap-3">
+            <div className="d-flex justify-content-center gap-3">
               {services
                 .slice(idx, idx + 3) // Toma tres elementos consecutivos
                 .concat(services.slice(0, Math.max(0, idx + 3 - services.length))) // Cicla si se pasa
