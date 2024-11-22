@@ -3,8 +3,8 @@
 //Probar a sustituir con row + col los divs para centrar el borde / O provar disminuir box-shadow del div 
 
 //New trial
-// import { useState } from 'react'; //Last trial working
-import { useState, useEffect, useRef } from 'react'; //Last trial working
+import { useState } from 'react'; //Last trial working
+// import { useState, useEffect, useRef } from 'react'; //Last trial working
 import { Carousel, Button, Card } from 'react-bootstrap';
 import img1 from '../images/img1.jpg';
 import img1filter from '../images/img1filter.jpg';
@@ -21,8 +21,8 @@ function ServiciosCarousel() {
   const [index, setIndex] = useState(0);
   const [hoveredCard, setHoveredCard] = useState(null);
   //Prueba medidas carta
-  const [cardSize, setCardSize] = useState({ width: 0, height: 0 });
-  const firstCardRef = useRef(null); // Referencia para medir la primera carta
+  // const [cardSize, setCardSize] = useState({ width: 0, height: 0 });
+  // const firstCardRef = useRef(null); // Referencia para medir la primera carta
 
   const handleSelect = (selectedIndex) => setIndex(selectedIndex); //Controla la diapositiva activa (se actualiza con el estado)
 
@@ -111,43 +111,63 @@ function ServiciosCarousel() {
         controls={false} // Oculta controles prev y next por defecto
         interval={null} // Desactiva el autoplay (para hacer pruebas, luego volver a habilitar)
       >
-        {services.map((service, idx) => (
+        {/* {services.map((service, idx) => ( */}
+        {services.map((_, idx) => (
           <Carousel.Item key={idx}>
             <div className="d-flex justify-content-center gap-3">
               {services
                 .slice(idx, idx + 3) // Toma tres elementos consecutivos
                 .concat(services.slice(0, Math.max(0, idx + 3 - services.length))) // Cicla si se pasa
-                .map((service, subIdx) => (
-                  <Card className='text-center mb-5'
-                    key={subIdx}
-                    // ref={subIdx === 0 ? firstCardRef : null} // Ref solo para la primera carta (medidas)
-                    // style={{
-                    //   width: cardSize.width ? `${cardSize.width}px` : '18rem',
-                    //   height: cardSize.height ? `${cardSize.height}px` : 'auto',
-                    //   width: `${cardSize.width}px`,
-                    //   height: `${cardSize.height}px`,
-                    // }}
-                    style={{ width: '18rem' }}
-                    onMouseEnter={() => setHoveredCard(idx)}
-                    onMouseLeave={() => setHoveredCard(null)}
-                  >
-                    <Card.Img
-                      variant="top"
-                      src={hoveredCard === idx ? service.imgHover : service.imgDefault}
-                      alt={service.title}
-                    />
-                    <Card.Body>
-                      <Card.Title>{service.title}</Card.Title>
-                      <Card.Text>{service.description}</Card.Text>
-                      <Button variant="outline-warning bg-dark">Ver más</Button> {/* Estilar botón -> eliminar atributo variant y customizar css */}
-                    </Card.Body>
-                  </Card>
-                ))}
+                // .map((service, subIdx) => (
+                .map((service, subIdx) => {
+                  // Identifica la carta central para el efecto hover
+                  const isCenterCard = subIdx === 1;
+
+                  return (
+                    <Card
+                      // className='text-center mb-5'
+                      className={`text-center mb-5 mt-2 ${isCenterCard && hoveredCard === subIdx ? 'hovered' : ''}`}
+                      key={subIdx}
+                      // ref={subIdx === 0 ? firstCardRef : null} // Ref solo para la primera carta (medidas)
+                      // style={{
+                      //   width: cardSize.width ? `${cardSize.width}px` : '18rem',
+                      //   height: cardSize.height ? `${cardSize.height}px` : 'auto',
+                      //   width: `${cardSize.width}px`,
+                      //   height: `${cardSize.height}px`,
+                      // }}
+                      style={{ width: '18rem', transition: 'transform 0.3s' }}
+                      onMouseEnter={() => isCenterCard && setHoveredCard(subIdx)}
+                      onMouseLeave={() => setHoveredCard(null)}
+                    // style={{ width: '18rem' }}
+                    // onMouseEnter={() => setHoveredCard(idx)}
+                    // onMouseLeave={() => setHoveredCard(null)}
+                    >
+                      <Card.Img
+                        variant="top"
+                        // src={hoveredCard === idx ? service.imgHover : service.imgDefault}
+                        src={isCenterCard && hoveredCard === subIdx ? service.imgHover : service.imgDefault}
+                        alt={service.title}
+                      />
+                      <Card.Body>
+                        <Card.Title>{service.title}</Card.Title>
+                        <Card.Text>{service.description}</Card.Text>
+                        <Button variant="outline-warning bg-dark">Ver más</Button>
+                      </Card.Body>
+                    </Card>
+                  );
+                  // ))}
+                })}
             </div>
           </Carousel.Item>
         ))}
       </Carousel>
       <div className='custom-hr rounded w-75 mb-4 mt-4'></div>
+      {/* Animación para elevar la carta central -> styled-jsx */}
+      <style jsx>{`
+        .hovered {
+          transform: translateY(-10px); /* Eleva la carta central al hacer hover */
+        }
+      `}</style>
     </div>
   );
 }
