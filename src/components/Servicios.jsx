@@ -5,7 +5,6 @@
 //New trial
 // import { useState } from 'react'; //Last trial working
 import { useState, useEffect, useRef } from 'react'; //Last trial working
-// import { useState, useEffect, useRef } from 'react';
 import { Carousel, Button, Card } from 'react-bootstrap';
 import img1 from '../images/img1.jpg';
 import img1filter from '../images/img1filter.jpg';
@@ -62,13 +61,19 @@ function ServiciosCarousel() {
   ];
 
   //Tomar medidas de una carta como referencia (trial)
-  useEffect(() => {
-    if (firstCardRef.current) {
-      // Obtiene las dimensiones de la primera carta
-      const { width, height } = firstCardRef.current.getBoundingClientRect();
-      setCardSize({ width, height });
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (firstCardRef.current) {
+  //     // Obtiene las dimensiones de la primera carta
+  //     const { width, height } = firstCardRef.current.getBoundingClientRect();
+  //     setCardSize({ width, height });
+  //   }
+  // }, []);
+  //Tomar medidas referencia img5filter
+  // useEffect(() => {
+  //   const img = new Image();
+  //   img.src = img5filter;
+  //   img.onload = () => setCardSize({ width: img.width, height: img.height });
+  // }, []);
 
   // Manejo de navegación manual
   const handlePrev = () => setIndex((prev) => (prev === 0 ? services.length - 1 : prev - 1));
@@ -102,7 +107,7 @@ function ServiciosCarousel() {
         // fade
         activeIndex={index}
         onSelect={handleSelect}
-        indicators={true} // Enable indicadores del slider --> not working
+        indicators={true}
         controls={false} // Oculta controles prev y next por defecto
         interval={null} // Desactiva el autoplay (para hacer pruebas, luego volver a habilitar)
       >
@@ -115,15 +120,16 @@ function ServiciosCarousel() {
                 .map((service, subIdx) => (
                   <Card className='text-center mb-5'
                     key={subIdx}
-                    ref={subIdx === 0 ? firstCardRef : null} // Ref solo para la primera carta (medidas)
-                    style={{
-                      width: cardSize.width ? `${cardSize.width}px` : '18rem',
-                      height: cardSize.height ? `${cardSize.height}px` : 'auto',
-                    }}
-                    // style={{ width: '18rem' }}
+                    // ref={subIdx === 0 ? firstCardRef : null} // Ref solo para la primera carta (medidas)
+                    // style={{
+                    //   width: cardSize.width ? `${cardSize.width}px` : '18rem',
+                    //   height: cardSize.height ? `${cardSize.height}px` : 'auto',
+                    //   width: `${cardSize.width}px`,
+                    //   height: `${cardSize.height}px`,
+                    // }}
+                    style={{ width: '18rem' }}
                     onMouseEnter={() => setHoveredCard(idx)}
                     onMouseLeave={() => setHoveredCard(null)}
-                    border='warning' //Quitar y estilar en css
                   >
                     <Card.Img
                       variant="top"

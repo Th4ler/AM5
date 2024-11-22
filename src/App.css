@@ -45,13 +45,16 @@
   margin-bottom: 1.5rem;
   border: none;
   height: 5px;
-  color: var(--light-gray);  /* old IE */
-  background-color: var(--light-gray);  /* Modern Browsers */
+  color: var(--light-gray);
+  /* old IE */
+  background-color: var(--light-gray);
+  /* Modern Browsers */
 }
 
 /* ABOUT ME */
 #root .App div.row div.mb-4.card {
-  border: hidden; /* Ocultar el borde de la carta */
+  border: hidden;
+  /* Ocultar el borde de la carta */
 }
 
 #root .App div.row div.mb-4.card div.card-body .custom-underline-color {
@@ -99,8 +102,10 @@
   width: 50%;
   margin-bottom: 1.5rem;
   height: 5px;
-  color: var(--light-gray);  /* old IE */
-  background-color: var(--light-gray);  /* Modern Browsers */
+  color: var(--light-gray);
+  /* old IE */
+  background-color: var(--light-gray);
+  /* Modern Browsers */
   margin: 0 auto;
   left: 0;
   right: 0;
@@ -129,16 +134,20 @@
 .custom-border-box::before {
   top: 0;
   left: 0;
-  height: 5px; /* Ancho de la línea */
-  width: 25%; /* Longitud del borde superior */
+  height: 5px;
+  /* Ancho de la línea */
+  width: 25%;
+  /* Longitud del borde superior */
 }
 
 /* Bottom Border (último 25%) */
 .custom-border-box::after {
   bottom: 0;
   right: 0;
-  height: 5px; /* Ancho de la línea */
-  width: 25%; /* Longitud del borde inferior */
+  height: 5px;
+  /* Ancho de la línea */
+  width: 25%;
+  /* Longitud del borde inferior */
 }
 
 /* Left Top Corner (primer 25% del borde izquierdo) */
@@ -146,8 +155,10 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 5px; /* Ancho de la línea */
-  height: 50%; /* Longitud del borde izquierdo */
+  width: 5px;
+  /* Ancho de la línea */
+  height: 50%;
+  /* Longitud del borde izquierdo */
   background-color: var(--primary-color);
 }
 
@@ -156,8 +167,10 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 5px; /* Ancho de la línea */
-  height: 50%; /* Longitud del borde derecho */
+  width: 5px;
+  /* Ancho de la línea */
+  height: 50%;
+  /* Longitud del borde derecho */
   background-color: var(--primary-color);
 }
 
@@ -165,17 +178,45 @@
 .card-title h5 {
   text-align: center;
 }
+
+/* Ajustar  cartas carousel */
+#services div.card {
+  border: 5px solid;
+  border-color: var(--primary-color);
+  max-height: 700px;
+  /* text-overflow: clip; */
+}
+
+#services div.card .card-img-top {
+  max-height: 200px;
+}
+
+#services div.card button {
+  border: transparent;
+  width: 10rem;
+  border-radius: 20px;
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
 /* Personalizar indicadores del Carousel */
 .custom-carousel .carousel-indicators button {
-  width: 12px; /* Tamaño del indicador */
+  width: 12px;
+  /* Tamaño del indicador */
   height: 12px;
-  border-radius: 50%; /* Forma redonda */
-  border: 2px solid black; /* Borde negro */
-  background-color: white; /* Fondo blanco (inactivo) */
-  opacity: 1; /* Evita la transparencia predeterminada */
+  border-radius: 50%;
+  /* Forma redonda */
+  border: 2px solid black;
+  /* Borde negro */
+  background-color: white;
+  /* Fondo blanco (inactivo) */
+  opacity: 1;
+  /* Evita la transparencia predeterminada */
 }
 
 .custom-carousel .carousel-indicators .active {
-  background-color: black; /* Fondo negro (activo) */
-  border-color: black; /* Borde negro (activo) */
+  background-color: black;
+  /* Fondo negro (activo) */
+  border-color: black;
+  /* Borde negro (activo) */
 }
