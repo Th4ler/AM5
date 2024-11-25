@@ -1,10 +1,12 @@
 //insertar foto / titulo /
 //Añadir disabled --> membresía
 //Optimizar: 2 arrays --> right & left (2 columnas desplegables + mb-2)
+import { useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Accordion from 'react-bootstrap/Accordion';
+import aboutmePic from '../images/aboutmePic.webp';
 
 function AboutMe() {
   const aboutEducacion = {
@@ -37,6 +39,8 @@ function AboutMe() {
     ]
   }
 
+  const [isMembresiaDisabled, setMembresiaDisabled] = useState(true); // Estado para controlar el botón
+
   return (
     <Row>
       <Row id='about'>
@@ -45,7 +49,7 @@ function AboutMe() {
         </Col>
       </Row>
       <Col xs={12} md={4}>
-        <img src="/path/to/foto.jpg" alt="Foto del cliente" className="img-fluid" />
+        <img src={aboutmePic} alt="Foto del cliente" className="img-fluid" />
       </Col>
       <Col xs={12} md={8}>
         <Card className="mb-4">
@@ -112,10 +116,10 @@ function AboutMe() {
             </Accordion>
           </Col>
           <Col xs={12} md={6} className="custom-accordion mb-4">
-            <Accordion className='acordion-membresia'>
+            <Accordion className='accordion-membresia'>
               {Object.keys(aboutMembresia).map((section, idx) => (
                 <Accordion.Item eventKey={String(idx + 2)} key={idx}>
-                  <Accordion.Header>{section}</Accordion.Header>
+                  <Accordion.Header as="button" disabled={isMembresiaDisabled}>{section}</Accordion.Header>
                   <Accordion.Body className='text-muted'>
                     <ul>
                       {aboutMembresia[section].map((text, index) => (

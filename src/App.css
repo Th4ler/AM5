@@ -4,7 +4,7 @@
 ----- HEADER (22)
 ----- CABECERA (43)
 ----- ABOUT ME (52)
------ SERVICIOS (109)
+----- SERVICIOS (126)
 ----- MEDIA () 
 ----- CONTACTO ()
 ----- FOOTER ()
@@ -96,6 +96,18 @@
 .custom-accordion li {
   list-style-type: none;
   text-align: start;
+}
+
+/* Membresia button */
+#root .App div.row div.row .custom-accordion div.accordion-membresia {
+  border: 3px solid;
+  border-color: var(--primary-color);
+  color: #4A4A4A;
+}
+
+#root .App div.row div.row .custom-accordion div.accordion-membresia .accordion-header {
+  width: 100%;
+  border: none;
 }
 
 .custom-hr {
