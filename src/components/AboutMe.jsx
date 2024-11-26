@@ -49,7 +49,7 @@ function AboutMe() {
         </Col>
       </Row>
       <Col xs={12} md={4}>
-        <img src={aboutmePic} alt="Foto del cliente" className="img-fluid" />
+        <img src={aboutmePic} alt="Foto de Andrés Madariaga" className="img-fluid" />
       </Col>
       <Col xs={12} md={8}>
         <Card className="mb-4">
