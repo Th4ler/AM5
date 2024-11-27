@@ -1,4 +1,4 @@
-//Logo + NavMenu /
+//Home: Logo + NavMenu
 import { Navbar, Nav } from 'react-bootstrap';
 import logo from '../assets/am5-logo.png';
 

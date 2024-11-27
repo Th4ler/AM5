@@ -4,8 +4,8 @@
 ----- HEADER (22)
 ----- CABECERA (43)
 ----- ABOUT ME (52)
------ SERVICIOS (126)
------ MEDIA () 
+----- SERVICIOS (117)
+----- MEDIA (232) 
 ----- CONTACTO ()
 ----- FOOTER ()
 ]
@@ -45,16 +45,13 @@
   margin-bottom: 1.5rem;
   border: none;
   height: 5px;
-  color: var(--light-gray);
-  /* old IE */
-  background-color: var(--light-gray);
-  /* Modern Browsers */
+  color: var(--light-gray); /* old IE */
+  background-color: var(--light-gray); /* Modern Browsers */  
 }
 
 /* ABOUT ME */
 #root .App div.row div.mb-4.card {
   border: hidden;
-  /* Ocultar el borde de la carta */
 }
 
 #root .App div.row div.mb-4.card div.card-body .custom-underline-color {
@@ -75,10 +72,8 @@
 }
 
 .custom-accordion .accordion-button:not(.collapsed) {
-  background-color: var(--background-color);
-  /* Fondo blanco cuando el acordeón está abierto */
-  border-color: var(--primary-color);
-  /* Borde amarillo */
+  background-color: var(--background-color);   /* Fondo blanco cuando el acordeón está abierto */
+  border-color: var(--primary-color);   /* Borde amarillo */
   color: #4A4A4A;
 }
 
@@ -87,10 +82,8 @@
 }
 
 .custom-accordion ul {
-  list-style: none;
-  /* Quitar los puntos de las listas ok */
-  padding-left: 0;
-  /* Quitar espacio del lado izquierdo ok */
+  list-style: none;   /* Quitar los puntos de las listas */
+  padding-left: 0;   /* Quitar espacio del lado izquierdo */
 }
 
 .custom-accordion li {
@@ -114,10 +107,8 @@
   width: 50%;
   margin-bottom: 1.5rem;
   height: 5px;
-  color: var(--light-gray);
-  /* old IE */
-  background-color: var(--light-gray);
-  /* Modern Browsers */
+  color: var(--light-gray);   /* old IE */
+  background-color: var(--light-gray);   /* Modern Browsers */
   margin: 0 auto;
   left: 0;
   right: 0;
@@ -146,20 +137,16 @@
 .custom-border-box::before {
   top: 0;
   left: 0;
-  height: 5px;
-  /* Ancho de la línea */
-  width: 25%;
-  /* Longitud del borde superior */
+  height: 5px; /* Ancho de la línea */
+  width: 25%; /* Longitud del borde superior */
 }
 
 /* Bottom Border (último 25%) */
 .custom-border-box::after {
   bottom: 0;
   right: 0;
-  height: 5px;
-  /* Ancho de la línea */
-  width: 25%;
-  /* Longitud del borde inferior */
+  height: 5px; /* Ancho de la línea */
+  width: 25%; /* Longitud del borde inferior */  
 }
 
 /* Left Top Corner (primer 25% del borde izquierdo) */
@@ -167,10 +154,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 5px;
-  /* Ancho de la línea */
-  height: 50%;
-  /* Longitud del borde izquierdo */
+  width: 5px; /* Ancho de la línea */  
+  height: 50%; /* Longitud del borde izquierdo */  
   background-color: var(--primary-color);
 }
 
@@ -179,10 +164,8 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 5px;
-  /* Ancho de la línea */
-  height: 50%;
-  /* Longitud del borde derecho */
+  width: 5px; /* Ancho de la línea */  
+  height: 50%; /* Longitud del borde derecho */  
   background-color: var(--primary-color);
 }
 
@@ -236,3 +219,14 @@
   border-color: black;
   /* Borde negro (activo) */
 }
+
+#services .carousel-container {
+  position: relative; /* Necesario para contener el fondo */
+  background-image: url('./images/bg-services-section.webp');
+  background-size: cover; /* Ajusta el tamaño del patrón */
+  background-repeat: no-repeat; /* Evita que se repita */
+  background-position: center; /* Centra el fondo */
+  padding: 20px; /* Opcional: Espaciado alrededor del carrusel */
+} 
+
+/* MEDIA */

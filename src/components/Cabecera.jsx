@@ -1,6 +1,7 @@
-//Imagen cabecera (añadir efecto?)
+//Home: Imagen cabecera
 import Image from 'react-bootstrap/Image';
-import am5cabecera from '../images/am5cabecera.jpg';
+import am5cabecera from '../images/imagenhome.webp';
+
 
 function Cabecera() {
     return (

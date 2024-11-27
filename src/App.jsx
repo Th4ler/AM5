@@ -14,39 +14,26 @@ import Footer from './components/Footer';
 function App() {
   return (
     <div className={"App container"}>
-<Router>
-  <Header />
-  <Routes>
-    <Route path="/" element={
-      <>
-        <Cabecera />
-        <AboutMe />
-        <Servicios />
-        <Contenidos />
-        <Contacto />
-      </>
-    } />
-    {/* <Route path="/blog" element={<Blog />} />
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Cabecera />
+              <AboutMe />
+              <Servicios />
+              <Contenidos />
+              <Contacto />
+            </>
+          } />
+          {/* <Route path="/blog" element={<Blog />} />
     <Route path="/contenidos" element={<Contenidos />} />
     <Route path="/podcast" element={<Podcast />} /> */}
-  </Routes>
-  <Footer />
-</Router>
+        </Routes>
+        <Footer />
+      </Router>
     </div>
   );
 }
 
 export default App;
-
-//Router working (Header)
-// return (
-//   <div className={"App container"}>
-//     <Header />
-//     <Cabecera />
-//     <AboutMe />
-//     <Servicios />
-//     <Contenidos />
-//     <Contacto />
-//     <Footer />
-//   </div>
-// );

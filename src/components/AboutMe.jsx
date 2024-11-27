@@ -1,6 +1,4 @@
-//insertar foto / titulo /
-//Añadir disabled --> membresía
-//Optimizar: 2 arrays --> right & left (2 columnas desplegables + mb-2)
+//Home section - Sobre mí
 import { useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
@@ -39,13 +37,13 @@ function AboutMe() {
     ]
   }
 
-  const [isMembresiaDisabled, setMembresiaDisabled] = useState(true); // Estado para controlar el botón
+  const [isMembresiaDisabled, setMembresiaDisabled] = useState(true); // Estado para controlar/deshabilitar el botón "membresia"
 
   return (
     <Row>
       <Row id='about'>
-        <Col md={{span:2, offset:5}}>
-        <h2 className='mb-4'>Sobre Mí</h2>
+        <Col md={{ span: 2, offset: 5 }}>
+          <h2 className='mb-4'>Sobre Mí</h2>
         </Col>
       </Row>
       <Col xs={12} md={4}>
@@ -60,7 +58,7 @@ function AboutMe() {
               de 10 años asesorando a empresas internacionales, descubrí una gran necesidad
               en el mundo legal y de negocios: personas, startups y empresas que no
               encuentran soluciones legales realmente alineadas con sus desafíos. Muchas
-              veces, los servicios legales se presentan como un "producto" despersonalizado
+              veces, los servicios legales se presentan como un &quot;producto&quot; despersonalizado
               que no entiende ni se adapta a las necesidades únicas de cada negocio, lo que
               genera confusión, sobrecostos y malos resultados.
             </Card.Text>
@@ -134,7 +132,7 @@ function AboutMe() {
         </Row>
       </Col>
       <div className='custom-hr rounded w-75 mb-4 mt-4'></div>
-      </Row>
+    </Row>
   );
 }
 
