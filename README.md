@@ -34,8 +34,9 @@ Instala el paquete (React + vite) con tu gestor de paquetes favorito
 
 ```sh
  npm install bootstrap
- npm install react-router-dom
  npm install react-bootstrap bootstrap
+ npm install react-router-dom
+ npm install swiper
 ```
 
 # Git Basic Commands:

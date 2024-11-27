@@ -2,7 +2,7 @@
 //Insertar background de sección --> figuras geométricas
 //Probar a sustituir con row + col los divs para centrar el borde / O provar disminuir box-shadow del div 
 
-//New trial
+//New trial (swiper)
 // import { useState } from 'react'; //Last trial working
 import { useState, useEffect } from 'react'; //Last trial working
 // import { useState, useEffect, useRef } from 'react'; //Trial
@@ -21,8 +21,8 @@ import img5filter from '../images/img5filter.jpg';
 function ServiciosCarousel() {
   const [index, setIndex] = useState(0);
   const [hoveredCard, setHoveredCard] = useState(null);
-    //Prueba medida pantalla
-    const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768);
+  //Prueba medida pantalla
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768);
   //Prueba medidas carta
   // const [cardSize, setCardSize] = useState({ width: 0, height: 0 });
   // const firstCardRef = useRef(null); // Referencia para medir la primera carta
@@ -111,12 +111,10 @@ function ServiciosCarousel() {
 
       {/* Slider */}
       <Carousel
-        // fade
+        fade
         className='custom-carousel'
         activeIndex={index}
         // onSelect={handleSelect} //WORKING!!
-        // indicators={true} //WORKING!!
-        // interval={null} // Desactiva el autoplay (para hacer pruebas, luego volver a habilitar) -> WORKING!!
         onSelect={setIndex}
         indicators={true}
         controls={false} // Oculta controles prev y next por defecto
@@ -184,7 +182,7 @@ function ServiciosCarousel() {
       {/* Animación para elevar la carta central -> styled-jsx */}
       <style jsx>{`
         .hovered {
-          transform: translateY(-10px); /* Eleva la carta central al hacer hover */
+          transform: translateY(-10px); /* Eleva la carta al hacer hover */
         }
       `}</style>
     </div>
@@ -192,6 +190,7 @@ function ServiciosCarousel() {
 }
 
 export default ServiciosCarousel;
+
 
 //Last TRIAL working (problemas con SLIDER INDIVIDUAL
 // // import { useState } from 'react'; //Last trial working

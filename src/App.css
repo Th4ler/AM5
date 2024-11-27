@@ -186,6 +186,11 @@
   background-color: var(--primary-color);
 }
 
+#services div.custom-carousel, div.carousel-item {
+  padding-top: 10px;
+  overflow: visible;
+}
+
 /* Cards inside slider */
 .card-title h5 {
   text-align: center;
@@ -196,7 +201,6 @@
   border: 5px solid;
   border-color: var(--primary-color);
   max-height: 700px;
-  /* text-overflow: clip; */
 }
 
 #services div.card .card-img-top {
