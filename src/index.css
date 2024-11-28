@@ -2,11 +2,18 @@
 /* Importar la fuente Montserrat */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
+/* Importar iconos bootstrap */
+@import 'bootstrap-icons/font/bootstrap-icons.css'; 
+
 :root {
   --primary-color: #FFFF29;
   --dark-gray: #4A4A4A;
   --light-gray: #BABABA;
   --background-color: #f8f8f8;
+}
+
+body {
+  background-color: var(--background-color);
 }
 
 h1, h3 {
@@ -46,7 +53,7 @@ h2::after {
   color: var(--dark-gray);
   text-decoration: underline;
   text-decoration-color: var(--primary-color);
-  text-align: center;
+  margin-bottom: 20px;
 }
 
 /*

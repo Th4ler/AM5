@@ -75,14 +75,14 @@ function ServiciosCarousel() {
           apoyo integral en el mundo legal, de negocios y comunicación pública. Nos especializamos en:</p>
       </div>
 
-      {/* Botones de navegación */}
+      {/* Botones de navegación con iconos */}
       <div className="d-flex justify-content-center align-items-center gap-3 mb-4">
-        <Button variant="outline-dark" onClick={handlePrev} className="rounded-circle p-2">
-          ⬅️
+        <Button variant="dark" onClick={handlePrev} className="rounded-circle p-2" id='carousel-btn-back'>
+          <i className="bi bi-skip-start"></i>
         </Button>
         <div className='rounded-5 border border-black px-4 py-2 fw-semibold'>Desliza</div>
-        <Button variant="outline-dark" onClick={handleNext} className="rounded-circle p-2">
-          ➡️
+        <Button variant="dark" onClick={handleNext} className="rounded-circle p-2" id='carousel-btn-next'>
+          <i className="bi bi-skip-end"></i>
         </Button>
       </div>
 

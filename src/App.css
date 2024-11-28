@@ -5,9 +5,9 @@
 ----- CABECERA (43)
 ----- ABOUT ME (52)
 ----- SERVICIOS (117)
------ MEDIA (232) 
+----- MEDIA (242) 
 ----- CONTACTO ()
------ FOOTER ()
+----- FOOTER (245)
 ]
 ***  SERVICES PAGES [
 ----- pending
@@ -229,4 +229,44 @@
   padding: 20px; /* Opcional: Espaciado alrededor del carrusel */
 } 
 
+/* Botones next/back carousel */
+#carousel-btn-back i {
+  color: var(--primary-color);
+}
+
+#carousel-btn-next i {
+  color: var(--primary-color);
+}
+
+
 /* MEDIA */
+
+/* FOOTER */
+.footer {
+  position: relative;
+  width: 100%;
+  color: var(--dark-gray);
+  background-color: var(--background-color);
+}
+
+.footer ul {
+  padding: 0;
+  list-style: none;
+}
+
+.footer ul li i {
+  margin-right: 0.5rem;
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: none;
+}
+
+.footer i {
+  color: var(--primary-color);
+  font-size: 1.5em;
+}

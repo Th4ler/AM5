@@ -22,6 +22,7 @@ function Contacto() {
         <Button variant="primary" type="submit" className="mt-3">Enviar</Button>
       </Form>
     </div>
+    <div className='custom-hr rounded w-75 mt-4'></div>
     </div>
   );
 }
