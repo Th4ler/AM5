@@ -6,7 +6,7 @@ function Header() {
     return (
         <Navbar sticky="top" bg="light" expand="lg" className="px-3">
             <Navbar.Brand href="#home" className="logo">
-                <img src={logo} alt="Logo" />
+                <img src={logo} alt="Imagen del logo de la start-up AM5 con su característico toque de color amarillo" />
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">

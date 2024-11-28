@@ -43,11 +43,11 @@ function AboutMe() {
     <Row>
       <Row id='about'>
         <Col md={{ span: 2, offset: 5 }}>
-          <h2 className='mb-4'>Sobre Mí</h2>
+          <h1 className='mb-4'>Sobre Mí</h1>
         </Col>
       </Row>
       <Col xs={12} md={4}>
-        <img src={aboutmePic} alt="Foto de Andrés Madariaga" className="img-fluid" />
+        <img src={aboutmePic} alt="Foto de Andrés Madariaga, CEO de la startup AM5" className="img-fluid" />
       </Col>
       <Col xs={12} md={8}>
         <Card className="mb-4">

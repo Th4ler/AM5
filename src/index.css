@@ -16,10 +16,37 @@ body {
   background-color: var(--background-color);
 }
 
-h1, h3 {
+h3 {
   color: var(--dark-gray);
   border: 5px solid var(--primary-color);
   text-align: center;
+}
+
+h1 {
+  color: var(--dark-gray);
+  border: 5px solid var(--primary-color);
+  border-right: none;
+  text-align: center;
+  position: relative; /* Necesario para posicionar el pseudo-elemento */
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0; /* Se aplica al borde derecho */
+  height: 100%; /* Ocupa toda la altura del h2 */
+  width: 5px; /* Ancho del borde */
+  background: linear-gradient(
+    to bottom,
+    var(--primary-color) 0%,
+    var(--primary-color) 25%,
+    transparent 25%,
+    transparent 75%,
+    var(--primary-color) 75%,
+    var(--primary-color) 100%
+  ); /* Degradado para mostrar solo el primer y último 25% */
+  z-index: -1; /* Asegúrate de que quede detrás del texto */
 }
 
 h2 {
@@ -47,13 +74,6 @@ h2::after {
     var(--primary-color) 100%
   ); /* Degradado para mostrar solo el primer y último 25% */
   z-index: -1; /* Asegúrate de que quede detrás del texto */
-}
-
-#footer h5 {
-  color: var(--dark-gray);
-  text-decoration: underline;
-  text-decoration-color: var(--primary-color);
-  margin-bottom: 20px;
 }
 
 /*
