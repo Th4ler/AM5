@@ -11,22 +11,22 @@ const ContactForm = () => {
             <Row>
               {/* Columna Izquierda */}
               <Col md={6}>
-                <Form.Group className="mb-3">
+                <Form.Group className="mb-3 ms-3">
                   <Form.Label>Nombre:</Form.Label>
                   <Form.Control type="text" placeholder="Andrés" />
                 </Form.Group>
-                <Form.Group className="mb-3">
+                <Form.Group className="mb-3 ms-3">
                   <Form.Label>Apellidos:</Form.Label>
                   <Form.Control type="text" placeholder="Madariaga" />
                 </Form.Group>
-                <Form.Group className="mb-3">
+                <Form.Group className="mb-3 ms-3">
                   <Form.Label>Correo Electrónico:</Form.Label>
                   <Form.Control
                     type="email"
                     placeholder="ejemplo1@am5.com"
                   />
                 </Form.Group>
-                <Form.Group className="mb-3">
+                <Form.Group className="mb-3 ms-3">
                   <Form.Label>Teléfono:</Form.Label>
                   <Form.Control type="text" placeholder="+56608747213" />
                 </Form.Group>
@@ -34,7 +34,7 @@ const ContactForm = () => {
 
               {/* Columna Derecha */}
               <Col md={6}>
-                <Form.Group className="mb-3">
+                <Form.Group className="mb-3 ms-3">
                   <Form.Label>Cuéntanos tu caso:</Form.Label>
                   <Form.Control
                     as="textarea"
@@ -45,7 +45,7 @@ const ContactForm = () => {
               </Col>
             </Row>
 
-            {/* Botón de Enviar */}
+            {/* Botón Submit */}
             <Row>
               <Col md={{ span: 2, offset: 5 }} className="text-center">
                 <Button type="submit" className="submit-btn text-dark">

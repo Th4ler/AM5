@@ -319,3 +319,29 @@
   color: var(--primary-color);
   font-size: 1.5em;
 }
+
+.pulse-icon:hover {
+  text-shadow: 
+    0 0 5px #BABABA,       /* Sombra gris claro */
+    0 0 10px #FFFF29;      /* Sombra amarilla */
+  animation: pulse 1s infinite; /* Aplica la animación pulse */
+}
+
+/* Animación de pulsación */
+@keyframes pulse {
+  0% {
+    text-shadow: 
+      0 0 5px #BABABA, 
+      0 0 10px #FFFF29;
+  }
+  50% {
+    text-shadow: 
+      0 0 10px #BABABA, 
+      0 0 20px #FFFF29;
+  }
+  100% {
+    text-shadow: 
+      0 0 5px #BABABA, 
+      0 0 10px #FFFF29;
+  }
+}

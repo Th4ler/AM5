@@ -19,37 +19,36 @@ function Footer() {
             <h5>Contacto</h5>
             <ul className="list-unstyled">
               <li className="mb-2">
-                <i className="bi bi-geo"></i>
+                <i className="bi bi-geo pulse-icon"></i>
                 Antonio Bellet 193, Oficina 1210, Providencia, RM
               </li>
               <li className="mb-2">
-                <i className="bi bi-telephone"></i>
+                <i className="bi bi-telephone pulse-icon"></i>
                 +569 6344 1988
               </li>
               <li className="mb-2">
-                <i className="bi bi-envelope-paper"></i>
-                {/* <i className="bi bi-envelope-paper text-warning"></i> */}
+                <i className="bi bi-envelope-paper pulse-icon"></i>
                 contacto@claimy.cl
               </li>
             </ul>
           </div>
 
-          {/* Columna 3: Redes Sociales -> añadir custom tooltip?? */}
+          {/* Columna 3: Redes Sociales */}
           <div className="col-md-3 mb-3">
             <h5>Redes Sociales</h5>
             <div className="row">
               <div className="col">
                 <ul className="list-unstyled">
-                  <li className='mb-2'><i className="bi bi-spotify"></i><a href="https://spotify.com" target="_blank" rel="noopener noreferrer" className="text-muted">Spotify</a></li>
-                  <li className='mb-2'><i className="bi bi-instagram"></i><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-muted">Instagram</a></li>
-                  <li><i className="bi bi-facebook"></i><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-muted">Facebook</a></li>
+                  <li className='mb-2'><i className="bi bi-spotify pulse-icon"></i><a href="https://spotify.com" target="_blank" rel="noopener noreferrer" className="text-muted">Spotify</a></li> {/* Prueba pulse animation -> pulse-icon */}
+                  <li className='mb-2'><i className="bi bi-instagram pulse-icon"></i><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-muted">Instagram</a></li>
+                  <li><i className="bi bi-facebook pulse-icon"></i><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-muted">Facebook</a></li>
                 </ul>
               </div>
               <div className="col">
                 <ul className="list-unstyled">
-                  <li className='mb-2'><i className="bi bi-linkedin"></i><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted">LinkedIn</a></li>
-                  <li className='mb-2'><i className="bi bi-youtube"></i><a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-muted">YouTube</a></li>
-                  <li><i className="bi bi-tiktok"></i><a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" className="text-muted">TikTok</a></li>
+                  <li className='mb-2'><i className="bi bi-linkedin pulse-icon"></i><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted">LinkedIn</a></li>
+                  <li className='mb-2'><i className="bi bi-youtube pulse-icon"></i><a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-muted">YouTube</a></li>
+                  <li><i className="bi bi-tiktok pulse-icon"></i><a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" className="text-muted">TikTok</a></li>
                 </ul>
               </div>
             </div>
