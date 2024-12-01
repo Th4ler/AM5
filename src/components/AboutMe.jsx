@@ -49,7 +49,7 @@ function AboutMe() {
       <Col xs={12} md={4}>
         <img src={aboutmePic} alt="Foto de Andrés Madariaga, CEO de la startup AM5" className="img-fluid" />
       </Col>
-      <Col xs={12} md={8}>
+      <Col xs={12} md={8} className="p-5">
         <Card className="mb-4">
           <Card.Body>
             <Card.Subtitle className="mb-2 p-2 custom-underline-color">Andrés Madariaga</Card.Subtitle>

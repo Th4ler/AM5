@@ -52,7 +52,7 @@ h1::after {
 h2 {
   color: var(--dark-gray);
   border: 5px solid var(--primary-color);
-  border-right: none;
+  border-right: inherit; 
   text-align: center;
   position: relative; /* Necesario para posicionar el pseudo-elemento */
 }

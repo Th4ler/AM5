@@ -13,7 +13,7 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className={"App container"}>
+    <div className={"App"}>
       <Router>
         <Header />
         <Routes>
