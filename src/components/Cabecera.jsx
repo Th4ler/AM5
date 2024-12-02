@@ -8,8 +8,9 @@ function Cabecera() {
         <div className='row'>
             <div className="cabecera">
                 <Image src={am5cabecera} alt='Imagen de la cabecera de la página de AM5, startup de soluciones legales y comunicación estratégica.' fluid />
-                <div className='cabecera-hr'></div>
             </div>
+            {/* <div className='cabecera-hr'></div> */}
+            <div className='custom-hr rounded w-75 mb-4'></div>
         </div>
     );
 }

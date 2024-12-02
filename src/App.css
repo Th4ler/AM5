@@ -3,11 +3,11 @@
 *** LANDING PAGE [
 ----- HEADER (22)
 ----- CABECERA (43)
------ ABOUT ME (52)
------ SERVICIOS (117)
------ MEDIA (242)
------ CONTACTO (244)
------ FOOTER (287)
+----- ABOUT ME (68)
+----- SERVICIOS (133)
+----- MEDIA (258)
+----- CONTACTO (261)
+----- FOOTER (302)
 ]
 ***  SERVICES PAGES [
 ----- pending
@@ -15,7 +15,7 @@
 ***  MEDIA PAGES [
 ----- BLOG ()
 ----- CONTENIDOS ()
------ PODCAST
+----- PODCAST ()
 ]
 */
 
@@ -41,12 +41,28 @@
 }
 
 /* CABECERA */
-#root .App .cabecera .cabecera-hr {
-  margin-bottom: 1.5rem;
-  border: none;
+#root .App .cabecera {
+  display: flex; /* Usamos flexbox */
+  justify-content: column; /* Centra la imagen horizontalmente */
+  align-items: center; /* Centra la imagen verticalmente */
+  text-align: center; /* Opcional: centra contenido dentro del div -> para futuro texto */
+}
+
+#root .App .cabecera img {
+  max-width: 100%; /* Ajusta la imagen al ancho del contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+  margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
+/* Not in use custom hr!! */
+#root .App .row .cabecera-hr {
+  margin-bottom: 1rem;
+  width: 100vw; /* Ocupa el 100% del ancho de la ventana */
   height: 5px;
-  color: var(--light-gray); /* old IE */
-  background-color: var(--light-gray); /* Modern Browsers */  
+  border: none;
+  background-color: var(--light-gray); /* Color del separador */
+  position: relative; /* Aseguramos que no influya en los elementos cercanos */
+  left: 0; /* Alineación con el borde izquierdo */
 }
 
 /* ABOUT ME */
