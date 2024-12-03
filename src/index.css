@@ -12,6 +12,10 @@
   --background-color: #f8f8f8;
 }
 
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
 body {
   background-color: var(--background-color);
 }

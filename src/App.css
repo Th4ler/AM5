@@ -27,13 +27,32 @@
 }
 
 .logo img {
-  max-width: 100px;
+  max-width: 130px;
   height: auto;
 }
 
+.navbar {
+  padding: 0.5rem 5rem 0.5rem 3rem !important;
+}
+
+.custom-underline-color .nav-link {
+  font-size: 1.3rem;
+}
+
 #root .App nav div .custom-underline-color .nav-link.active {
-  border-bottom-color: var(--primary-color);
+  border-bottom-color: transparent;
+  position: relative;
   font-weight: normal;
+}
+
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(30%);
+  width: 60%;
+  border-bottom: 0.6rem solid var(--primary-color);
 }
 
 #root .App nav div .custom-underline-color .nav-link:hover {
@@ -68,6 +87,7 @@
 /* ABOUT ME */
 #root .App div.row div.mb-4.card {
   border: hidden;
+  font-size: 1.2rem;
 }
 
 #root .App div.row div.mb-4.card div.card-body .custom-underline-color {

@@ -52,7 +52,6 @@ function AboutMe() {
       <Col xs={12} md={8} className='p-5'>
         <Card className="mb-4">
           <Card.Body>
-            <Card.Subtitle className="mb-2 p-2 custom-underline-color">Andrés Madariaga</Card.Subtitle>
             <Card.Text className='text-muted'>
               Soy Andrés Madariaga, abogado, profesor de derecho y emprendedor. Tras más
               de 10 años asesorando a empresas internacionales, descubrí una gran necesidad
