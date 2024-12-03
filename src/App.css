@@ -53,10 +53,23 @@
   transform: translateX(-50%) translateY(30%);
   width: 60%;
   border-bottom: 0.6rem solid var(--primary-color);
+  transition: all 0.3s ease;
 }
 
 #root .App nav div .custom-underline-color .nav-link:hover {
-  border-bottom-color: var(--primary-color);
+  border-bottom-color: transparent;
+  position: relative;
+}
+
+#root .App nav div .custom-underline-color .nav-link:hover::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(30%);
+  width: 70%;
+  border-bottom: 0.3rem solid var(--primary-color);
+  transition: all 0.3s ease;
 }
 
 /* CABECERA */
