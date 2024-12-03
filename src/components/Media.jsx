@@ -1,7 +1,7 @@
 //Insertar las diferentes secciones + rutas (blog, contenidos, redes) + iconos redes
 function Contenidos() {
     return (
-        <div className='row'>
+        <div className='d-flex flex-column'>
       <div id="media" className="container">
         <h2 className='col-md-2 offset-md-5'>Media</h2>
         <div className="d-flex">

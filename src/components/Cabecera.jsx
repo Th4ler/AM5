@@ -5,7 +5,7 @@ import am5cabecera from '../images/imagenhome.webp';
 
 function Cabecera() {
     return (
-        <div className='row'>
+        <div className='d-flex flex-column'>
             <div className="cabecera">
                 <Image src={am5cabecera} alt='Imagen de la cabecera de la página de AM5, startup de soluciones legales y comunicación estratégica.' fluid />
             </div>

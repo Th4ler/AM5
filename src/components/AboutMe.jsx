@@ -40,12 +40,12 @@ function AboutMe() {
   const [isMembresiaDisabled, setMembresiaDisabled] = useState(true); // Estado para controlar/deshabilitar el botón "membresia"
 
   return (
-    <Row>
-      <Row id='about'>
+    <div className='d-flex flex-column'>
+      <div className='col-12' id='about'>
         <Col md={{ span: 2, offset: 5 }}>
           <h1 className='mb-4'>Sobre Mí</h1>
         </Col>
-      </Row>
+      </div>
       <Col xs={12} md={4}>
         <img src={aboutmePic} alt="Foto de Andrés Madariaga, CEO de la startup AM5" className="img-fluid" />
       </Col>
@@ -131,7 +131,7 @@ function AboutMe() {
         </Row>
       </Col>
       <div className='custom-hr rounded w-75 mb-4 mt-4'></div>
-    </Row>
+    </div>
   );
 }
 
