@@ -4,7 +4,7 @@ import logo from '../assets/am5-logo.png';
 
 function Header() {
     return (
-        <Navbar sticky="top" bg="light" expand="lg" className="Navbar">
+        <Navbar sticky="top" bg="white" expand="lg" className="Navbar">
             <Navbar.Brand href="#home" className="logo">
                 <img src={logo} alt="Imagen del logo de la start-up AM5 con su característico toque de color amarillo" />
             </Navbar.Brand>

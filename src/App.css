@@ -77,7 +77,7 @@ p {
 #root .App .cabecera img {
   max-width: 100%; /* Ajusta la imagen al ancho del contenedor */
   height: auto; /* Mantiene la proporción de la imagen */
-  margin: 0 auto; /* Centra la imagen horizontalmente */
+  margin: 0 2px 0 auto; /* Centra la imagen horizontalmente */
 }
 
 /* Not in use custom hr!! */
@@ -89,6 +89,42 @@ p {
   background-color: var(--light-grey); /* Color del separador */
   position: relative; /* Aseguramos que no influya en los elementos cercanos */
   left: 0; /* Alineación con el borde izquierdo */
+}
+
+.box-cabecera {
+  position: relative;
+  padding: 20px;
+}
+
+.box-cabecera::after {
+  content: "";
+  position: absolute;
+  background-color: var(--primary-color);
+}
+
+/* Bottom Border (último 25%) */
+.box-cabecera::after {
+  bottom: 0;
+  right: 0;
+  height: 12%; /* Ancho de la línea */
+  width: 20%; /* Longitud del borde inferior */  
+}
+
+[data-component="cabecera"] .box-cabecera .row h1 {
+  font-size: 1.8rem;
+}
+
+.offset-md-7-5 {
+  margin-left: 62.5%;
+}
+
+[data-component="cabecera"] .right-corner {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 1%; /* Ancho de la línea */  
+  height: 50%; /* Longitud del borde derecho */  
+  background-color: var(--primary-color);
 }
 
 /* ABOUT ME */

@@ -26,31 +26,17 @@ body {
   text-align: center;
 } */
 
-h1 {
-  color: var(--dark-gray);
-  border: 5px solid var(--primary-color);
-  border-right: none;
-  text-align: center;
-  position: relative; /* Necesario para posicionar el pseudo-elemento */
+[data-component="cabecera"] h1 {
+  color: inherit;
+  position: inherit;
+  border-left: 1px solid #cecece !important;
+  text-align: start;
+  font-size: 1.5rem;
 }
 
-h1::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0; /* Se aplica al borde derecho */
-  height: 100%; 
-  width: 5px; 
-  background: linear-gradient(
-    to bottom,
-    var(--primary-color) 0%,
-    var(--primary-color) 25%,
-    transparent 25%,
-    transparent 75%,
-    var(--primary-color) 75%,
-    var(--primary-color) 100%
-  ); /* Degradado para mostrar solo el primer y último 25% */
-  z-index: -1; /* Asegúrate de que quede detrás del texto */
+h1 {
+  color: var(--dark-gray);
+  text-align: center;
 }
 
 h2 {

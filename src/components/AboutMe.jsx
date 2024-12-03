@@ -43,7 +43,7 @@ function AboutMe() {
     <div className='d-flex flex-column'>
       <div className='col-12' id='about'>
         <Col md={{ span: 2, offset: 5 }}>
-          <h1 className='mb-4'>Sobre Mí</h1>
+          <h2 className='mb-4'>Sobre Mí</h2>
         </Col>
       </div>
       <div className="d-flex flex-column flex-lg-row">
