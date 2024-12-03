@@ -10,8 +10,8 @@ function Header() {
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
-                <Nav variant="underline" defaultActiveKey="/" className="ms-auto custom-underline-color">
-                    <Nav.Link href="/">Inicio</Nav.Link>
+                <Nav variant="underline" defaultActiveKey="#inicio" className="ms-auto custom-underline-color">
+                    <Nav.Link href="#inicio">Inicio</Nav.Link>
                     <Nav.Link href="#about">Sobre Mí</Nav.Link>
                     <Nav.Link href="#services">Servicios</Nav.Link>
                     <Nav.Link href="#media">Media</Nav.Link>
