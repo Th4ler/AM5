@@ -19,6 +19,10 @@
 ]
 */
 
+p {
+  font-size: 1.2rem;
+}
+
 /* HEADER: LOGO + NAVBAR */
 .logo {
   font-size: 1.5rem;
@@ -100,7 +104,6 @@
 /* ABOUT ME */
 #root .App div.row div.mb-4.card {
   border: hidden;
-  font-size: 1.2rem;
 }
 
 #root .App div.row div.mb-4.card div.card-body .custom-underline-color {
