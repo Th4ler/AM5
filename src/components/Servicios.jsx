@@ -1,6 +1,4 @@
 //Home section - Servicios
-//Pedir iconos flecha botones slider!!
-
 import { useState, useEffect } from 'react';
 import { Carousel, Button, Card } from 'react-bootstrap';
 import img1 from '../images/img1.jpg';
