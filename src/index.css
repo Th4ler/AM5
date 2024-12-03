@@ -7,8 +7,8 @@
 
 :root {
   --primary-color: #FFFF29;
-  --dark-gray: #4A4A4A;
-  --light-gray: #B9B9B9;
+  --dark-grey: #4A4A4A;
+  --light-grey: #B9B9B9;
   --background-color: #f8f8f8;
 }
 
@@ -16,11 +16,11 @@ body {
   background-color: var(--background-color);
 }
 
-h3 {
+/* h3 {
   color: var(--dark-gray);
   border: 5px solid var(--primary-color);
   text-align: center;
-}
+} */
 
 h1 {
   color: var(--dark-gray);
@@ -35,8 +35,8 @@ h1::after {
   position: absolute;
   top: 0;
   right: 0; /* Se aplica al borde derecho */
-  height: 100%; /* Ocupa toda la altura del h2 */
-  width: 5px; /* Ancho del borde */
+  height: 100%; 
+  width: 5px; 
   background: linear-gradient(
     to bottom,
     var(--primary-color) 0%,
@@ -62,8 +62,8 @@ h2::after {
   position: absolute;
   top: 0;
   right: 0; /* Se aplica al borde derecho */
-  height: 100%; /* Ocupa toda la altura del h2 */
-  width: 5px; /* Ancho del borde */
+  height: 100%;
+  width: 5px; 
   background: linear-gradient(
     to bottom,
     var(--primary-color) 0%,
