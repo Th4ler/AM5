@@ -46,90 +46,92 @@ function AboutMe() {
           <h1 className='mb-4'>Sobre Mí</h1>
         </Col>
       </div>
-      <Col xs={12} md={4}>
-        <img src={aboutmePic} alt="Foto de Andrés Madariaga, CEO de la startup AM5" className="img-fluid" />
-      </Col>
-      <Col xs={12} md={8} className='p-5'>
-        <Card className="mb-4">
-          <Card.Body>
-            <Card.Text className='text-muted'>
-              Soy Andrés Madariaga, abogado, profesor de derecho y emprendedor. Tras más
-              de 10 años asesorando a empresas internacionales, descubrí una gran necesidad
-              en el mundo legal y de negocios: personas, startups y empresas que no
-              encuentran soluciones legales realmente alineadas con sus desafíos. Muchas
-              veces, los servicios legales se presentan como un &quot;producto&quot; despersonalizado
-              que no entiende ni se adapta a las necesidades únicas de cada negocio, lo que
-              genera confusión, sobrecostos y malos resultados.
-            </Card.Text>
-          </Card.Body>
-        </Card>
-        <Row>
-          <Col xs={12} md={6} className="custom-accordion mb-4">
-            <Accordion>
-              {Object.keys(aboutEducacion).map((section, idx) => (
-                <Accordion.Item eventKey={String(idx)} key={idx}>
-                  <Accordion.Header>{section}</Accordion.Header>
-                  <Accordion.Body className='text-muted'>
-                    <ul>
-                      {aboutEducacion[section].map((text, index) => (
-                        <li key={index}>{text}</li>
-                      ))}
-                    </ul>
-                  </Accordion.Body>
-                </Accordion.Item>
-              ))}
-            </Accordion>
-          </Col>
-          <Col xs={12} md={6} className="custom-accordion mb-4">
-            <Accordion>
-              {Object.keys(aboutExperiencia).map((section, idx) => (
-                <Accordion.Item eventKey={String(idx + 2)} key={idx}>
-                  <Accordion.Header>{section}</Accordion.Header>
-                  <Accordion.Body className='text-muted'>
-                    <ul>
-                      {aboutExperiencia[section].map((text, index) => (
-                        <li key={index}>{text}</li>
-                      ))}
-                    </ul>
-                  </Accordion.Body>
-                </Accordion.Item>
-              ))}
-            </Accordion>
-          </Col>
-          <Col xs={12} md={6} className="custom-accordion mb-4">
-            <Accordion>
-              {Object.keys(aboutIdiomas).map((section, idx) => (
-                <Accordion.Item eventKey={String(idx)} key={idx}>
-                  <Accordion.Header>{section}</Accordion.Header>
-                  <Accordion.Body className='text-muted'>
-                    <ul>
-                      {aboutIdiomas[section].map((text, index) => (
-                        <li key={index}>{text}</li>
-                      ))}
-                    </ul>
-                  </Accordion.Body>
-                </Accordion.Item>
-              ))}
-            </Accordion>
-          </Col>
-          <Col xs={12} md={6} className="custom-accordion mb-4">
-            <Accordion className='accordion-membresia'>
-              {Object.keys(aboutMembresia).map((section, idx) => (
-                <Accordion.Item eventKey={String(idx + 2)} key={idx}>
-                  <Accordion.Header as="button" disabled={isMembresiaDisabled}>{section}</Accordion.Header>
-                  <Accordion.Body className='text-muted'>
-                    <ul>
-                      {aboutMembresia[section].map((text, index) => (
-                        <li key={index}>{text}</li>
-                      ))}
-                    </ul>
-                  </Accordion.Body>
-                </Accordion.Item>
-              ))}
-            </Accordion>
-          </Col>
-        </Row>
-      </Col>
+      <div className="row">
+        <Col xs={12} md={4}>
+          <img src={aboutmePic} alt="Foto de Andrés Madariaga, CEO de la startup AM5" className="img-fluid" />
+        </Col>
+        <Col xs={12} md={8} className='p-5'>
+          <Card className="mb-4">
+            <Card.Body>
+              <Card.Text className='text-muted'>
+                Soy Andrés Madariaga, abogado, profesor de derecho y emprendedor. Tras más
+                de 10 años asesorando a empresas internacionales, descubrí una gran necesidad
+                en el mundo legal y de negocios: personas, startups y empresas que no
+                encuentran soluciones legales realmente alineadas con sus desafíos. Muchas
+                veces, los servicios legales se presentan como un &quot;producto&quot; despersonalizado
+                que no entiende ni se adapta a las necesidades únicas de cada negocio, lo que
+                genera confusión, sobrecostos y malos resultados.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+          <Row>
+            <Col xs={12} md={6} className="custom-accordion mb-4">
+              <Accordion>
+                {Object.keys(aboutEducacion).map((section, idx) => (
+                  <Accordion.Item eventKey={String(idx)} key={idx}>
+                    <Accordion.Header>{section}</Accordion.Header>
+                    <Accordion.Body className='text-muted'>
+                      <ul>
+                        {aboutEducacion[section].map((text, index) => (
+                          <li key={index}>{text}</li>
+                        ))}
+                      </ul>
+                    </Accordion.Body>
+                  </Accordion.Item>
+                ))}
+              </Accordion>
+            </Col>
+            <Col xs={12} md={6} className="custom-accordion mb-4">
+              <Accordion>
+                {Object.keys(aboutExperiencia).map((section, idx) => (
+                  <Accordion.Item eventKey={String(idx + 2)} key={idx}>
+                    <Accordion.Header>{section}</Accordion.Header>
+                    <Accordion.Body className='text-muted'>
+                      <ul>
+                        {aboutExperiencia[section].map((text, index) => (
+                          <li key={index}>{text}</li>
+                        ))}
+                      </ul>
+                    </Accordion.Body>
+                  </Accordion.Item>
+                ))}
+              </Accordion>
+            </Col>
+            <Col xs={12} md={6} className="custom-accordion mb-4">
+              <Accordion>
+                {Object.keys(aboutIdiomas).map((section, idx) => (
+                  <Accordion.Item eventKey={String(idx)} key={idx}>
+                    <Accordion.Header>{section}</Accordion.Header>
+                    <Accordion.Body className='text-muted'>
+                      <ul>
+                        {aboutIdiomas[section].map((text, index) => (
+                          <li key={index}>{text}</li>
+                        ))}
+                      </ul>
+                    </Accordion.Body>
+                  </Accordion.Item>
+                ))}
+              </Accordion>
+            </Col>
+            <Col xs={12} md={6} className="custom-accordion mb-4">
+              <Accordion className='accordion-membresia'>
+                {Object.keys(aboutMembresia).map((section, idx) => (
+                  <Accordion.Item eventKey={String(idx + 2)} key={idx}>
+                    <Accordion.Header as="button" disabled={isMembresiaDisabled}>{section}</Accordion.Header>
+                    <Accordion.Body className='text-muted'>
+                      <ul>
+                        {aboutMembresia[section].map((text, index) => (
+                          <li key={index}>{text}</li>
+                        ))}
+                      </ul>
+                    </Accordion.Body>
+                  </Accordion.Item>
+                ))}
+              </Accordion>
+            </Col>
+          </Row>
+        </Col>
+      </div>
       <div className='custom-hr rounded w-75 mb-4 mt-4'></div>
     </div>
   );
