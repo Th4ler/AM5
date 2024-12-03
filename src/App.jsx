@@ -7,7 +7,7 @@ import Header from './components/Header';
 import Cabecera from './components/Cabecera';
 import AboutMe from './components/AboutMe';
 import Servicios from './components/Servicios';
-import Contenidos from './components/Media';
+import Media from './components/Media';
 import Contacto from './components/Contacto';
 import Footer from './components/Footer';
 
@@ -22,7 +22,7 @@ function App() {
               <Cabecera />
               <AboutMe />
               <Servicios />
-              <Contenidos />
+              <Media />
               <Contacto />
             </>
           } />

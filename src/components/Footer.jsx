@@ -1,4 +1,4 @@
-//Dirección + logo + redes (link)
+//Footer
 import logo from '../assets/am5-logo.png';
 // import qr from '../assets/am5-qr.png'; //Pedir qr
 

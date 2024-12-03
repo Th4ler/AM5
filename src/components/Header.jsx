@@ -23,5 +23,3 @@ function Header() {
 }
 
 export default Header;
-
-//Pedir e insertar logo en SVG!

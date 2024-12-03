@@ -1,3 +1,4 @@
+//Home section - Contacto: formulario + submit
 //Crear formulario de contacto + submit (linkado a email?)
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { InputGroup } from "react-bootstrap";

@@ -2,7 +2,6 @@
 import Image from 'react-bootstrap/Image';
 import am5cabecera from '../images/imagenhome.webp';
 
-
 function Cabecera() {
     return (
         <div className='row'>
