@@ -46,12 +46,12 @@ function AboutMe() {
           <h1 className='mb-4'>Sobre Mí</h1>
         </Col>
       </div>
-      <div className="container-fluid row">
+      <div className="d-flex flex-column flex-lg-row">
         <Col xs={12} md={4}>
           <img src={aboutmePic} alt="Foto de Andrés Madariaga, CEO de la startup AM5" className="img-fluid" />
         </Col>
         <Col xs={12} md={8} className='p-5'>
-          <Card className="mb-4">
+          <Card className="mb-4 custom-card">
             <Card.Body>
               <Card.Text className='text-muted'>
                 Soy Andrés Madariaga, abogado, profesor de derecho y emprendedor. Tras más

@@ -102,11 +102,11 @@ p {
 }
 
 /* ABOUT ME */
-#root .App div.row div.mb-4.card {
-  border: hidden;
+.custom-card {
+  border: hidden !important;
 }
 
-#root .App div.row div.mb-4.card div.card-body .custom-underline-color {
+.custom-card div.card-body .custom-underline-color {
   text-decoration: underline;
   text-decoration-color: var(--primary-color);
   text-decoration-thickness: 0.2rem;
@@ -114,13 +114,26 @@ p {
 }
 
 /* Acordeón personalizado */
-#root .App div.row div.row .custom-accordion div.accordion-item {
-  border: 3px solid;
-  border-color: var(--primary-color);
+.accordion-header {
+  padding: 0 !important;
+}
+
+.accordion-item {
+  border: 3px solid var(--primary-color) !important;
 }
 
 .custom-accordion .accordion-button {
   color: #4A4A4A;
+}
+
+.accordion-item:first-of-type {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+
+.accordion-item:last-of-type {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
 }
 
 .custom-accordion .accordion-button:not(.collapsed) {
@@ -144,13 +157,13 @@ p {
 }
 
 /* Membresia button */
-#root .App div.row div.row .custom-accordion div.accordion-membresia {
+.accordion-membresia {
   border: 3px solid;
   border-color: var(--primary-color);
   color: #4A4A4A;
 }
 
-#root .App div.row div.row .custom-accordion div.accordion-membresia .accordion-header {
+.accordion-membresia .accordion-header {
   width: 100%;
   border: none;
 }
