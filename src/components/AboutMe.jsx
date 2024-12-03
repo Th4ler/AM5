@@ -46,7 +46,7 @@ function AboutMe() {
           <h1 className='mb-4'>Sobre Mí</h1>
         </Col>
       </div>
-      <div className="row">
+      <div className="container-fluid row">
         <Col xs={12} md={4}>
           <img src={aboutmePic} alt="Foto de Andrés Madariaga, CEO de la startup AM5" className="img-fluid" />
         </Col>
