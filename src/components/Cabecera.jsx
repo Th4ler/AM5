@@ -10,21 +10,21 @@ function Cabecera() {
                 className="cabecera"
                 data-component="cabecera"
             >
-                <div className="content-wrapper text-center align-items-end" style={{ flex: 1 }}>
+                <div className="content-wrapper text-center align-items-end">
                     {/* Contenido en la parte derecha */}
-                    <div className="box-cabecera col-md-5 me-4">
-                        <div className="row align-items-center justify-content-end">
+                    <div className="box-cabecera">
+                        <div className="d-flex flex-row align-items-center justify-content-end gap-3">
                             <Image
-                                className='col-auto d-none d-md-flex ps-0'
+                                className='d-none d-md-flex ps-0'
                                 src={am5logo}
                                 alt="Logo de AM5, startup de soluciones legales y comunicación estratégica."
                                 fluid
                             />
                             <div className="right-corner"></div>
-                            <h1 className="text-muted col-auto">
+                            <h1 className="px-3 text-muted">
                                 Soluciones legales<br />
-                                Negocios y<br />
-                                Comunicación estratégica
+                                Negocios<br />
+                                Asuntos Públicos
                             </h1>
                         </div>
                     </div>

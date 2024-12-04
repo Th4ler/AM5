@@ -98,6 +98,7 @@
   position: relative;  
   padding: 20px;
   border-radius: 8px;
+  margin-right: 4rem !important;
 }
 
 @media (max-width: 767px) {
@@ -116,7 +117,7 @@
 /* Para pantallas más grandes */
 @media (min-width: 1200px) {
   .cabecera h1 {
-      font-size: clamp(0.9rem, 2vw, 3rem);
+      font-size: clamp(1.1rem, 2vw, 3rem);
   }
 }
 
@@ -134,7 +135,7 @@
 }
 
 .cabecera img {
-  max-width: 100px;
+  width: clamp(20px, 6vw, 150px);
   height: auto;
   object-fit: contain;
 }
@@ -149,8 +150,8 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  height: 2vh; /* Ancho de la línea */
-  width: 15vh; /* Longitud del borde inferior */  
+  height: 7%; /* Ancho de la línea */
+  width: 20%; /* Longitud del borde inferior */  
   background-color: var(--primary-color);
 }
 
@@ -159,8 +160,8 @@
   bottom: 0;
   padding: 0;
   right: 0;
-  width: 2vh; /* Ancho de la línea */  
-  height: 15vh; /* Longitud del borde derecho */  
+  width: 3%; /* Ancho de la línea */
+  height: 50%; /* Longitud del borde derecho */
   background-color: var(--primary-color);
 }
 
