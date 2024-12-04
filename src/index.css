@@ -20,9 +20,23 @@ body {
   background-color: var(--background-color);
 }
 
+/* Para pantallas más grandes */
 @media (min-width: 1200px) {
   body {
-    font-size: clamp(1.1rem, 1.5vw, 1.5rem) !important;
+    font-size: clamp(1.1rem, 1.2vw, 1.2rem) !important;
+  }
+}
+
+/* Para pantallas más pequeñas */
+@media (max-width: 992px) {
+  body {
+    font-size: clamp(0.1rem, 1.7vw, 1.1rem) !important;
+  }
+}
+
+@media (max-width: 769px) {
+  body {
+    font-size: clamp(1rem, 2vw, 1.3rem) !important;
   }
 }
 
@@ -46,7 +60,7 @@ p {
 
 @media (min-width: 1200px) {
   p {
-    font-size: clamp(0.9rem, 1.5vw, 1.5rem) !important;
+    font-size: clamp(0.9rem, 1.2vw, 1.5rem) !important;
   }
 }
 
@@ -57,7 +71,7 @@ h1 {
 
 @media (min-width: 1200px) {
   .h2, h2 {
-    font-size: clamp(0.9rem, 1.5vw, 2.2rem) !important;
+    font-size: clamp(1.3rem, 1.2vw, 2.2rem) !important;
   }
 }
 

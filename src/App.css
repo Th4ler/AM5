@@ -114,7 +114,6 @@
 }
 
 /* Para pantallas más grandes */
-
 @media (min-width: 1200px) {
   .cabecera h1 {
       font-size: clamp(0.9rem, 2vw, 3rem);
@@ -188,7 +187,7 @@
 
 @media (min-width: 1200px) {
   .accordion-button {
-    font-size: clamp(0.9rem, 1.5vw, 1.5rem) !important;
+    font-size: clamp(0.9rem, 1.2vw, 1.5rem) !important;
   }
 }
 
