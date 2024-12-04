@@ -46,11 +46,11 @@ function AboutMe() {
           <h2 className='mb-4'>Sobre Mí</h2>
         </Col>
       </div>
-      <div className="d-flex flex-column flex-lg-row">
+      <div className="d-flex flex-row flex-wrap">
         <Col xs={12} md={4}>
           <img src={aboutmePic} alt="Foto de Andrés Madariaga, CEO de la startup AM5" className="img-fluid" />
         </Col>
-        <Col xs={12} md={8} className='p-5'>
+        <Col xs={12} md={8} className='p-5 pt-0'>
           <Card className="mb-4 custom-card">
             <Card.Body>
               <Card.Text className='text-muted'>
