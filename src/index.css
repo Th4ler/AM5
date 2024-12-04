@@ -20,6 +20,12 @@ body {
   background-color: var(--background-color);
 }
 
+@media (min-width: 1200px) {
+  body {
+    font-size: clamp(1.1rem, 1.5vw, 1.5rem) !important;
+  }
+}
+
 /* h3 {
   color: var(--dark-gray);
   border: 5px solid var(--primary-color);
@@ -34,9 +40,25 @@ body {
   font-size: 1.5rem;
 }
 
+p {
+  font-size: 1.2rem;
+}
+
+@media (min-width: 1200px) {
+  p {
+    font-size: clamp(0.9rem, 1.5vw, 1.5rem) !important;
+  }
+}
+
 h1 {
   color: var(--dark-gray);
   text-align: center;
+}
+
+@media (min-width: 1200px) {
+  .h2, h2 {
+    font-size: clamp(0.9rem, 1.5vw, 2.2rem) !important;
+  }
 }
 
 h2 {

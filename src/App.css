@@ -19,10 +19,6 @@
 ]
 */
 
-p {
-  font-size: 1.2rem;
-}
-
 /* HEADER: LOGO + NAVBAR */
 .logo {
   font-size: 1.5rem;
@@ -41,6 +37,12 @@ p {
 
 .custom-underline-color .nav-link {
   font-size: 1.3rem;
+}
+
+@media (min-width: 1200px) {
+  .custom-underline-color .nav-link {
+      font-size: clamp(0.9rem, 1.5vw, 1.8rem);
+  }
 }
 
 #root .App nav div .custom-underline-color .nav-link.active {
@@ -182,6 +184,12 @@ p {
 
 .accordion-item {
   border: 3px solid var(--primary-color) !important;
+}
+
+@media (min-width: 1200px) {
+  .accordion-button {
+    font-size: clamp(0.9rem, 1.5vw, 1.5rem) !important;
+  }
 }
 
 .custom-accordion .accordion-button {
