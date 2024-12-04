@@ -64,7 +64,7 @@ function ServiciosCarousel() {
 
 
   return (
-    <div id='services' className="container">
+    <div id='services' className="d-flex flex-column">
       <h2 className='col-md-2 offset-md-5'>Servicios</h2>
       <div className='custom-border-box text-center col-md-8 offset-md-2 mb-4'>
         <div className="left-corner"></div>
@@ -107,7 +107,7 @@ function ServiciosCarousel() {
                       <Card
                         className={`text-center mb-5 ${hoveredCard === subIdx ? 'hovered' : ''}`} //Correcting slider trial
                         key={subIdx}
-                        style={{ width: '18rem', transition: 'transform 0.3s' }}
+                        style={{ width: '25rem', transition: 'transform 0.3s' }}
                         onMouseEnter={() => setHoveredCard(subIdx)} // Marca la carta en hover
                         onMouseLeave={() => setHoveredCard(null)}  // Restablece el estado
                       >
