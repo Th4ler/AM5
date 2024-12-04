@@ -67,63 +67,90 @@ p {
 
 
 /* CABECERA */
-#root .App .cabecera {
+
+.cabecera {
   display: flex;
-  justify-content: column; /* Centra la imagen horizontalmente */
-  align-items: center; /* Centra la imagen verticalmente */
-  text-align: center; /* Opcional: centra contenido dentro del div -> para futuro texto */
+  align-items: center;
+  justify-content: flex-end;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+
+  background-image: url('images/imagenhome.webp');
+  background-size: cover;
+  background-position: center;
 }
 
-#root .App .cabecera img {
-  max-width: 100%; /* Ajusta la imagen al ancho del contenedor */
-  height: auto; /* Mantiene la proporción de la imagen */
-  margin: 0 2px 0 auto; /* Centra la imagen horizontalmente */
+@media (max-width: 768px) {
+  .cabecera {
+      background-image: url('images/imagenhome-small.webp');
+  }
 }
 
-/* Not in use custom hr!! */
-#root .App .row .cabecera-hr {
-  margin-bottom: 1rem;
-  width: 100vw; /* Ocupa el 100% del ancho de la ventana */
-  height: 5px;
-  border: none;
-  background-color: var(--light-grey); /* Color del separador */
-  position: relative; /* Aseguramos que no influya en los elementos cercanos */
-  left: 0; /* Alineación con el borde izquierdo */
+.cabecera .content-wrapper {
+  display: flex;
+  flex-direction: column;
 }
 
-.box-cabecera {
-  position: relative;
+.cabecera .box-cabecera {
+  position: relative;  
   padding: 20px;
+  border-radius: 8px;
 }
 
-.box-cabecera::after {
-  content: "";
-  position: absolute;
-  background-color: var(--primary-color);
+@media (max-width: 767px) {
+  .cabecera .box-cabecera {
+    background: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
+  }
 }
 
-/* Bottom Border (último 25%) */
-.box-cabecera::after {
-  bottom: 0;
-  right: 0;
-  height: 12%; /* Ancho de la línea */
-  width: 20%; /* Longitud del borde inferior */  
+.cabecera h1 {
+  font-size: clamp(1.2rem, 1.5vw, 1.8rem); /* Ajusta el tamaño según la pantalla */
+  color: var(--text-muted-color) !important;
+  line-height: 1.4;
+  margin-top: 15px;
 }
 
-[data-component="cabecera"] .box-cabecera .row h1 {
-  font-size: 1.8rem;
+@media (max-width: 992px) {
+  .cabecera h1 {
+    font-size: clamp(0.1rem, 1.7vw, 1.1rem);
+  }
+}
+
+@media (max-width: 769px) {
+  .cabecera h1 {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+  }
+}
+
+.cabecera img {
+  max-width: 100px;
+  height: auto;
+  object-fit: contain;
 }
 
 .offset-md-7-5 {
   margin-left: 62.5%;
 }
 
-[data-component="cabecera"] .right-corner {
+/* Bottom Border (último 25%) */
+.box-cabecera::after {
+  content: "";
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 1%; /* Ancho de la línea */  
-  height: 50%; /* Longitud del borde derecho */  
+  height: 2vh; /* Ancho de la línea */
+  width: 15vh; /* Longitud del borde inferior */  
+  background-color: var(--primary-color);
+}
+
+[data-component="cabecera"] .right-corner {
+  position: absolute;
+  bottom: 0;
+  padding: 0;
+  right: 0;
+  width: 2vh; /* Ancho de la línea */  
+  height: 15vh; /* Longitud del borde derecho */  
   background-color: var(--primary-color);
 }
 
