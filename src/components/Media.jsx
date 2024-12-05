@@ -40,7 +40,10 @@ const Media = () => {
   return (
     <section id="media" className="media-section">
       <Container>
-        <h2 className="col-md-2 offset-md-5 mb-5">Media</h2>
+        <div className="d-flex justify-content-center text-center py-4">
+          <h2 className="p-3">Media</h2>
+        </div>
+
         <Row>
           {/* Columna 1 */}
           <Col md={4} className="d-flex flex-column align-items-center">

@@ -44,10 +44,8 @@ function AboutMe() {
 
   return (
     <div className='d-flex flex-column'>
-      <div className='col-12' id='about'>
-        <Col md={{ span: 2, offset: 5 }}>
-          <h2 className='mb-4 py-2'>Sobre Mí</h2>
-        </Col>
+      <div id="about" className="d-flex justify-content-center text-center py-4">
+        <h2 className="p-3">Sobre Mí</h2>
       </div>
       <div className="d-flex flex-row flex-wrap">
         <Col xs={12} md={4}>

@@ -65,7 +65,11 @@ function ServiciosCarousel() {
 
   return (
     <div id='services' className="d-flex flex-column">
-      <h2 className='col-md-2 offset-md-5'>Servicios</h2>
+
+      <div className="d-flex justify-content-center text-center py-4">
+        <h2 className="p-3">Servicios</h2>
+      </div>
+
       <div className='custom-border-box text-center col-md-8 offset-md-2 mb-4'>
         <div className="left-corner"></div>
         <div className="right-corner"></div>

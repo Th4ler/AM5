@@ -7,7 +7,11 @@ const ContactForm = () => {
   return (
     <section id="contact" className="contact-section">
       <Container>
-        <h2 className='col-md-2 offset-md-5 mb-5'>Contacto</h2>
+
+        <div className="d-flex justify-content-center text-center py-4">
+          <h2 className="p-3">Contacto</h2>
+        </div>
+
         <div className="form-container bg-light mb-5">
           <div className="custom-form-border mx-3">
             <div className="left-corner"></div>
