@@ -177,9 +177,52 @@
   text-decoration-skip-ink: none;
 }
 
+/*Botón de AboutMe*/
+
+.aboutme-button button {
+  font-size: 2rem !important;
+  padding: 0;
+  width: auto;
+  gap: 10px;
+  box-shadow: none;
+  outline: none;
+}
+
+.aboutme-button .accordion-button::after {
+  background-color: rgba(33,37,41,1) !important; /* Color pantano */
+  border-radius: 50%;
+  width: 25px !important;
+  height: 25px !important;
+  background-image: url('assets/flecha.svg') !important;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.aboutme-button .accordion-button:not(.collapsed) {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+.aboutme-button .accordion-button:not(.collapsed)::after {
+  background-image: url('assets/flecha.svg') !important;
+}
+
+.aboutme-button .accordion-button:focus {
+  box-shadow: none;
+}
+
 /* Acordeón personalizado */
 .accordion-header {
   padding: 0 !important;
+}
+
+.accordion-header {
+  width: 100%;
+  border: none !important;
+  outline: none !important;
+}
+
+.accordion-button:focus {
+  box-shadow: none !important;
 }
 
 .accordion-item {
@@ -224,18 +267,6 @@
 .custom-accordion li {
   list-style-type: none;
   text-align: start;
-}
-
-/* Membresia button */
-.accordion-membresia {
-  border: 3px solid;
-  border-color: var(--primary-color);
-  color: #4A4A4A;
-}
-
-.accordion-membresia .accordion-header {
-  width: 100%;
-  border: none;
 }
 
 .custom-hr {
