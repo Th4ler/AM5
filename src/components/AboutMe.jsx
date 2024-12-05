@@ -7,6 +7,7 @@ import Accordion from 'react-bootstrap/Accordion';
 import aboutmePic from '../images/aboutmePic.webp';
 
 function AboutMe() {
+  const [activeKey, setActiveKey] = useState(null);
   const aboutSections = [
     {
       title: 'Educación',
@@ -48,14 +49,14 @@ function AboutMe() {
         <h2 className="p-3">Sobre Mí</h2>
       </div>
       <div className="d-flex flex-row flex-wrap">
-        <Col xs={12} md={4}>
+        <Col xs={12} md={4} className='d-flex justify-content-center align-items-center'>
           <img src={aboutmePic} alt="Foto de Andrés Madariaga, CEO de la startup AM5" className="img-fluid" />
         </Col>
         <Col xs={12} md={8} className='p-5 pt-0'>
           <Card className="mb-4 custom-card">
             <Card.Body className='p-0'>
               
-              <Accordion>
+              <Accordion className='pt-4 pt-md-0'>
                 <Accordion.Item eventKey="0" className='border-0'>
                   <Accordion.Header className='aboutme-button border-0 outline-0'>
                     <div className="custom-underline-color">Andrés Madariaga</div>
@@ -72,8 +73,8 @@ function AboutMe() {
           </Card>
           <Row>
             {aboutSections.map((section, idx) => (
-              <Col xs={12} md={6} className="custom-accordion mb-4" key={idx}>
-                <Accordion>
+              <Col xs={12} lg={6} className="custom-accordion mb-4" key={idx}>
+                <Accordion activeKey={activeKey} onSelect={(k) => setActiveKey(k)}>
                   <Accordion.Item eventKey={String(idx)}>
                     <Accordion.Header as="button" disabled={section.isDisabled}>
                       {section.title}
