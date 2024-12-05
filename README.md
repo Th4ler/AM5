@@ -41,10 +41,7 @@ Instala el paquete (React + vite) con tu gestor de paquetes favorito
 ```
 
 # Integración con Laravel 11
-Para integrar Laravel 11 con el proyecto React + Vite, sigue los siguientes pasos:
-
-* Instalación de Laravel 11
-Instala Laravel 11 en un directorio separado utilizando Composer:
+Para integrar Laravel 11 con el proyecto React + Vite instala Laravel 11 en un directorio separado utilizando Composer:
 
 ```sh
 composer create-project --prefer-dist laravel/laravel nombre-del-proyecto-laravel
