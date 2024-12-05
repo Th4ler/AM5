@@ -70,11 +70,18 @@ function ServiciosCarousel() {
         <h2 className="p-3">Servicios</h2>
       </div>
 
-      <div className='custom-border-box text-center col-md-8 offset-md-2 mb-4'>
-        <div className="left-corner"></div>
-        <div className="right-corner"></div>
-        <p className='text-muted'>En AM5 ofrecemos soluciones estratégicas para personas, startups y empresas que buscan
-          apoyo integral en el mundo legal, de negocios y comunicación pública. Nos especializamos en:</p>
+      <div className='container text-center'>
+        <div className='custom-border-box'>
+
+          <div className="left-corner" />
+          <div className="right-corner" />
+
+          <p className='text-muted'>
+            En AM5 ofrecemos soluciones estratégicas para personas, startups y empresas que buscan
+            apoyo integral en el mundo legal, de negocios y comunicación pública. Nos especializamos en:
+          </p>
+
+        </div>
       </div>
 
       {/* Botones de navegación con iconos */}
