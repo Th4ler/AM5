@@ -11,6 +11,8 @@ import Media from './components/Media';
 import Contacto from './components/Contacto';
 import Footer from './components/Footer';
 
+import Blog from './components/subpages/Blog';
+
 function App() {
   return (
     <div className={"App"}>
@@ -26,6 +28,9 @@ function App() {
               <Contacto />
             </>
           } />
+
+          <Route path="/blog" element={<Blog />} />
+
           {/* <Route path="/blog" element={<Blog />} />
     <Route path="/contenidos" element={<Contenidos />} />
     <Route path="/podcast" element={<Podcast />} /> */}

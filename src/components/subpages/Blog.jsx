@@ -38,7 +38,7 @@ const Blog = () => {
   };
 
   return (
-    <div>
+    <section id="blog" className="blog-section">
       <h1>Blogs</h1>
       {Array.isArray(blogs) && blogs.length > 0 ? (
         <ul>
@@ -57,7 +57,7 @@ const Blog = () => {
         <textarea value={contenido} onChange={(event) => setContenido(event.target.value)} placeholder="Contenido" />
         <button type="submit">Crear blog</button>
       </form>
-    </div>
+    </section>
   );
 };
 
