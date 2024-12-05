@@ -52,7 +52,7 @@ function AboutMe() {
         <Col xs={12} md={4} className='d-flex justify-content-center align-items-center'>
           <img src={aboutmePic} alt="Foto de Andrés Madariaga, CEO de la startup AM5" className="img-fluid" />
         </Col>
-        <Col xs={12} md={8} className='p-5 pt-0'>
+        <Col xs={12} md={8} className='px-5'>
           <Card className="mb-4 custom-card">
             <Card.Body className='p-0'>
               
