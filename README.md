@@ -1,6 +1,6 @@
 # Descripción del proyecto
 
-Proyecto de página web creado con React + Vite, implementando Bootstrap para la construcción de los distintos componentes del proyecto.
+Proyecto de página web creado con React + Vite, implementando Bootstrap para la construcción de los distintos componentes del proyecto, y Laravel 11 como gestor de bases de datos.
 
 Para clonar el repositorio en tu máquina local:
 
@@ -36,7 +36,26 @@ Instala el paquete (React + vite) con tu gestor de paquetes favorito
  npm install bootstrap
  npm install react-bootstrap bootstrap
  npm install react-router-dom
+ npm install axios
  npm i bootstrap-icons
+```
+
+# Integración con Laravel 11
+Para integrar Laravel 11 con el proyecto React + Vite, sigue los siguientes pasos:
+
+* Instalación de Laravel 11
+Instala Laravel 11 en un directorio separado utilizando Composer:
+
+```sh
+composer create-project --prefer-dist laravel/laravel nombre-del-proyecto-laravel
+```
+
+# Configuración de Laravel 11
+01: Abre el archivo .env y configura la conexión a la base de datos.
+02: Ejecuta las migraciones para crear las tablas por defecto en la base de datos:
+
+```sh
+php artisan migrate
 ```
 
 # Git Basic Commands:
