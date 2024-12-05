@@ -62,6 +62,13 @@
   transition: all 0.3s ease;
 }
 
+@media (max-width: 991px) {
+  .nav-link.active::after {
+    width: 100%;
+    border-bottom: 0.2rem solid var(--primary-color);
+  }
+}
+
 #root .App nav div .custom-underline-color .nav-link:hover {
   border-bottom-color: transparent !important;
   color: black;
@@ -171,7 +178,7 @@
 }
 
 .custom-card div.card-body .custom-underline-color {
-  text-decoration: underline;
+  text-decoration: none;
   text-decoration-color: var(--primary-color);
   text-decoration-thickness: 0.2rem;
   text-decoration-skip-ink: none;
