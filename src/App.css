@@ -2,12 +2,12 @@
 /*
 *** LANDING PAGE [
 ----- HEADER (22)
------ CABECERA (43)
------ ABOUT ME (68)
------ SERVICIOS (133)
------ MEDIA (257)
------ CONTACTO (351)
------ FOOTER (470)
+----- CABECERA (77)
+----- ABOUT ME (174)
+----- SERVICIOS (289)
+----- MEDIA (414)
+----- CONTACTO (514)
+----- FOOTER (630)
 ]
 ***  SERVICES PAGES [
 ----- pending
@@ -73,7 +73,6 @@
   border-bottom-color: transparent !important;
   color: black;
 }
-
 
 /* CABECERA */
 
@@ -173,6 +172,7 @@
 }
 
 /* ABOUT ME */
+
 .custom-card {
   border: hidden !important;
 }
@@ -185,7 +185,6 @@
 }
 
 /*Botón de AboutMe*/
-
 .aboutme-button button {
   font-size: 2rem !important;
   padding: 0;
@@ -288,6 +287,7 @@
 }
 
 /* SERVICIOS */
+
 .class-container h2 {
   margin: 0;
   padding: 0;
@@ -412,6 +412,7 @@
 }
 
 /* MEDIA */
+
 .media-section {
   padding: 50px 0;
 }
@@ -627,6 +628,7 @@
 }
 
 /* FOOTER */
+
 #footer h5 {
   color: var(--dark-grey);
   text-decoration: underline;
