@@ -12,6 +12,11 @@ import Contacto from './components/Contacto';
 import Footer from './components/Footer';
 
 import Blog from './components/subpages/Blog';
+import Legales from './components/subpages/Legales';
+// import Negocios from './components/subpages/Negocios';
+// import Comunicaciones from './components/subpages/Comunicaciones';
+// import Coach from './components/subpages/Coach';
+// import Sostenibilidad from './components/subpages/Sostenibilidad';
 
 function App() {
   return (
@@ -30,10 +35,16 @@ function App() {
           } />
 
           <Route path="/blog" element={<Blog />} />
+          <Route path="/legales" element={<Legales />} />
+          {/* <Route path="/negocios" element={<Negocios />} />
+          <Route path="/comunicaciones" element={<Comunicaciones />} />
+          <Route path="/coach" element={<Coach />} />
+          <Route path="/sostenibilidad" element={<Sostenibilidad />} /> */}
 
-          {/* <Route path="/blog" element={<Blog />} />
-    <Route path="/contenidos" element={<Contenidos />} />
-    <Route path="/podcast" element={<Podcast />} /> */}
+          {/*
+      <Route path="/contenidos" element={<Contenidos />} />
+      <Route path="/rrss" element={<Rrss />} /> 
+    */}
         </Routes>
         <Footer />
       </Router>

@@ -38,6 +38,7 @@ Instala el paquete (React + vite) con tu gestor de paquetes favorito
  npm install react-router-dom
  npm install axios
  npm i bootstrap-icons
+ npm install reactjs-flip-card
 ```
 
 # Integración con Laravel 11

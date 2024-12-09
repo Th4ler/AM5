@@ -1,16 +1,20 @@
 /* STYLING SECTIONS DOCUMENTATION */
 /*
 *** LANDING PAGE [
------ HEADER (22)
------ CABECERA (77)
------ ABOUT ME (174)
------ SERVICIOS (289)
------ MEDIA (414)
------ CONTACTO (471)
------ FOOTER (587)
+----- HEADER (26)
+----- CABECERA (81)
+----- ABOUT ME (178)
+----- SERVICIOS (293)
+----- MEDIA (418)
+----- CONTACTO (475)
+----- FOOTER (591)
 ]
 ***  SERVICES PAGES [
------ pending
+----- LEGALES (656)
+----- NEGOCIO ()
+----- COMUNICACIONES ()
+----- COACH ()
+----- SOSTENIBILIDAD ()
 ]
 ***  MEDIA PAGES [
 ----- BLOG ()
@@ -647,4 +651,68 @@
       0 0 5px #BABABA, 
       0 0 10px #FFFF29;
   }
+}
+
+/* LEGALES -> SERVICIOS PAGE */
+
+/* Sección decorativa */
+.decorative-section {
+  display: flex;
+  height: 400px;
+}
+
+.left-section {
+  background-size: cover;
+  background-position: center;
+}
+
+.right-section {
+  background-color: #f8f8f8;
+}
+
+/* Botón colapsable */
+.collapsible-btn {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.arrow-icon {
+  transition: transform 0.3s ease;
+}
+
+.arrow-icon.up {
+  transform: rotate(180deg);
+}
+
+/* Grid de cartas */
+.cards-grid .card-front img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.cards-grid .card-info {
+  border-top: 4px solid var(--primary-color);
+}
+
+.card-back {
+  background-color: #fff;
+  border: 2px solid var(--primary-color);
+}
+
+.highlight-box {
+  border-bottom: 3px solid var(--primary-color);
+}
+
+/* Botón para volver */
+.back-btn {
+  width: 60px;
+  height: 60px;
+}
+
+.back-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.back-btn:hover svg {
+  transform: scale(1.2);
 }
