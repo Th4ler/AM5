@@ -367,12 +367,13 @@
   max-height: 200px;
 }
 
-#services div.card button {
+#services div.card a {
   border: transparent;
   width: 10rem;
   border-radius: 20px;
   border-color: var(--primary-color);
   color: var(--primary-color);
+  background-color: var(--dark-grey);
 }
 
 /* Personalizar indicadores del Carousel */

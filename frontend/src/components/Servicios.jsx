@@ -136,7 +136,7 @@ function ServiciosCarousel() {
                         <Card.Body>
                           <Card.Title>{service.title}</Card.Title>
                           <Card.Text>{service.description}</Card.Text>
-                          <Button as={Link} to={service.link} variant="outline-warning bg-dark">Ver más</Button>
+                          <Button as={Link} to={service.link} >Ver más</Button>
                         </Card.Body>
                       </Card>
                     );
