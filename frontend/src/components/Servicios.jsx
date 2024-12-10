@@ -1,6 +1,7 @@
 //Home section - Servicios
 import { useState, useEffect } from 'react';
 import { Carousel, Button, Card } from 'react-bootstrap';
+import { Link } from "react-router-dom"; // Importa Link
 import img1 from '../images/img1.jpg';
 import img1filter from '../images/img1filter.jpg';
 import img2 from '../images/img2.jpg';
@@ -23,31 +24,36 @@ function ServiciosCarousel() {
       title: "Soluciones legales.",
       description: "Ofrecemos soluciones legales integrales para personas, inversores, startups y empresas de todos los tamaños y sectores.",
       imgDefault: img1filter,
-      imgHover: img1
+      imgHover: img1,
+      link: "/legales"
     },
     {
       title: "Soluciones de negocio y backoffice.",
       description: "Ofrecemos soluciones de negocio y backoffice diseñadas para impulsar el crecimiento diario de tu empresa, optimizando operaciones y fortaleciendo cada área clave para tu éxito.",
       imgDefault: img2filter,
-      imgHover: img2
+      imgHover: img2,
+      link: "/negocios"
     },
     {
       title: "Comunicaciones estratégicas.",
       description: "Brindamos soluciones de comunicación estratégica que fortalecen tu imagen y marca, mejoran tu reputación y anticipan riesgos legales y regulatorios.",
       imgDefault: img3filter,
-      imgHover: img3
+      imgHover: img3,
+      link: "/comunicaciones"
     },
     {
       title: "Capacitación y coach empresarial.",
       description: "Ofrecemos capacitación y coaching empresarial personalizados para potenciar habilidades, mejorar la comunicación y transformar la cultura organizacional.",
       imgDefault: img4filter,
-      imgHover: img4
+      imgHover: img4,
+      link: "/coach"
     },
     {
       title: "Sostenibilidad y RCE.",
       description: "Potenciamos la sostenibilidad empresarial y el trabajo pro bono, impulsando un impacto positivo en comunidades y promoviendo prácticas responsables.",
       imgDefault: img5filter,
-      imgHover: img5
+      imgHover: img5,
+      link: "/sostenibilidad"
     }
   ];
 
@@ -130,7 +136,7 @@ function ServiciosCarousel() {
                         <Card.Body>
                           <Card.Title>{service.title}</Card.Title>
                           <Card.Text>{service.description}</Card.Text>
-                          <Button variant="outline-warning bg-dark">Ver más</Button>
+                          <Button as={Link} to={service.link} >Ver más</Button>
                         </Card.Body>
                       </Card>
                     );

@@ -1,16 +1,20 @@
 /* STYLING SECTIONS DOCUMENTATION */
 /*
 *** LANDING PAGE [
------ HEADER (22)
------ CABECERA (77)
------ ABOUT ME (174)
------ SERVICIOS (289)
------ MEDIA (414)
------ CONTACTO (514)
------ FOOTER (630)
+----- HEADER (26)
+----- CABECERA (81)
+----- ABOUT ME (178)
+----- SERVICIOS (293)
+----- MEDIA (418)
+----- CONTACTO (475)
+----- FOOTER (591)
 ]
 ***  SERVICES PAGES [
------ pending
+----- LEGALES (656)
+----- NEGOCIO ()
+----- COMUNICACIONES ()
+----- COACH ()
+----- SOSTENIBILIDAD ()
 ]
 ***  MEDIA PAGES [
 ----- BLOG ()
@@ -363,12 +367,13 @@
   max-height: 200px;
 }
 
-#services div.card button {
+#services div.card a {
   border: transparent;
   width: 10rem;
   border-radius: 20px;
   border-color: var(--primary-color);
   color: var(--primary-color);
+  background-color: var(--dark-grey);
 }
 
 /* Personalizar indicadores del Carousel */
@@ -412,103 +417,60 @@
 }
 
 /* MEDIA */
-
-.media-section {
-  padding: 50px 0;
-}
-
-.media-pic-box img {
-  border-radius: 10px;
-  height: max-content;
-}
-
-.yellow-box {
-  background-color: var(--primary-color);
-  width: 100%;
-  height: 300px;
-  border-radius: 10px;
+/* Estilo de la carta */
+.media-card {
   position: relative;
+  width: 25rem;
   overflow: hidden;
-}
-.zoom-img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 80px;
-  height: 80px;
-  transform: translate(-50%, -50%) scale(1);
   transition: transform 0.3s ease;
 }
 
-.yellow-box:hover .zoom-img,
-.black-box:hover .zoom-img {
-  transform: translate(-50%, -50%) scale(1.2);
+.media-card:hover {
+  transform: translateY(-10px);
 }
 
-.long-btn {
-  background-color: transparent;
-  border: 2px solid var(--primary-color);
-  border-radius: 20px;
-  padding: 10px 20px;
-  color: var(--dark-gray);
-  text-decoration: none;
-  font-size: 1.2rem;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
 
-.long-btn:hover {
-  background-color: var(--primary-color);
-  color: #fff;
-}
-
-.vertical-btn {
-  background-color: transparent;
-  border: 2px solid var(--dark-gray);
-  border-radius: 20px;
-  padding: 10px;
-  color: var(--dark-gray);
-  text-align: center;
-  display: block;
-  width: 80%;
-  margin: auto;
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.vertical-btn:hover {
-  background-color: var(--dark-gray);
-  color: #fff;
-}
-
-.black-box {
-  background-color: #000;
+.media-card-img {
   width: 100%;
-  height: 400px;
-  border-radius: 10px;
+  height: 100%;
+  object-fit: cover; /* Asegura que la imagen mantenga proporciones */
+}
+
+/* Superposición para el botón */
+.media-card-overlay {
+  position: absolute;
+  top: 0; /* Parte superior de la carta */
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: center;
-  position: relative;
+  background-color: rgba(0, 0, 0, 0.3); /* Oscurece ligeramente el fondo */
+  opacity: 0; /* Oculta inicialmente */
+  transition: opacity 0.3s ease;
 }
 
-.black-box .social-icons {
-  display: flex;
-  flex-wrap: nowrap;
+.media-card:hover .media-card-overlay {
+  opacity: 1; /* Muestra el overlay en hover */
 }
 
-.black-box .social-icons ul {
-  margin: 0 10px;
-  padding: 0;
-  list-style: none;
+/* Botón superpuesto */
+#media .media-card-btn {
+  border: 2px solid var(--primary-color);
+  border-radius: 25px;
+  color: var(--primary-color);
+  background-color: transparent;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.black-box .social-icons li {
-  color: var(--light-gray);
-  text-align: center;
-  margin-bottom: 5px;
+.media-card-btn:hover {
+  background-color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 /* CONTACTO */
@@ -690,4 +652,68 @@
       0 0 5px #BABABA, 
       0 0 10px #FFFF29;
   }
+}
+
+/* LEGALES -> SERVICIOS PAGE */
+
+/* Sección decorativa */
+.decorative-section {
+  display: flex;
+  height: 400px;
+}
+
+.left-section {
+  background-size: cover;
+  background-position: center;
+}
+
+.right-section {
+  background-color: #f8f8f8;
+}
+
+/* Botón colapsable */
+.collapsible-btn {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.arrow-icon {
+  transition: transform 0.3s ease;
+}
+
+.arrow-icon.up {
+  transform: rotate(180deg);
+}
+
+/* Grid de cartas */
+.cards-grid .card-front img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.cards-grid .card-info {
+  border-top: 4px solid var(--primary-color);
+}
+
+.card-back {
+  background-color: #fff;
+  border: 2px solid var(--primary-color);
+}
+
+.highlight-box {
+  border-bottom: 3px solid var(--primary-color);
+}
+
+/* Botón para volver */
+.back-btn {
+  width: 60px;
+  height: 60px;
+}
+
+.back-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.back-btn:hover svg {
+  transform: scale(1.2);
 }
