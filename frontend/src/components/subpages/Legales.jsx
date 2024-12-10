@@ -1,4 +1,5 @@
 // //Service Page - Soluciones legales
+// https://www.npmjs.com/package/reactjs-flip-card
 //PATH TESTING -> WORKING
 const Legales = () => {
     return (
