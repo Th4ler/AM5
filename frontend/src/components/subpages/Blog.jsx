@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import axiosInstance from '../endpoint/axios'; // Asegúrate de usar axiosInstance siempre
 
 const Blog = () => {
   const [blogs, setBlogs] = useState([]);
@@ -7,8 +7,9 @@ const Blog = () => {
   const [contenido, setContenido] = useState('');
   const [error, setError] = useState('');
 
+  // Cargar blogs usando axiosInstance
   useEffect(() => {
-    axios.get('/api/blogs')
+    axiosInstance.get('/blogs')
       .then(response => {
         setBlogs(response.data);
       })
@@ -24,15 +25,26 @@ const Blog = () => {
       return;
     }
 
-    axios.post('/api/blogs', { titulo, contenido })
+    axiosInstance.post('/blogs', { titulo, contenido })
       .then(response => {
-        setBlogs(prevBlogs => [...prevBlogs, response.data]); // Añadir nuevo blog
+        console.log('Respuesta del servidor:', response.data);
+        setBlogs(prevBlogs => [...prevBlogs, response.data]);
         setTitulo('');
         setContenido('');
         setError('');
       })
-      .catch(() => {
-        setError('Error al crear el blog. Intenta nuevamente.');
+      .catch(error => {
+        console.error('Error al crear el blog:', error.message);
+        if (error.response) {
+          console.error('Error de respuesta:', error.response.status, error.response.data);
+          setError(`Error ${error.response.status}: ${error.response.data.error || 'No especificado'}`);
+        } else if (error.request) {
+          console.error('No hubo respuesta del servidor:', error.request);
+          setError('No se pudo conectar con el servidor. Revisa tu conexión.');
+        } else {
+          console.error('Error desconocido:', error.message);
+          setError('Ocurrió un error inesperado.');
+        }
       });
   };
 
@@ -69,7 +81,6 @@ const Blog = () => {
       </form>
     </section>
   );
-  
 };
 
 export default Blog;

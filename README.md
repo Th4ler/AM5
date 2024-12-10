@@ -48,11 +48,23 @@ composer create-project --prefer-dist laravel/laravel nombre-del-proyecto-larave
 ```
 
 # Configuración de Laravel 11
-01: Abre el archivo .env y configura la conexión a la base de datos.
-02: Ejecuta las migraciones para crear las tablas por defecto en la base de datos:
+* 01: Abre el archivo .env y configura la conexión a la base de datos.
+* 02: Ejecuta las migraciones para crear las tablas por defecto en la base de datos:
 
 ```sh
 php artisan migrate
+```
+
+* 03: Ejecuta el comando para una configuración rápida de la api.php:
+
+```sh
+php artisan install:api
+```
+
+* 04: De ser necesario, configura las cors dentro de config/cors.php. Puedes crearlo con el siguiente comando:
+
+```sh
+php artisan config:publish cors
 ```
 
 # Git Basic Commands:
