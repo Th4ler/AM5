@@ -9,18 +9,18 @@ function Cabecera() {
                 className="cabecera"
                 data-component="cabecera"
             >
-                <div className="content-wrapper text-center align-items-end">
+                <div className="text-center items-end">
                     {/* Contenido en la parte derecha */}
                     <div className="box-cabecera">
-                        <div className="d-flex flex-row align-items-center justify-content-end gap-3">
+                        <div className="flex flex-row items-center justify-end gap-3">
                             <img
-                                className='d-none d-md-flex ps-0'
+                                className='hidden md:flex ps-0'
                                 src={am5logo}
                                 alt="Logo de AM5, startup de soluciones legales y comunicación estratégica."
                                 fluid
                             />
                             <div className="right-corner"></div>
-                            <h1 className="px-3 text-muted">
+                            <h1 className="px-3 text-gray-600">
                                 Soluciones legales<br />
                                 Negocios<br />
                                 Asuntos Públicos
@@ -32,7 +32,7 @@ function Cabecera() {
                 {/* <div className='cabecera-hr'></div> */}
                 
             </section>
-            <div className='custom-hr rounded w-75 mb-4'></div>
+            <div className='custom-hr rounded'></div>
         </>
     );
 }
