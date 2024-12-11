@@ -110,7 +110,7 @@ function ServiciosCarousel() {
           onSelect={setIndex}
           indicators={true}
           controls={false} // Oculta controles prev y next por defecto
-        // interval={null} // Desactiva el autoplay (para hacer pruebas, luego volver a habilitar)
+          interval={null} // Desactiva el autoplay (para hacer pruebas, luego volver a habilitar)
         >
           {services.map((_, idx) => (
             <Carousel.Item key={idx}>

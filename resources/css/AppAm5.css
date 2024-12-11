@@ -353,22 +353,23 @@
 }
 
 /* Ajustar  cartas carousel */
-#services div.card {
+#services div.carousel-card {
   border: 5px solid;
   border-color: var(--primary-color);
   max-height: 700px;
 }
 
-#services div.card .card-img-top {
+#services div.carousel-card .card-img-top {
   max-height: 200px;
 }
 
-#services div.card button {
+#services div.carousel-card .custom-btn-carousel {
   border: transparent;
   width: 10rem;
   border-radius: 20px;
   border-color: var(--primary-color);
   color: var(--primary-color);
+  background-color: var(--dark-grey);
 }
 
 /* Personalizar indicadores del Carousel */

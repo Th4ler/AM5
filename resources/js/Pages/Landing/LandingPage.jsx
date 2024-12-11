@@ -12,11 +12,11 @@ const LandingPage = () => {
     return (
         <div className="LandingPage">
             <Header />
-            <Cabecera />
-            <AboutMe />
+            {/* <Cabecera /> */}
+            {/* <AboutMe /> */}
             <Servicios />
-            <Media />
-            <Contacto />
+            {/*<Media />*/}
+            {/* <Contacto /> */}
             <Footer />
         </div>
     );
