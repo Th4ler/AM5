@@ -1,5 +1,4 @@
 //Home: Imagen cabecera
-import Image from 'react-bootstrap/Image';
 import am5logo from '../../../../public/assets/am5-logo.png';
 
 function Cabecera() {
@@ -14,7 +13,7 @@ function Cabecera() {
                     {/* Contenido en la parte derecha */}
                     <div className="box-cabecera">
                         <div className="d-flex flex-row align-items-center justify-content-end gap-3">
-                            <Image
+                            <img
                                 className='d-none d-md-flex ps-0'
                                 src={am5logo}
                                 alt="Logo de AM5, startup de soluciones legales y comunicación estratégica."
