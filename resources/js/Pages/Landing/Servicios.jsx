@@ -1,6 +1,7 @@
 //Home section - Servicios
 import { useState, useEffect } from 'react';
-import { Carousel, Button, Card } from 'react-bootstrap';
+import { Carousel } from 'react-bootstrap';
+import { BackwardIcon, ForwardIcon } from '@heroicons/react/24/solid';
 import img1 from '../../../../public/images/img1.jpg';
 import img1filter from '../../../../public/images/img1filter.jpg';
 import img2 from '../../../../public/images/img2.jpg';
@@ -69,13 +70,13 @@ function ServiciosCarousel() {
 
 
   return (
-    <div id='services' className="d-flex flex-column">
+    <div id='services' className="flex flex-col">
 
-      <div className="d-flex justify-content-center text-center py-4">
+      <div className="flex justify-center text-center py-4">
         <h2 className="p-3">Servicios</h2>
       </div>
 
-      <div className='container text-center'>
+      <div className='max-w-6xl mx-auto text-center'>
         <div className='custom-border-box'>
 
           <div className="left-corner" />
@@ -90,14 +91,14 @@ function ServiciosCarousel() {
       </div>
 
       {/* Botones de navegación con iconos */}
-      <div className="d-flex justify-content-center align-items-center gap-3 mb-4">
-        <Button variant="dark" onClick={handlePrev} className="rounded-circle p-2" id='carousel-btn-back'>
-          <i className="bi bi-skip-start"></i>
-        </Button>
-        <div className='rounded-5 border border-black px-4 py-2 fw-semibold'>Desliza</div>
-        <Button variant="dark" onClick={handleNext} className="rounded-circle p-2" id='carousel-btn-next'>
-          <i className="bi bi-skip-end"></i>
-        </Button>
+      <div className="flex justify-center items-center gap-3 mb-4">
+        <button onClick={handlePrev} className="rounded-full p-2 inline-block bg-gray-900" id='carousel-btn-back'>
+          <BackwardIcon className="h-6 w-6 text-[#FFFF29]" />
+        </button>
+        <div className='rounded-full border border-black px-4 py-2 font-semibold'>Desliza</div>
+        <button onClick={handleNext} className="rounded-full p-2 inline-block bg-gray-900" id='carousel-btn-next'>
+          <ForwardIcon className="h-6 w-6 text-[#FFFF29]" />
+        </button>
       </div>
 
       {/* Slider */}
@@ -109,35 +110,36 @@ function ServiciosCarousel() {
           onSelect={setIndex}
           indicators={true}
           controls={false} // Oculta controles prev y next por defecto
-        // interval={null} // Desactiva el autoplay (para hacer pruebas, luego volver a habilitar)
+          interval={null} // Desactiva el autoplay (para hacer pruebas, luego volver a habilitar)
         >
           {services.map((_, idx) => (
             <Carousel.Item key={idx}>
-              <div className="d-flex justify-content-center gap-3">
+              <div className="flex justify-center gap-4">
                 {services
                   .slice(index, index + (isSmallScreen ? 1 : 3)) //Medidas pantalla
                   .concat(services.slice(0, Math.max(0, index + (isSmallScreen ? 1 : 3) - services.length))) //Medidas pantalla
                   .map((service, subIdx) => {
 
                     return (
-                      <Card
-                        className={`text-center mb-5 ${hoveredCard === subIdx ? 'hovered' : ''}`} //Correcting slider trial
+                      <div
+                        className={`carousel-card bg-white rounded shadow-md text-center mb-12 ${hoveredCard === subIdx ? 'hovered' : ''}`} //Correcting slider trial
                         key={subIdx}
                         style={{ width: '25rem', transition: 'transform 0.3s' }}
                         onMouseEnter={() => setHoveredCard(subIdx)} // Marca la carta en hover
                         onMouseLeave={() => setHoveredCard(null)}  // Restablece el estado
                       >
-                        <Card.Img
+                        <img
+                          className="card-img-top w-full h-full object-cover"
                           variant="top"
                           src={hoveredCard === subIdx ? service.imgHover : service.imgDefault}
                           alt={service.title}
                         />
-                        <Card.Body>
-                          <Card.Title>{service.title}</Card.Title>
-                          <Card.Text>{service.description}</Card.Text>
-                          <Button href={service.link}>Ver más</Button>
-                        </Card.Body>
-                      </Card>
+                        <div className="p-4">
+                          <h5 className ="text-xl text-gray-900 mb-2">{service.title}</h5>
+                          <p className="text-gray-600 text-sm leading-relaxed">{service.description}</p>
+                          <button className="custom-btn-carousel px-3 py-1.5 text-white bg-blue-500 rounded hover:bg-blue-600" href={service.link}>Ver más</button>
+                        </div>
+                      </div>
                     );
                   })}
               </div>
@@ -145,7 +147,7 @@ function ServiciosCarousel() {
           ))}
         </Carousel>
       </div>
-      <div className='custom-hr rounded w-75 mb-4 mt-4'></div>
+      <div className='custom-hr rounded'></div>
       {/* Animación para elevar la carta central */}
       <style>{`
         .hovered {
