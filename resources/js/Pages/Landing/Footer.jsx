@@ -1,5 +1,5 @@
 //Footer
-import logo from '../../../../public/assets/am5-logo.png';
+import logo from '../../../../public/am5-logo.png';
 // import qr from '../assets/am5-qr.png'; //Pedir qr
 
 function Footer() {
