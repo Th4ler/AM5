@@ -62,7 +62,7 @@ export default function Dashboard({
         <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 mt-4">
           <div className="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
             <div className="p-6 text-gray-900 dark:text-gray-100">
-              <h3 className="text-gray-200 text-xl font-semibold">
+              <h3 className="text-gray-900 dark:text-gray-200 text-xl font-semibold">
                 Mis publicaciones activas
               </h3>
 
@@ -80,12 +80,12 @@ export default function Dashboard({
                   {activeTasks.data.map((task) => (
                     <tr key={task.id}>
                       <td className="px-3 py-2">{task.id}</td>
-                      <td className="px-3 py-2 text-white hover:underline">
+                      <td className="px-3 py-2 text-gray-900 dark:text-gray-200 hover:underline">
                         <Link href={route("project.show", task.project.id)}>
                           {task.project.name}
                         </Link>
                       </td>
-                      <td className="px-3 py-2 text-white hover:underline">
+                      <td className="px-3 py-2 text-gray-900 dark:text-gray-200 hover:underline">
                         <Link href={route("task.show", task.id)}>
                           {task.name}
                         </Link>
@@ -100,7 +100,7 @@ export default function Dashboard({
                           {TASK_STATUS_TEXT_MAP[task.status]}
                         </span>
                       </td>
-                      <td className="px-3 py-2 text-nowrap">{task.due_date}</td>
+                      <td className="px-3 py-2 text-nowrap text-gray-900 dark:text-gray-200">{task.due_date}</td>
                     </tr>
                   ))}
                 </tbody>
