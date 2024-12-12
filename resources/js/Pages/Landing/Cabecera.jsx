@@ -1,5 +1,5 @@
 //Home: Imagen cabecera
-import am5logo from '../../../../public/assets/am5-logo.png';
+import am5logo from '../../../../public/am5-logo.png';
 
 function Cabecera() {
     return (

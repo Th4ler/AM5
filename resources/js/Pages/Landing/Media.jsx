@@ -9,7 +9,7 @@ const Media = () => {
   return (
     <section id="media" className="py-8">
       <div className="text-center py-4">
-        <h2 className="p-3 text-3xl font-bold">Media</h2>
+        <h2 className="am5-border p-3 text-3xl font-bold">Media</h2>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
