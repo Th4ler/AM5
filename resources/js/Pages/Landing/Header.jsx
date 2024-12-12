@@ -4,7 +4,7 @@ function Header() {
     return (
         <header className="sticky top-0 bg-white shadow-md z-50">
             <div className="max-w-screen-xl mx-auto px-4 py-4">
-                <div className="flex justify-between items-center">
+                <div className="flex justify-between items-center logo">
                     <a href="/" className="flex items-center space-x-2">
                         <img src={logo} alt="Imagen del logo de la start-up AM5 con su característico toque de color amarillo" className="h-12" />
                     </a>
