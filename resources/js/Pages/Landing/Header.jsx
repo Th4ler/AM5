@@ -14,11 +14,11 @@ function Header() {
                         </svg>
                     </button>
                     <nav className="hidden lg:flex space-x-6">
-                        <a href="#inicio" className="text-lg text-gray-700 hover:text-yellow-500">Inicio</a>
-                        <a href="#about" className="text-lg text-gray-700 hover:text-yellow-500">Sobre Mí</a>
-                        <a href="#services" className="text-lg text-gray-700 hover:text-yellow-500">Servicios</a>
-                        <a href="#media" className="text-lg text-gray-700 hover:text-yellow-500">Media</a>
-                        <a href="#contact" className="text-lg text-gray-700 hover:text-yellow-500">Contacto</a>
+                        <a href="#inicio" className="relative text-lg text-gray-700 hover: after:content-[''] after:block after:w-0 after:h-[3px] after:bg-primary after:transition-all after:duration-300 after:ease-in-out hover:after:w-full header-nav-link">Inicio</a>
+                        <a href="#about" className="relative text-lg text-gray-700 hover: after:content-[''] after:block after:w-0 after:h-[3px] after:bg-primary after:transition-all after:duration-300 after:ease-in-out hover:after:w-full header-nav-link">Sobre Mí</a>
+                        <a href="#services" className="relative text-lg text-gray-700 hover: after:content-[''] after:block after:w-0 after:h-[3px] after:bg-primary after:transition-all after:duration-300 after:ease-in-out hover:after:w-full header-nav-link">Servicios</a>
+                        <a href="#media" className="relative text-lg text-gray-700 hover: after:content-[''] after:block after:w-0 after:h-[3px] after:bg-primary after:transition-all after:duration-300 after:ease-in-out hover:after:w-full header-nav-link">Media</a>
+                        <a href="#contact" className="relative text-lg text-gray-700 hover: after:content-[''] after:block after:w-0 after:h-[3px] after:bg-primary after:transition-all after:duration-300 after:ease-in-out hover:after:w-full header-nav-link">Contacto</a>
                     </nav>
                 </div>
             </div>

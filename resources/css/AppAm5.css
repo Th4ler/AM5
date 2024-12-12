@@ -38,6 +38,9 @@
 .custom-underline-color .nav-link {
   font-size: 1.3rem;
 }
+.header-nav-link {
+  font-size: 1.3rem;
+}
 
 @media (min-width: 1200px) {
   .custom-underline-color .nav-link {
@@ -45,7 +48,12 @@
   }
 }
 
-#root .App nav div .custom-underline-color .nav-link.active {
+/* #root .App nav div .custom-underline-color .nav-link.active {
+  border-bottom-color: transparent;
+  position: relative;
+  font-weight: normal;
+}
+.header-nav-link .active {
   border-bottom-color: transparent;
   position: relative;
   font-weight: normal;
@@ -61,6 +69,16 @@
   border-bottom: 0.6rem solid var(--primary-color);
   transition: all 0.3s ease;
 }
+.header-nav-link .active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(30%);
+  width: 60%;
+  border-bottom: 0.6rem solid var(--primary-color);
+  transition: all 0.3s ease;
+} */
 
 @media (max-width: 991px) {
   .nav-link.active::after {
@@ -69,10 +87,14 @@
   }
 }
 
-#root .App nav div .custom-underline-color .nav-link:hover {
+/* #root .App nav div .custom-underline-color .nav-link:hover {
   border-bottom-color: transparent !important;
   color: black;
 }
+.header-nav-link:hover {
+  border-bottom-color: transparent !important;
+  color: black;
+} */
 
 /* CABECERA */
 
