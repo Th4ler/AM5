@@ -35,10 +35,10 @@ export default function Create({ auth, blog }) {
 
       <div className="py-12">
         <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-          <div className="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+          <div className="bg-lightBackground dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
             <form
               onSubmit={onSubmit}
-              className="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg"
+              className="p-4 sm:p-8 bg-lightBackground dark:bg-gray-800 shadow sm:rounded-lg"
             >
               {blog.image_path && (
                 <div className="mb-4">

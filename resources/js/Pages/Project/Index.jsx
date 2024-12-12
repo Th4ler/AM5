@@ -54,7 +54,7 @@ export default function Index({ auth, projects, queryParams = null, success }) {
       user={auth.user}
       header={
         <div className="flex justify-between items-center">
-          <h2 className="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+          <h2 className="font-semibold text-xl text-gray-900 dark:text-gray-100 leading-tight">
             Proyectos
           </h2>
           <Link
@@ -82,11 +82,11 @@ export default function Index({ auth, projects, queryParams = null, success }) {
               </button>
             </div>
           )}
-          <div className="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+          <div className="bg-lightBackground dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
             <div className="p-6 text-gray-900 dark:text-gray-100">
               <div className="overflow-auto">
-                <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                  <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 border-b-2 border-gray-500">
+                <table className="w-full text-sm text-left rtl:text-right text-gray-900 dark:text-gray-100">
+                  <thead className="text-xs text-gray-900 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-100 border-b-2 border-gray-500">
                     <tr className="text-nowrap">
                       <TableHeading
                         name="id"
@@ -119,7 +119,7 @@ export default function Index({ auth, projects, queryParams = null, success }) {
                       <th className="px-3 py-3 text-right">Acciones</th>
                     </tr>
                   </thead>
-                  <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 border-b-2 border-gray-500">
+                  <thead className="text-xs text-gray-900 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-100 border-b-2 border-gray-500">
                     <tr className="text-nowrap">
                       <th className="px-3 py-3"></th>
                       <th className="px-3 py-3"></th>
@@ -142,14 +142,14 @@ export default function Index({ auth, projects, queryParams = null, success }) {
                   <tbody>
                     {projects.data.map((project) => (
                       <tr
-                        className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                        className="bg-lightBackground border-b dark:bg-gray-800 dark:border-gray-700"
                         key={project.id}
                       >
                         <td className="px-3 py-2">{project.id}</td>
                         <td className="px-3 py-2">
                           <img src={project.image_path} style={{ width: 60 }} />
                         </td>
-                        <th className="px-3 py-2 text-gray-100 text-nowrap hover:underline">
+                        <th className="px-3 py-2 text-gray-900 dark:text-gray-100 text-nowrap hover:underline">
                           <Link href={route("project.show", project.id)}>
                             {project.name}
                           </Link>

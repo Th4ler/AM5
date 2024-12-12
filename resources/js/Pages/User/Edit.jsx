@@ -27,7 +27,7 @@ export default function Create({ auth, user }) {
       header={
         <div className="flex justify-between items-center">
           <h2 className="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            Edit user "{user.name}"
+            Editar usuario "{user.name}"
           </h2>
         </div>
       }
@@ -36,13 +36,13 @@ export default function Create({ auth, user }) {
 
       <div className="py-12">
         <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-          <div className="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+          <div className="bg-lightBackground dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
             <form
               onSubmit={onSubmit}
-              className="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg"
+              className="p-4 sm:p-8 bg-lightBackground dark:bg-gray-800 shadow sm:rounded-lg"
             >
               <div className="mt-4">
-                <InputLabel htmlFor="user_name" value="User Name" />
+                <InputLabel htmlFor="user_name" value="Nombre de usuario" />
 
                 <TextInput
                   id="user_name"
@@ -57,7 +57,7 @@ export default function Create({ auth, user }) {
                 <InputError message={errors.name} className="mt-2" />
               </div>
               <div className="mt-4">
-                <InputLabel htmlFor="user_email" value="User Email" />
+                <InputLabel htmlFor="user_email" value="Email de usuario" />
 
                 <TextInput
                   id="user_email"
@@ -72,7 +72,7 @@ export default function Create({ auth, user }) {
               </div>
 
               <div className="mt-4">
-                <InputLabel htmlFor="user_password" value="Password" />
+                <InputLabel htmlFor="user_password" value="Contraseña" />
 
                 <TextInput
                   id="user_password"
@@ -89,7 +89,7 @@ export default function Create({ auth, user }) {
               <div className="mt-4">
                 <InputLabel
                   htmlFor="user_password_confirmation"
-                  value="Confirm Password"
+                  value="Confirmar contraseña"
                 />
 
                 <TextInput
@@ -113,10 +113,10 @@ export default function Create({ auth, user }) {
                   href={route("user.index")}
                   className="bg-gray-100 py-1 px-3 text-gray-800 rounded shadow transition-all hover:bg-gray-200 mr-2"
                 >
-                  Cancel
+                  Cancelar
                 </Link>
                 <button className="bg-emerald-500 py-1 px-3 text-white rounded shadow transition-all hover:bg-emerald-600">
-                  Submit
+                  Actualizar
                 </button>
               </div>
             </form>

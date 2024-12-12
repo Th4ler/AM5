@@ -64,8 +64,8 @@ export default function TasksTable({
         </div>
       )}
       <div className="overflow-auto">
-        <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-          <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 border-b-2 border-gray-500">
+        <table className="w-full text-sm text-left rtl:text-right text-gray-900 dark:text-gray-100">
+          <thead className="text-xs text-gray-900 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-100 border-b-2 border-gray-500">
             <tr className="text-nowrap">
               <TableHeading
                 name="id"
@@ -118,7 +118,7 @@ export default function TasksTable({
               <th className="px-3 py-3 text-right">Acciones</th>
             </tr>
           </thead>
-          <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 border-b-2 border-gray-500">
+          <thead className="text-xs text-gray-900 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-100 border-b-2 border-gray-500">
             <tr className="text-nowrap">
               <th className="px-3 py-3"></th>
               <th className="px-3 py-3"></th>
@@ -127,7 +127,7 @@ export default function TasksTable({
                 <TextInput
                   className="w-full"
                   defaultValue={queryParams.name}
-                  placeholder="Nombre de la publicación"
+                  placeholder="Título de la publicación"
                   onBlur={(e) => searchFieldChanged("name", e.target.value)}
                   onKeyPress={(e) => onKeyPress("name", e)}
                 />
@@ -163,7 +163,7 @@ export default function TasksTable({
                 {!hideProjectColumn && (
                   <td className="px-3 py-2">{task.project.name}</td>
                 )}
-                <th className="px-3 py-2 text-gray-100 hover:underline">
+                <th className="px-3 py-2 text-gray-900 dark:text-gray-100 hover:underline">
                   <Link href={route("task.show", task.id)}>{task.name}</Link>
                 </th>
                 <td className="px-3 py-2">
