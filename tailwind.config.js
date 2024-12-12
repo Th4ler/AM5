@@ -21,7 +21,7 @@ export default {
                 'dark-grey': '#4A4A4A',
                 'light-grey': '#B9B9B9',
                 'background-color': '#f8f8f8',
-                'lightBackground': '#f8f5fa', // Un gris claro y elegante
+                'lightBackground': '#f8f5fa',
             },
         },
     },
