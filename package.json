@@ -16,7 +16,7 @@
         "postcss": "^8.4.31",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
-        "tailwindcss": "^3.2.1",
+        "tailwindcss": "^3.4.16",
         "vite": "^5.0"
     },
     "dependencies": {
@@ -24,6 +24,7 @@
         "@inertiajs/inertia": "^0.11.1",
         "@inertiajs/inertia-react": "^0.8.1",
         "bootstrap": "^5.3.3",
+        "bootstrap-icons": "^1.11.3",
         "react-bootstrap": "^2.10.6",
         "react-lazy-load": "^4.0.1",
         "react-router-dom": "^7.0.2"
