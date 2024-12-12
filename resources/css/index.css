@@ -10,10 +10,10 @@
   --background-color: #f8f8f8;
 }
 
-* {
-  /* font-family: 'Montserrat', sans-serif; */
+/* * {
+  font-family: 'Montserrat', sans-serif;
   color: var(--dark-grey);
-}
+} */
 
 body {
   background-color: var(--background-color);
