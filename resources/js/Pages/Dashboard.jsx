@@ -25,7 +25,7 @@ export default function Dashboard({
 
       <div className="py-12">
         <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 grid grid-cols-3 gap-2">
-          <div className="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+          <div className="bg-lightBackground dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
             <div className="p-6 text-gray-900 dark:text-gray-100">
               <h3 className="text-amber-500 text-2xl font-semibold">
                 Tareas pendientes
@@ -36,7 +36,7 @@ export default function Dashboard({
               </p>
             </div>
           </div>
-          <div className="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+          <div className="bg-lightBackground dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
             <div className="p-6 text-gray-900 dark:text-gray-100">
               <h3 className="text-blue-500 text-2xl font-semibold">
                 Tareas en progreso
@@ -47,7 +47,7 @@ export default function Dashboard({
               </p>
             </div>
           </div>
-          <div className="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+          <div className="bg-lightBackground dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
             <div className="p-6 text-gray-900 dark:text-gray-100">
               <h3 className="text-green-500 text-2xl font-semibold">
                 Blogs publicados
@@ -60,7 +60,7 @@ export default function Dashboard({
           </div>
         </div>
         <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 mt-4">
-          <div className="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+          <div className="bg-lightBackground dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
             <div className="p-6 text-gray-900 dark:text-gray-100">
               <h3 className="text-gray-900 dark:text-gray-200 text-xl font-semibold">
                 Mis publicaciones activas

@@ -31,7 +31,7 @@ export default function Create({ auth, task, projects, users }) {
       header={
         <div className="flex justify-between items-center">
           <h2 className="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            Edit task "{task.name}"
+            Editar publicación "{task.name}"
           </h2>
         </div>
       }
@@ -40,10 +40,10 @@ export default function Create({ auth, task, projects, users }) {
 
       <div className="py-12">
         <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-          <div className="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+          <div className="bg-lightBackground dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
             <form
               onSubmit={onSubmit}
-              className="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg"
+              className="p-4 sm:p-8 bg-lightBackground dark:bg-gray-800 shadow sm:rounded-lg"
             >
               {task.image_path && (
                 <div className="mb-4">
@@ -51,7 +51,7 @@ export default function Create({ auth, task, projects, users }) {
                 </div>
               )}
               <div>
-                <InputLabel htmlFor="task_project_id" value="Project" />
+                <InputLabel htmlFor="task_project_id" value="Proyecto" />
 
                 <SelectInput
                   name="project_id"
@@ -60,7 +60,7 @@ export default function Create({ auth, task, projects, users }) {
                   className="mt-1 block w-full"
                   onChange={(e) => setData("project_id", e.target.value)}
                 >
-                  <option value="">Select Project</option>
+                  <option value="">Seleccionar proyecto</option>
                   {projects.data.map((project) => (
                     <option value={project.id} key={project.id}>
                       {project.name}
@@ -71,7 +71,7 @@ export default function Create({ auth, task, projects, users }) {
                 <InputError message={errors.project_id} className="mt-2" />
               </div>
               <div className="mt-4">
-                <InputLabel htmlFor="task_image_path" value="Task Image" />
+                <InputLabel htmlFor="task_image_path" value="Imagen de la publicación" />
                 <TextInput
                   id="task_image_path"
                   type="file"
@@ -82,7 +82,7 @@ export default function Create({ auth, task, projects, users }) {
                 <InputError message={errors.image} className="mt-2" />
               </div>
               <div className="mt-4">
-                <InputLabel htmlFor="task_name" value="Task Name" />
+                <InputLabel htmlFor="task_name" value="Título de la publicación" />
 
                 <TextInput
                   id="task_name"
@@ -99,7 +99,7 @@ export default function Create({ auth, task, projects, users }) {
               <div className="mt-4">
                 <InputLabel
                   htmlFor="task_description"
-                  value="Task Description"
+                  value="Descripción de la publicación"
                 />
 
                 <TextAreaInput
@@ -113,7 +113,7 @@ export default function Create({ auth, task, projects, users }) {
                 <InputError message={errors.description} className="mt-2" />
               </div>
               <div className="mt-4">
-                <InputLabel htmlFor="task_due_date" value="Task Deadline" />
+                <InputLabel htmlFor="task_due_date" value="Fecha de entrega" />
 
                 <TextInput
                   id="task_due_date"
@@ -127,7 +127,7 @@ export default function Create({ auth, task, projects, users }) {
                 <InputError message={errors.due_date} className="mt-2" />
               </div>
               <div className="mt-4">
-                <InputLabel htmlFor="task_status" value="Task Status" />
+                <InputLabel htmlFor="task_status" value="Estado de la publicación" />
 
                 <SelectInput
                   name="status"
@@ -136,17 +136,17 @@ export default function Create({ auth, task, projects, users }) {
                   className="mt-1 block w-full"
                   onChange={(e) => setData("status", e.target.value)}
                 >
-                  <option value="">Select Status</option>
-                  <option value="pending">Pending</option>
-                  <option value="in_progress">In Progress</option>
-                  <option value="completed">Completed</option>
+                  <option value="">Selecciona el estado</option>
+                  <option value="pending">Pendiente</option>
+                  <option value="in_progress">En progreso</option>
+                  <option value="completed">Completado</option>
                 </SelectInput>
 
                 <InputError message={errors.task_status} className="mt-2" />
               </div>
 
               <div className="mt-4">
-                <InputLabel htmlFor="task_priority" value="Task Priority" />
+                <InputLabel htmlFor="task_priority" value="Prioridad de la publicación" />
 
                 <SelectInput
                   name="priority"
@@ -155,10 +155,10 @@ export default function Create({ auth, task, projects, users }) {
                   className="mt-1 block w-full"
                   onChange={(e) => setData("priority", e.target.value)}
                 >
-                  <option value="">Select Priority</option>
-                  <option value="low">Low</option>
-                  <option value="medium">Medium</option>
-                  <option value="high">High</option>
+                  <option value="">Selecciona la prioridad</option>
+                  <option value="low">Baja</option>
+                  <option value="medium">Mediano</option>
+                  <option value="high">Alto</option>
                 </SelectInput>
 
                 <InputError message={errors.priority} className="mt-2" />
@@ -167,7 +167,7 @@ export default function Create({ auth, task, projects, users }) {
               <div className="mt-4">
                 <InputLabel
                   htmlFor="task_assigned_user"
-                  value="Assigned User"
+                  value="Usuario asignado"
                 />
 
                 <SelectInput
@@ -177,7 +177,7 @@ export default function Create({ auth, task, projects, users }) {
                   className="mt-1 block w-full"
                   onChange={(e) => setData("assigned_user_id", e.target.value)}
                 >
-                  <option value="">Select User</option>
+                  <option value="">Selecciona el usuario</option>
                   {users.data.map((user) => (
                     <option value={user.id} key={user.id}>
                       {user.name}
@@ -196,10 +196,10 @@ export default function Create({ auth, task, projects, users }) {
                   href={route("task.index")}
                   className="bg-gray-100 py-1 px-3 text-gray-800 rounded shadow transition-all hover:bg-gray-200 mr-2"
                 >
-                  Cancel
+                  Cancelar
                 </Link>
                 <button className="bg-emerald-500 py-1 px-3 text-white rounded shadow transition-all hover:bg-emerald-600">
-                  Submit
+                  Actualizar
                 </button>
               </div>
             </form>

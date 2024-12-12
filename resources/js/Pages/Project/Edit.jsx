@@ -28,7 +28,7 @@ export default function Create({ auth, project }) {
       header={
         <div className="flex justify-between items-center">
           <h2 className="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            Edit project "{project.name}"
+            Editar proyecto "{project.name}"
           </h2>
         </div>
       }
@@ -37,10 +37,10 @@ export default function Create({ auth, project }) {
 
       <div className="py-12">
         <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-          <div className="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+          <div className="bg-lightBackground dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
             <form
               onSubmit={onSubmit}
-              className="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg"
+              className="p-4 sm:p-8 bg-lightBackground dark:bg-gray-800 shadow sm:rounded-lg"
             >
               {project.image_path && (
                 <div className="mb-4">
@@ -50,7 +50,7 @@ export default function Create({ auth, project }) {
               <div>
                 <InputLabel
                   htmlFor="project_image_path"
-                  value="Project Image"
+                  value="Imagen del proyecto"
                 />
                 <TextInput
                   id="project_image_path"
@@ -62,7 +62,7 @@ export default function Create({ auth, project }) {
                 <InputError message={errors.image} className="mt-2" />
               </div>
               <div className="mt-4">
-                <InputLabel htmlFor="project_name" value="Project Name" />
+                <InputLabel htmlFor="project_name" value="Nombre del proyecto" />
 
                 <TextInput
                   id="project_name"
@@ -79,7 +79,7 @@ export default function Create({ auth, project }) {
               <div className="mt-4">
                 <InputLabel
                   htmlFor="project_description"
-                  value="Project Description"
+                  value="Descripción del proyecto"
                 />
 
                 <TextAreaInput
@@ -95,7 +95,7 @@ export default function Create({ auth, project }) {
               <div className="mt-4">
                 <InputLabel
                   htmlFor="project_due_date"
-                  value="Project Deadline"
+                  value="Fecha de finalización del proyecto"
                 />
 
                 <TextInput
@@ -110,7 +110,7 @@ export default function Create({ auth, project }) {
                 <InputError message={errors.due_date} className="mt-2" />
               </div>
               <div className="mt-4">
-                <InputLabel htmlFor="project_status" value="Project Status" />
+                <InputLabel htmlFor="project_status" value="Estado del proyecto" />
 
                 <SelectInput
                   name="status"
@@ -118,10 +118,10 @@ export default function Create({ auth, project }) {
                   className="mt-1 block w-full"
                   onChange={(e) => setData("status", e.target.value)}
                 >
-                  <option value="">Select Status</option>
-                  <option value="pending">Pending</option>
-                  <option value="in_progress">In Progress</option>
-                  <option value="completed">Completed</option>
+                  <option value="">Selecciona el estado</option>
+                  <option value="pending">Pendiente</option>
+                  <option value="in_progress">En progreso</option>
+                  <option value="completed">Completado</option>
                 </SelectInput>
 
                 <InputError message={errors.project_status} className="mt-2" />
@@ -131,10 +131,10 @@ export default function Create({ auth, project }) {
                   href={route("project.index")}
                   className="bg-gray-100 py-1 px-3 text-gray-800 rounded shadow transition-all hover:bg-gray-200 mr-2"
                 >
-                  Cancel
+                  Cancelar
                 </Link>
                 <button className="bg-emerald-500 py-1 px-3 text-white rounded shadow transition-all hover:bg-emerald-600">
-                  Submit
+                  Actualizar
                 </button>
               </div>
             </form>
