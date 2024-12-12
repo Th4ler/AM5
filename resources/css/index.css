@@ -1,6 +1,7 @@
 /* AM5 GLOBAL styles --> vbles globales (colores, tipografia), estilos básicos html (body, h1, p), fuente y color del background...  */
 /* Importar la fuente Montserrat */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+@import 'bootstrap-icons/font/bootstrap-icons.css';
 
 :root {
   --primary-color: #FFFF29;
@@ -10,7 +11,8 @@
 }
 
 * {
-  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Montserrat', sans-serif; */
+  color: var(--dark-grey);
 }
 
 body {

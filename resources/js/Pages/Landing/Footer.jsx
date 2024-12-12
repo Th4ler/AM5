@@ -1,8 +1,6 @@
 //Migración footer bootstrap -> tailwind
 import logo from '../../../../public/am5-logo.png';
-import { MapPinIcon } from '@heroicons/react/24/outline'  
-import { PhoneIcon } from '@heroicons/react/24/outline'  
-import { EnvelopeOpenIcon } from '@heroicons/react/24/outline'  
+ 
 
 function Footer() {
   return (
@@ -24,16 +22,16 @@ function Footer() {
             <h5 className="text-lg font-bold mb-4">Contacto</h5>
             <ul className="space-y-2">
               <li className="flex items-start">
-                <MapPinIcon className="size-6 text-[#FFFF29] mr-2" /> 
+                <i className="bi bi-geo text-[#FFFF29] mr-2 pulse-icon"></i>
                 <span>Antonio Bellet 193, Oficina 1210, Providencia, RM</span>
               </li>
               <li className="flex items-start">
-              <PhoneIcon className="size-6 text-[#FFFF29] mr-2" />
-              <span>+569 6344 1988</span>
+                <i className="bi bi-telephone text-[#FFFF29] mr-2 pulse-icon"></i>
+                <span>+569 6344 1988</span>
               </li>
               <li className="flex items-start">
-              <EnvelopeOpenIcon className="size-6 text-[#FFFF29] mr-2" />
-              <span>contacto@claimy.cl</span>
+                <i className="bi bi-envelope-paper text-[#FFFF29] mr-2 pulse-icon"></i>
+                <span>contacto@claimy.cl</span>
               </li>
             </ul>
           </div>
@@ -48,9 +46,9 @@ function Footer() {
                     href="https://spotify.com" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="flex items-center text-gray-600 hover:text-yellow-500"
+                    className="flex items-center text-gray-600 hover:underline decoration-primary"
                   >
-                    <i className="bi bi-spotify mr-2"></i>Spotify
+                    <i className="bi bi-spotify text-[#FFFF29] mr-2 pulse-icon"></i>Spotify
                   </a>
                 </li>
                 <li>
@@ -58,9 +56,9 @@ function Footer() {
                     href="https://instagram.com" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="flex items-center text-gray-600 hover:text-yellow-500"
+                    className="flex items-center text-gray-600 hover:underline decoration-primary"
                   >
-                    <i className="bi bi-instagram mr-2"></i>Instagram
+                    <i className="bi bi-instagram text-[#FFFF29] mr-2 pulse-icon"></i>Instagram
                   </a>
                 </li>
                 <li>
@@ -68,9 +66,9 @@ function Footer() {
                     href="https://facebook.com" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="flex items-center text-gray-600 hover:text-yellow-500"
+                    className="flex items-center text-gray-600 hover:underline decoration-primary"
                   >
-                    <i className="bi bi-facebook mr-2"></i>Facebook
+                    <i className="bi bi-facebook text-[#FFFF29] mr-2 pulse-icon"></i>Facebook
                   </a>
                 </li>
               </ul>
@@ -80,9 +78,9 @@ function Footer() {
                     href="https://linkedin.com" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="flex items-center text-gray-600 hover:text-yellow-500"
+                    className="flex items-center text-gray-600 hover:underline decoration-primary"
                   >
-                    <i className="bi bi-linkedin mr-2"></i>LinkedIn
+                    <i className="bi bi-linkedin text-[#FFFF29] mr-2 pulse-icon"></i>LinkedIn
                   </a>
                 </li>
                 <li>
@@ -90,9 +88,9 @@ function Footer() {
                     href="https://youtube.com" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="flex items-center text-gray-600 hover:text-yellow-500"
+                    className="flex items-center text-gray-600 hover:underline decoration-primary"
                   >
-                    <i className="bi bi-youtube mr-2"></i>YouTube
+                    <i className="bi bi-youtube text-[#FFFF29] mr-2 pulse-icon"></i>YouTube
                   </a>
                 </li>
                 <li>
@@ -100,9 +98,9 @@ function Footer() {
                     href="https://tiktok.com" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="flex items-center text-gray-600 hover:text-yellow-500"
+                    className="flex items-center text-gray-600 hover:underline decoration-primary"
                   >
-                    <i className="bi bi-tiktok mr-2"></i>TikTok
+                    <i className="bi bi-tiktok text-[#FFFF29] mr-2 pulse-icon"></i>TikTok
                   </a>
                 </li>
               </ul>
