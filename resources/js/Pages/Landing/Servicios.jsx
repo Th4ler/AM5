@@ -73,7 +73,7 @@ function ServiciosCarousel() {
     <div id='services' className="flex flex-col">
 
       <div className="flex justify-center text-center py-4">
-        <h2 className="p-3">Servicios</h2>
+        <h2 className="am5-border p-3">Servicios</h2>
       </div>
 
       <div className='max-w-6xl mx-auto text-center'>

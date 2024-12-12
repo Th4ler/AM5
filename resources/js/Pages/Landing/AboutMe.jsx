@@ -43,7 +43,7 @@ function AboutMe() {
   return (
     <div className="flex flex-col">
       <div id="about" className="text-center py-8">
-        <h2 className="text-3xl font-bold p-3">Sobre Mí</h2>
+        <h2 className="am5-border text-3xl font-bold p-3">Sobre Mí</h2>
       </div>
       <div className="flex flex-col md:flex-row items-center justify-center">
         <div className="flex justify-center mb-6 md:mb-0">

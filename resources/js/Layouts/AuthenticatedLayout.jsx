@@ -1,16 +1,41 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ApplicationLogo from "@/Components/ApplicationLogo";
 import Dropdown from "@/Components/Dropdown";
 import NavLink from "@/Components/NavLink";
 import ResponsiveNavLink from "@/Components/ResponsiveNavLink";
 import { Link } from "@inertiajs/react";
+import { MoonIcon, SunIcon } from "@heroicons/react/24/solid";
 
 export default function AuthenticatedLayout({ user, header, children }) {
   const [showingNavigationDropdown, setShowingNavigationDropdown] =
     useState(false);
 
+  // ==========================================================
+  // Funciones para cambiar modo oscuro
+  // ==========================================================
+  
+  const [darkMode, setDarkMode] = useState(false); // Declaración del estado para manejar el modo oscuro
+
+  const toggleDarkMode = () => setDarkMode((prev) => !prev);
+
+  const ThemeSwitch = ({ darkMode, toggleDarkMode }) => (
+    <div
+      onClick={toggleDarkMode}
+      className="cursor-pointer flex items-center space-x-2 p-2 bg-gray-200 dark:bg-gray-600"
+    >
+      {darkMode ? <MoonIcon className="h-5 w-5" /> : <SunIcon className="h-5 w-5" />}
+      <span>{darkMode ? "Modo Oscuro" : "Modo Claro"}</span>
+    </div>
+  );
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", darkMode);
+  }, [darkMode]);
+
+  // ==========================================================
+
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
+    <div className="min-h-screen bg-white dark:bg-gray-900">
       <nav className="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
@@ -101,6 +126,7 @@ export default function AuthenticatedLayout({ user, header, children }) {
                     >
                       Salir
                     </Dropdown.Link>
+                    <ThemeSwitch darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
                   </Dropdown.Content>
                 </Dropdown>
               </div>
@@ -180,6 +206,7 @@ export default function AuthenticatedLayout({ user, header, children }) {
               >
                 Salir
               </ResponsiveNavLink>
+              <ThemeSwitch darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
             </div>
           </div>
         </div>

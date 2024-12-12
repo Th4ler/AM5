@@ -18,11 +18,11 @@ body {
 }
 
 /* Para pantallas más grandes */
-@media (min-width: 1200px) {
+/* @media (min-width: 1200px) {
   body {
     font-size: clamp(1.1rem, 1.2vw, 1.2rem) !important;
   }
-}
+} */
 
 /* Para pantallas más pequeñas */
 @media (max-width: 992px) {
@@ -73,7 +73,7 @@ h1 {
   }
 }
 
-h2 {
+.am5-border {
   color: var(--dark-gray);
   border: 5px solid var(--primary-color);
   border-right: inherit; 
@@ -81,7 +81,7 @@ h2 {
   position: relative; /* Necesario para posicionar el pseudo-elemento */
 }
 
-h2::after {
+.am5-border::after {
   content: '';
   position: absolute;
   top: 0;
