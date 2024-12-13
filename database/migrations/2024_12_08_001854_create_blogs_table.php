@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('content');
             $table->string('image')->nullable();
+            $table->enum('status', ['draft', 'published'])->default('draft'); // Estado del blog
             $table->foreignId('created_by')->constrained('users');
             $table->foreignId('updated_by')->constrained('users');
             $table->timestamps();

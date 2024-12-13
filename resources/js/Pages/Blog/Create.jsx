@@ -11,6 +11,7 @@ export default function Create({ auth }) {
     image: "",
     title: "",
     content: "",
+    status: "Borrador",
   });
 
   const onSubmit = (e) => {
@@ -83,6 +84,21 @@ export default function Create({ auth }) {
                 />
 
                 <InputError message={errors.content} className="mt-2" />
+              </div>
+              <div className="mt-4">
+                <InputLabel htmlFor="blog_status" value="Estado del blog" />
+                <SelectInput
+                  id="blog_status"
+                  name="status"
+                  value={data.status}
+                  className="mt-1 block w-full"
+                  onChange={(e) => setData("status", e.target.value)}
+                >
+                  <option value="">Selecciona el estado</option>
+                  <option value="draft">Borrador</option>
+                  <option value="published">Publicar</option>
+                </SelectInput>
+                <InputError message={errors.status} className="mt-2" />
               </div>
               <div className="mt-4 text-right">
                 <Link

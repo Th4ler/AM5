@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class StoreBlogRequest extends FormRequest
 {
@@ -25,6 +26,7 @@ class StoreBlogRequest extends FormRequest
             "title" => ['required', 'max:255'],
             'image' => ['nullable', 'image'],
             "content" => ['nullable', 'string'],
+            'status' => ['required', Rule::in(['draft', 'published'])],
         ];
     }
 }

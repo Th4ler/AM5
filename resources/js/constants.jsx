@@ -8,6 +8,14 @@ export const PROJECT_STATUS_TEXT_MAP = {
   in_progress: "En progreso",
   completed: "Completado",
 };
+export const BLOG_STATUS_CLASS_MAP = {
+  draft: "bg-amber-500",
+  published: "bg-green-500",
+};
+export const BLOG_STATUS_TEXT_MAP = {
+  draft: "Borrador",
+  published: "Publicado",
+};
 export const TASK_STATUS_CLASS_MAP = {
   pending: "bg-amber-500",
   in_progress: "bg-blue-500",

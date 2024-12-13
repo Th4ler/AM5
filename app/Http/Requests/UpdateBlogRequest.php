@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class UpdateBlogRequest extends FormRequest
 {
@@ -22,9 +23,10 @@ class UpdateBlogRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "title" => ['required', 'max:255'],
+            "title" => ['sometimes', 'max:255'],
             'image' => ['nullable', 'image'],
             "content" => ['nullable', 'string'],
+            'status' => ['sometimes', Rule::in(['draft', 'published'])],
         ];
     }
 }

@@ -4,13 +4,15 @@ import SelectInput from "@/Components/SelectInput";
 import TextAreaInput from "@/Components/TextAreaInput";
 import TextInput from "@/Components/TextInput";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
+import { BLOG_STATUS_CLASS_MAP, BLOG_STATUS_TEXT_MAP } from "@/constants.jsx";
 import { Head, Link, useForm } from "@inertiajs/react";
 
 export default function Create({ auth, blog }) {
   const { data, setData, post, errors, reset } = useForm({
     image: "",
-    name: blog.title || "",
+    title: blog.title || "",
     content: blog.content || "",
+    status: blog.status || "",
     _method: "PUT",
   });
 
@@ -66,13 +68,13 @@ export default function Create({ auth, blog }) {
                   id="blog_title"
                   type="text"
                   name="title"
-                  value={data.name}
+                  value={data.title}
                   className="mt-1 block w-full"
                   isFocused={true}
-                  onChange={(e) => setData("name", e.target.value)}
+                  onChange={(e) => setData("title", e.target.value)}
                 />
 
-                <InputError message={errors.name} className="mt-2" />
+                <InputError message={errors.title} className="mt-2" />
               </div>
               <div className="mt-4">
                 <InputLabel
@@ -90,7 +92,31 @@ export default function Create({ auth, blog }) {
 
                 <InputError message={errors.content} className="mt-2" />
               </div>
-              
+              <div className="mt-4">
+                <InputLabel htmlFor="blog_status" value="Estado del blog" />
+                <span
+                  className={
+                    "px-2 py-1 rounded text-white " +
+                    BLOG_STATUS_CLASS_MAP[blog.status]
+                  }
+                >
+                  {BLOG_STATUS_TEXT_MAP[blog.status]}
+                </span>
+              </div>
+              <div className="mt-4">
+                <InputLabel htmlFor="blog_status" value="Acción" />
+                <SelectInput
+                  id="blog_status"
+                  name="status"
+                  className="mt-1 block w-full"
+                  onChange={(e) => setData("status", e.target.value)}
+                >
+                  <option value="">Selecciona una acción</option>
+                  <option value="draft">Borrador</option>
+                  <option value="published">Publicar</option>
+                </SelectInput>
+                <InputError message={errors.status} className="mt-2" />
+              </div>
               <div className="mt-4 text-right">
                 <Link
                   href={route("blog.index")}

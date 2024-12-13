@@ -26,6 +26,9 @@ class BlogController extends Controller
         if (request("title")) {
             $query->where("title", "like", "%" . request("title") . "%");
         }
+        if (request("status")) {
+            $query->where("status", request("status"));
+        }
 
         $blogs = $query->orderBy($sortField, $sortDirection)
             ->paginate(10)
@@ -74,6 +77,13 @@ class BlogController extends Controller
 
         $sortField = request("sort_field", 'created_at');
         $sortDirection = request("sort_direction", "desc");
+
+        if (request("title")) {
+            $query->where("title", "like", "%" . request("title") . "%");
+        }
+        if (request("status")) {
+            $query->where("status", request("status"));
+        }
 
         $tasks = $query->orderBy($sortField, $sortDirection)
             ->paginate(10)
