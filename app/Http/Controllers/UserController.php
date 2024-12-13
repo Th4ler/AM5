@@ -56,7 +56,7 @@ class UserController extends Controller
         User::create($data);
 
         return to_route('user.index')
-            ->with('success', 'User was created');
+            ->with('success', 'Usuario creado.');
     }
 
     /**
@@ -92,7 +92,7 @@ class UserController extends Controller
         $user->update($data);
 
         return to_route('user.index')
-            ->with('success', "User \"$user->name\" was updated");
+            ->with('success', "Fue actualizado el usuario \"$user->name\".");
     }
 
     /**
@@ -103,6 +103,6 @@ class UserController extends Controller
         $name = $user->name;
         $user->delete();
         return to_route('user.index')
-            ->with('success', "User \"$name\" was deleted");
+            ->with('success', "El usuario \"$name\" fue eliminado.");
     }
 }
