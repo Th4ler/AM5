@@ -207,6 +207,12 @@
 }
 
 /*Botón de AboutMe*/
+.accordion-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
 .aboutme-button button {
   font-size: 2rem !important;
   padding: 0;
@@ -217,11 +223,13 @@
 }
 
 .aboutme-button .accordion-button::after {
+  content: "";
   background-color: rgba(33,37,41,1) !important; /* Color pantano */
   border-radius: 50%;
   width: 25px !important;
   height: 25px !important;
-  background-image: url('assets/flecha.svg') !important;
+  background-image: url('../../public/assets/flecha.svg') !important;
+  background-size: 1.25rem;
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -231,7 +239,7 @@
   box-shadow: none !important;
 }
 .aboutme-button .accordion-button:not(.collapsed)::after {
-  background-image: url('assets/flecha.svg') !important;
+  background-image: url('../../public/assets/flecha.svg') !important;
 }
 
 .aboutme-button .accordion-button:focus {

@@ -7,18 +7,22 @@ import Servicios from './Servicios';
 import Media from './Media';
 import Contacto from './Contacto';
 import Footer from './Footer';
+import { Head } from "@inertiajs/react";
 
 const LandingPage = () => {
     return (
-        <div className="LandingPage">
-            <Header />
-            <Cabecera />
-            {/* <AboutMe /> */}
-            {/* <Servicios /> */}
-            {/*<Media />*/}
-            {/* <Contacto /> */}
-            <Footer />
-        </div>
+        <>
+            <Head title="Andrés Madariaga" />
+            <div className="LandingPage">
+                <Header />
+                <Cabecera />
+                <AboutMe />
+                {/* <Servicios /> */}
+                {/*<Media />*/}
+                {/* <Contacto /> */}
+                <Footer />
+            </div>
+        </>
     );
 };
 
