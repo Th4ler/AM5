@@ -35,6 +35,10 @@
   padding: 0.5rem 5rem 0.5rem 3rem !important;
 }
 
+.custom-am5-border {
+  border: 3px solid #FFFF29;
+}
+
 .custom-underline-color .nav-link {
   font-size: 1.3rem;
 }
@@ -211,6 +215,27 @@
   position: relative;
   display: flex;
   align-items: center;
+  padding: 1rem 1.25rem;
+}
+
+.accordion-button::after {
+  margin-left: auto;
+  transition: transform 0.2s ease-in-out;
+}
+
+.accordion-button::after {
+  content: "";
+  border-radius: 50%;
+  width: 25px !important;
+  height: 25px !important;
+  background-image: url('../../public/assets/flecha-normal.svg');
+  background-size: 1.25rem;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.accordion-button:not(.collapsed)::after{
+  transform: rotate(-180deg);
 }
 
 .aboutme-button button {
@@ -232,6 +257,10 @@
   background-size: 1.25rem;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.aboutme-button .accordion-button:not(.collapsed)::after{
+  transform: rotate(-180deg);
 }
 
 .aboutme-button .accordion-button:not(.collapsed) {
@@ -306,12 +335,10 @@
 }
 
 .custom-hr {
-  width: 50%;
-  margin-bottom: 1.5rem;
+  width: 70%;
   height: 5px;
   color: var(--light-grey);   /* old IE */
   background-color: var(--light-grey);   /* Modern Browsers */
-  margin: 0 auto;
   left: 0;
   right: 0;
 }

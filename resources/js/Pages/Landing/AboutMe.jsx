@@ -1,8 +1,10 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import aboutmePic from '../../../../public/images/aboutmePic.webp';
 
 function AboutMe() {
   const [activeIndex, setActiveIndex] = useState(null);
+  // Para obtener una referencia al contenedor cuyo tamaño se va a animar
+  const contentRefs = useRef([]);
 
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -46,22 +48,33 @@ function AboutMe() {
   return (
     <div className="flex flex-col">
       <div id="about" className="flex justify-center text-center py-8">
-        <h2 className="am5-border text-3xl font-bold p-3">Sobre Mí</h2>
+        <h2 className="am5-border text-3xl p-3">Sobre Mí</h2>
       </div>
       <div className="flex flex-col md:flex-row flex-wrap">
         <div className="flex justify-center md:w-1/3 w-full">
-          <img src={aboutmePic} alt="Foto de Andrés Madariaga" className="w-60 h-auto" />
+          <img src={aboutmePic} alt="Foto de Andrés Madariaga" className="object-contain w-full" />
         </div>
-        <div className="px-5 md:w-2/3 w-full">
+        <div className="px-10 md:pt-0 pt-10 md:w-2/3 w-full">
           <div className="mb-4 custom-card">
             <div className="aboutme-button">
               <button
                 onClick={() => toggleAccordion(0)}
-                className="accordion-button w-full text-left relative"
+                className={`accordion-button w-full text-left relative border-0 focus:outline-none ${
+                  activeIndex !== 0 ? 'collapsed' : ''
+                }`}
               >
                 Andrés Madariaga
               </button>
-              <div className={`mt-2 ${activeIndex === 0 ? 'block' : 'hidden'}`}>
+              <div
+                ref={(el) => (contentRefs.current[0] = el)}
+                className={`mt-2 overflow-hidden transition-[max-height] duration-500 ease-in-out`}
+                style={{
+                  maxHeight:
+                    activeIndex === 0
+                      ? `${contentRefs.current[0]?.scrollHeight}px`
+                      : '0px',
+                }}
+              >
                 <p className="text-sm text-gray-700">
                   Soy Andrés Madariaga, abogado, profesor de derecho y emprendedor. Tras más de 10 años asesorando a empresas internacionales, descubrí una gran necesidad en el mundo legal y de negocios: personas, startups y empresas que no encuentran soluciones legales realmente alineadas con sus desafíos.
                 </p>
@@ -72,16 +85,27 @@ function AboutMe() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {aboutSections.map((section, idx) => (
               <div className="mb-4" key={idx}>
-                <div>
+                <div className="custom-am5-border">
                   <button
                     onClick={() => toggleAccordion(idx + 1)}
                     disabled={section.isDisabled}
-                    className={`w-full text-left text-lg font-semibold text-gray-700 border-0 focus:outline-none ${section.isDisabled ? 'cursor-not-allowed opacity-50' : ''}`}
+                    className={`accordion-button w-full text-left text-lg text-gray-700 border-0 focus:outline-none ${
+                      activeIndex !== idx + 1 ? 'collapsed' : ''
+                    } ${section.isDisabled ? 'cursor-not-allowed opacity-50' : ''}`}
                   >
                     {section.title}
                   </button>
-                  <div className={`mt-2 ${activeIndex === idx + 1 ? 'block' : 'hidden'}`}>
-                    <ul className="text-sm text-gray-600">
+                  <div 
+                    ref={(el) => (contentRefs.current[idx + 1] = el)}
+                    className={`mt-2 overflow-hidden transition-[max-height] duration-500 ease-in-out`}
+                    style={{
+                      maxHeight:
+                        activeIndex === idx + 1
+                          ? `${contentRefs.current[idx + 1]?.scrollHeight}px`
+                          : '0px',
+                    }}
+                  >
+                    <ul className="text-sm text-gray-600 py-4 px-5">
                       {section.content.map((item, index) => (
                         <li key={index}>{item}</li>
                       ))}
@@ -93,7 +117,8 @@ function AboutMe() {
           </div>
         </div>
       </div>
-      <div className="w-3/4 mx-auto mt-6 border-t-2 border-gray-300"></div>
+      {/* <div className="w-3/4 mx-auto mt-6 border-t-2 border-gray-300"></div> */}
+      <div className='custom-hr rounded mx-auto mt-3'></div>
     </div>
   );
 }
