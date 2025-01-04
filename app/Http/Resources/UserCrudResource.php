@@ -21,7 +21,10 @@ class UserCrudResource extends JsonResource
             "id" => $this->id,
             "name" => $this->name,
             "email" => $this->email,
+            "status" => $this->status,
+            "description" => $this->description,
             'created_at' => (new Carbon($this->created_at))->format('Y-m-d H:i:s'),
+            'end_date' => (new Carbon($this->end_date))->format('Y-m-d H:i:s'),
         ];
     }
 }

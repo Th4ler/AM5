@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\UserCrudResource;
+use App\Http\Resources\TaskResource;
+use App\Models\Task;
 use App\Models\User;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
@@ -62,9 +64,34 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(User $user)
+    public function show(User $user, Task $task)
     {
-        //
+        $tasks = Task::query()
+        ->where(function ($query) {
+            $query->where('created_by', auth()->id())
+                  ->orWhere('updated_by', auth()->id());
+        });
+
+        $sortField = request("sort_field", 'created_at');
+        $sortDirection = request("sort_direction", "desc");
+
+        if (request("name")) {
+            $tasks->where("name", "like", "%" . request("name") . "%");
+        }
+        if (request("status")) {
+            $tasks->where("status", request("status"));
+        }
+
+        $tasks = $tasks->orderBy($sortField, $sortDirection)
+            ->paginate(10)
+            ->onEachSide(1);
+
+        return inertia("User/Show", [
+            'user' => new UserCrudResource($user),
+            'tasks' => TaskResource::collection($tasks),
+            'queryParams' => request()->query() ?: null,
+            'success' => session('success'),
+        ]);
     }
 
     /**

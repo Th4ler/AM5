@@ -2,7 +2,7 @@ import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { Head } from "@inertiajs/react";
 import { USER_STATUS_CLASS_MAP, USER_STATUS_TEXT_MAP } from "@/constants.jsx";
 import TasksTable from "../Task/TasksTable";
-export default function Show({ auth, user, tasks, queryParams }) {
+export default function Show({ auth, user, tasks, queryParams = null }) {
   return (
     <AuthenticatedLayout
       user={auth.user}
@@ -12,7 +12,7 @@ export default function Show({ auth, user, tasks, queryParams }) {
         </h2>
       }
     >
-      <Head title={`User "${user.name}"`} />
+      <Head title={`Usuario "${user.name}"`} />
       <div className="py-12">
         <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
           <div className="bg-lightBackground dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
@@ -31,12 +31,12 @@ export default function Show({ auth, user, tasks, queryParams }) {
                     <p className="mt-1">{user.id}</p>
                   </div>
                   <div className="mt-4">
-                    <label className="font-bold text-lg">User Name</label>
+                    <label className="font-bold text-lg">Nombre</label>
                     <p className="mt-1">{user.name}</p>
                   </div>
 
                   <div className="mt-4">
-                    <label className="font-bold text-lg">User Status</label>
+                    <label className="font-bold text-lg">Rango</label>
                     <p className="mt-1">
                       <span
                         className={
@@ -48,29 +48,29 @@ export default function Show({ auth, user, tasks, queryParams }) {
                       </span>
                     </p>
                   </div>
-                  <div className="mt-4">
+                  {/* <div className="mt-4">
                     <label className="font-bold text-lg">Created By</label>
                     <p className="mt-1">{user.createdBy.name}</p>
-                  </div>
+                  </div> */}
                 </div>
                 <div>
-                  <div>
-                    <label className="font-bold text-lg">Due Date</label>
-                    <p className="mt-1">{user.due_date}</p>
-                  </div>
                   <div className="mt-4">
-                    <label className="font-bold text-lg">Create Date</label>
+                    <label className="font-bold text-lg">Fecha de registro</label>
                     <p className="mt-1">{user.created_at}</p>
                   </div>
-                  <div className="mt-4">
+                  <div>
+                    <label className="font-bold text-lg">Fecha de finalización</label>
+                    <p className="mt-1">{user.end_date}</p>
+                  </div>
+                  {/* <div className="mt-4">
                     <label className="font-bold text-lg">Updated By</label>
                     <p className="mt-1">{user.updatedBy.name}</p>
-                  </div>
+                  </div> */}
                 </div>
               </div>
 
               <div className="mt-4">
-                <label className="font-bold text-lg">User Description</label>
+                <label className="font-bold text-lg">Descripción del usuario</label>
                 <p className="mt-1">{user.description}</p>
               </div>
             </div>

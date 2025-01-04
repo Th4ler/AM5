@@ -17,8 +17,10 @@ return new class extends Migration {
             $table->timestamp('due_date')->nullable();
             $table->string('status');
             $table->string('image_path')->nullable();
-            $table->foreignId('created_by')->constrained('users');
-            $table->foreignId('updated_by')->constrained('users');
+            $table->uuid('created_by');
+            $table->uuid('updated_by');
+            $table->foreign('created_by')->references('id')->on('users')->cascadeOnDelete();
+            $table->foreign('updated_by')->references('id')->on('users')->cascadeOnDelete();
             $table->timestamps();
         });
     }

@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,14 +17,17 @@ class ProjectFactory extends Factory
      */
     public function definition(): array
     {
+        // Obtener un usuario aleatorio para 'created_by' y 'updated_by'
+        $user = User::inRandomOrder()->first();
+
         return [
             'name' => fake()->sentence(),
             'description' => fake()->realText(),
             'due_date' => fake()->dateTimeBetween('now', '+1 year'),
             'status' => fake()->randomElement(['pending', 'in_progress', 'completed']),
             'image_path' => fake()->imageUrl(),
-            'created_by' => 1,
-            'updated_by' => 1,
+            'created_by' => $user->id,
+            'updated_by' => $user->id,
             'created_at' => time(),
             'updated_at' => time(),
         ];

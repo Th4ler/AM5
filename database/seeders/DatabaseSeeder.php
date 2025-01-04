@@ -16,24 +16,32 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'id' => 1,
+        $zura = User::factory()->create([
             'name' => 'Zura',
             'email' => 'zura@example.com',
+            'status' => 'user',
+            'description' => 'I am a description for Zura',
             'password' => bcrypt('123.321A'),
-            'email_verified_at' => time()
+            'email_verified_at' => time(),
+            'end_date' => now()->addDays(10)
         ]);
-        User::factory()->create([
-            'id' => 2,
+        $john = User::factory()->create([
             'name' => 'John Smith',
             'email' => 'john@example.com',
+            'status' => 'admin',
+            'description' => 'I am a description for John',
             'password' => bcrypt('123.321A'),
-            'email_verified_at' => time()
+            'email_verified_at' => time(),
+            'end_date' => now()->addDays(20)
         ]);
 
+        // Crear proyectos vinculados a los usuarios creados
         Project::factory()
             ->count(5)
-            ->hasTasks(10)
-            ->create();
+            ->hasTasks(5)
+            ->create([
+                'created_by' => $zura->id,
+                'updated_by' => $john->id,
+            ]);
     }
 }

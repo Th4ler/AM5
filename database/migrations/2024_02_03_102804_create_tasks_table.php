@@ -18,10 +18,13 @@ return new class extends Migration {
             $table->string('status');
             $table->string('priority');
             $table->string('due_date')->nullable();
-            $table->foreignId('assigned_user_id')->constrained('users');
-            $table->foreignId('created_by')->constrained('users');
-            $table->foreignId('updated_by')->constrained('users');
+            $table->uuid('assigned_user_id');
+            $table->uuid('created_by');
+            $table->uuid('updated_by');
             $table->foreignId('project_id')->constrained('projects');
+            $table->foreign('assigned_user_id')->references('id')->on('users')->cascadeOnDelete();
+            $table->foreign('created_by')->references('id')->on('users')->cascadeOnDelete();
+            $table->foreign('updated_by')->references('id')->on('users')->cascadeOnDelete();
             $table->timestamps();
         });
     }
