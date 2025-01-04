@@ -109,16 +109,8 @@
   height: 100vh;
   background-size: cover;
   background-position: center;
-
-  background-image: url('../../public/images/imagenhome.webp');
   background-size: cover;
   background-position: center;
-}
-
-@media (max-width: 768px) {
-  .cabecera {
-      background-image: url('../../public/images/imagenhome-small.webp');
-  }
 }
 
 .cabecera .content-wrapper {
