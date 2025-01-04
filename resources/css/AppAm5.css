@@ -110,14 +110,14 @@
   background-size: cover;
   background-position: center;
 
-  background-image: url('images/imagenhome.webp');
+  background-image: url('../../public/images/imagenhome.webp');
   background-size: cover;
   background-position: center;
 }
 
 @media (max-width: 768px) {
   .cabecera {
-      background-image: url('images/imagenhome-small.webp');
+      background-image: url('../../public/images/imagenhome-small.webp');
   }
 }
 
