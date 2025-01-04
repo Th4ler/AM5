@@ -46,9 +46,9 @@ function AboutMe() {
   ];
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col mx-16">
       <div id="about" className="flex justify-center text-center py-8">
-        <h2 className="am5-border text-3xl p-3">Sobre Mí</h2>
+        <h2 className="am5-border p-3 text-3xl font-bold">Sobre Mí</h2>
       </div>
       <div className="flex flex-col md:flex-row flex-wrap">
         <div className="flex justify-center md:w-1/3 w-full">

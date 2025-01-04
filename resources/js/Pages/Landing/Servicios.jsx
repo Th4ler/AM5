@@ -73,7 +73,7 @@ function ServiciosCarousel() {
     <div id='services' className="flex flex-col">
 
       <div className="flex justify-center text-center py-4">
-        <h2 className="am5-border p-3">Servicios</h2>
+        <h2 className="am5-border p-3 text-3xl font-bold">Servicios</h2>
       </div>
 
       <div className='max-w-6xl mx-auto text-center'>
@@ -110,7 +110,7 @@ function ServiciosCarousel() {
           onSelect={setIndex}
           indicators={true}
           controls={false} // Oculta controles prev y next por defecto
-          //interval={null} // Desactiva el autoplay (para hacer pruebas, luego volver a habilitar)
+          interval={null} // Desactiva el autoplay (para hacer pruebas, luego volver a habilitar)
         >
           {services.map((_, idx) => (
             <Carousel.Item key={idx}>
@@ -147,7 +147,7 @@ function ServiciosCarousel() {
           ))}
         </Carousel>
       </div>
-      <div className='custom-hr rounded'></div>
+      <div className='custom-hr rounded mx-auto'></div>
       {/* Animación para elevar la carta central */}
       <style>{`
         .hovered {

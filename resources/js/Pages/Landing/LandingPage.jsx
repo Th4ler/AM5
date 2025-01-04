@@ -18,7 +18,7 @@ const LandingPage = () => {
                 <Cabecera />
                 <AboutMe />
                 <Servicios />
-                {/* <Media /> */}
+                <Media />
                 {/* <Contacto /> */}
                 <Footer />
             </div>
