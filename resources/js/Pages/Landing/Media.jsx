@@ -71,7 +71,7 @@ function Media() {
           onSelect={setIndex}
           indicators={true}
           controls={false}
-          interval={null} // Desactiva el autoplay (para hacer pruebas, luego volver a habilitar)
+          //interval={null} // Desactiva el autoplay (para hacer pruebas, luego volver a habilitar)
         >
           {mediaItems.map((_, idx) => (
             <Carousel.Item key={idx}>
