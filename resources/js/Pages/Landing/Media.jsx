@@ -23,9 +23,9 @@ const Media = () => {
             />
           </div>
           <div className="relative">
-            <Link href={route("blog")} className="absolute top-1/2 transform -translate-y-1/2 left-1/2 -translate-x-1/2 bg-yellow-500 text-white py-2 px-4 rounded-full rotate-90">
+            {/* <Link href={route("blog")} className="absolute top-1/2 transform -translate-y-1/2 left-1/2 -translate-x-1/2 bg-yellow-500 text-white py-2 px-4 rounded-full rotate-90">
               Blog
-            </Link>
+            </Link> */}
             <img
               src={cameraPic}
               alt="Imagen decorativa 2"

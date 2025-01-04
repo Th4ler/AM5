@@ -17,8 +17,8 @@ const LandingPage = () => {
                 <Header />
                 <Cabecera />
                 <AboutMe />
-                {/* <Servicios /> */}
-                {/*<Media />*/}
+                <Servicios />
+                {/* <Media /> */}
                 {/* <Contacto /> */}
                 <Footer />
             </div>
