@@ -1,15 +1,78 @@
-import React, { useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
+import { Link, scroller, Events, scrollSpy } from 'react-scroll';
 import logo from '../../../../public/am5-logo.png';
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
+  const [navbarHeight, setNavbarHeight] = useState(0);
+  const navbarRef = useRef(null);
+
+  const navLinks = [
+    { href: '#inicio', label: 'Inicio' },
+    { href: '#about', label: 'Sobre Mí' },
+    { href: '#services', label: 'Servicios' },
+    { href: '#media', label: 'Media' },
+    // { href: '#contact', label: 'Contacto' },
+  ];
+
+  useEffect(() => {
+    if (navbarRef.current) {
+      setNavbarHeight(navbarRef.current.offsetHeight);
+    }
+
+    // Inicializar scrollspy
+    scrollSpy.update();
+
+    // Configurar el evento de scroll para actualizar la sección activa
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      
+      // Encontrar la sección actual basada en la posición del scroll
+      const sections = navLinks.map(link => link.href.substring(1));
+      
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (
+            scrollPosition >= offsetTop - navbarHeight - 5 && // 5px de margen para mejor detección
+            scrollPosition < offsetTop + offsetHeight - navbarHeight
+          ) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Llamada inicial
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [navbarHeight]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleSetActive = (to) => {
+    setActiveSection(to);
+  };
+
+  const handleLinkClick = (to) => {
+    scroller.scrollTo(to, {
+      duration: 500,
+      smooth: true,
+      offset: -navbarHeight,
+    });
+    setIsMenuOpen(false);
+  };
+
   return (
-    <header className="sticky top-0 bg-white shadow-md z-50">
+    <header ref={navbarRef} className="sticky top-0 bg-white shadow-md z-50">
       <div className="max-w-screen-xl mx-auto px-4 py-4">
         <div className="flex justify-between items-center logo">
           <a href="/" className="flex items-center space-x-2">
@@ -39,86 +102,51 @@ function Header() {
               ></path>
             </svg>
           </button>
+          
           <nav className="hidden lg:flex space-x-6 font-normal">
-            <a
-              href="#inicio"
-              className="relative text-lg text-gray-700 hover:after:content-[''] after:block after:w-0 after:h-[3px] after:bg-primary after:transition-all after:duration-300 after:ease-in-out hover:after:w-full header-nav-link"
-            >
-              Inicio
-            </a>
-            <a
-              href="#about"
-              className="relative text-lg text-gray-700 hover:after:content-[''] after:block after:w-0 after:h-[3px] after:bg-primary after:transition-all after:duration-300 after:ease-in-out hover:after:w-full header-nav-link"
-            >
-              Sobre Mí
-            </a>
-            <a
-              href="#services"
-              className="relative text-lg text-gray-700 hover:after:content-[''] after:block after:w-0 after:h-[3px] after:bg-primary after:transition-all after:duration-300 after:ease-in-out hover:after:w-full header-nav-link"
-            >
-              Servicios
-            </a>
-            <a
-              href="#media"
-              className="relative text-lg text-gray-700 hover:after:content-[''] after:block after:w-0 after:h-[3px] after:bg-primary after:transition-all after:duration-300 after:ease-in-out hover:after:w-full header-nav-link"
-            >
-              Media
-            </a>
-            <a
-              href="#contact"
-              className="relative text-lg text-gray-700 hover:after:content-[''] after:block after:w-0 after:h-[3px] after:bg-primary after:transition-all after:duration-300 after:ease-in-out hover:after:w-full header-nav-link"
-            >
-              Contacto
-            </a>
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                to={link.href.substring(1)}
+                smooth={true}
+                duration={500}
+                offset={-navbarHeight}
+                className={`relative text-lg text-gray-700 cursor-pointer ${
+                  activeSection === link.href.substring(1)
+                    ? 'after:content-[""] after:block after:w-full after:h-[3px] after:bg-primary after:transition-all after:duration-300 after:ease-in-out header-nav-link'
+                    : 'hover:after:content-[""] after:block after:w-0 after:h-[3px] after:bg-primary after:transition-all after:duration-300 after:ease-in-out hover:after:w-full header-nav-link'
+                }`}
+                onSetActive={handleSetActive}
+              >
+                {link.label}
+              </Link>
+            ))}
           </nav>
         </div>
       </div>
-      {/* Menú desplegable para dispositivos móviles */}
+
       {isMenuOpen && (
         <div className="fixed inset-0 z-40 flex">
-          {/* Fondo con desenfoque */}
           <div
             className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm"
             onClick={toggleMenu}
           ></div>
-          {/* Menú lateral */}
           <div className="ml-auto w-2/3 max-w-xs bg-white shadow-lg p-4 transform transition-transform duration-300 ease-in-out">
             <nav className="space-y-4 mt-8">
-              <a
-                href="#inicio"
-                className="block lg:inline-block relative text-lg text-gray-700 hover:after:content-[''] after:block after:w-0 after:h-[3px] after:bg-primary after:transition-all after:duration-300 after:ease-in-out hover:after:w-full px-4 py-2 lg:py-0"
-                onClick={toggleMenu}
-              >
-                Inicio
-              </a>
-              <a
-                href="#about"
-                className="block lg:inline-block relative text-lg text-gray-700 hover:after:content-[''] after:block after:w-0 after:h-[3px] after:bg-primary after:transition-all after:duration-300 after:ease-in-out hover:after:w-full px-4 py-2 lg:py-0"
-                onClick={toggleMenu}
-              >
-                Sobre Mí
-              </a>
-              <a
-                href="#services"
-                className="block lg:inline-block relative text-lg text-gray-700 hover:after:content-[''] after:block after:w-0 after:h-[3px] after:bg-primary after:transition-all after:duration-300 after:ease-in-out hover:after:w-full px-4 py-2 lg:py-0"
-                onClick={toggleMenu}
-              >
-                Servicios
-              </a>
-              <a
-                href="#media"
-                className="block lg:inline-block relative text-lg text-gray-700 hover:after:content-[''] after:block after:w-0 after:h-[3px] after:bg-primary after:transition-all after:duration-300 after:ease-in-out hover:after:w-full px-4 py-2 lg:py-0"
-                onClick={toggleMenu}
-              >
-                Media
-              </a>
-              <a
-                href="#contact"
-                className="block lg:inline-block relative text-lg text-gray-700 hover:after:content-[''] after:block after:w-0 after:h-[3px] after:bg-primary after:transition-all after:duration-300 after:ease-in-out hover:after:w-full px-4 py-2 lg:py-0"
-                onClick={toggleMenu}
-              >
-                Contacto
-              </a>
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className={`block relative text-lg text-gray-700 after:content-[''] after:block after:h-[3px] after:bg-primary after:transition-all after:duration-300 after:ease-in-out ${
+                    activeSection === link.href.substring(1)
+                      ? 'after:w-full'
+                      : 'after:w-0 hover:after:w-full'
+                  } px-4 py-2`}
+                  onClick={() => handleLinkClick(link.href.substring(1))}
+                >
+                  {link.label}
+                </a>
+              ))}
             </nav>
           </div>
         </div>

@@ -47,6 +47,7 @@ Coming soon...
  npm install @heroicons/react
  npm install @inertiajs/inertia @inertiajs/inertia-react
  npm install reactjs-flip-card
+ npm install react-scroll
  npm install cors
 ```
 
