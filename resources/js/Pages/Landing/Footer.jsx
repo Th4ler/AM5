@@ -5,7 +5,7 @@ import logo from '../../../../public/am5-logo.png';
 function Footer() {
   return (
     <footer id="footer" className="bg-gray-100 py-6">
-      <div className="container mx-16 md:mx-auto px-4">
+      <div className="container mx-auto px-4">
         <div className="flex flex-wrap justify-between gap-4 text-center md:text-left">
 
           {/* Columna 1: QR */}

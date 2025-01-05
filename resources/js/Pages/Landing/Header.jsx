@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, scroller } from 'react-scroll';
 import logo from '../../../../public/am5-logo.png';
 
@@ -9,16 +9,16 @@ function Header() {
   const navbarRef = useRef(null);
 
   const navLinks = [
-    { href: '#inicio', label: 'Inicio' },
-    { href: '#about', label: 'Sobre Mí' },
-    { href: '#services', label: 'Servicios' },
-    { href: '#media', label: 'Media' },
-    { href: '#contact', label: 'Contacto' },
+    { href: 'inicio', label: 'Inicio' },
+    { href: 'about', label: 'Sobre Mí' },
+    { href: 'services', label: 'Servicios' },
+    { href: 'media', label: 'Media' },
+    // { href: 'contact', label: 'Contacto' },
   ];
 
   useEffect(() => {
     if (navbarRef.current) {
-      setNavbarHeight(navbarRef.current.offsetHeight); // Calculando la altura de la navbar
+      setNavbarHeight(navbarRef.current.offsetHeight);
     }
   }, []);
 
@@ -27,16 +27,16 @@ function Header() {
   };
 
   const handleSetActive = (to) => {
-    setActiveSection(to); // Actualizando la sección activa
+    setActiveSection(to);
   };
 
   const handleLinkClick = (to) => {
     scroller.scrollTo(to, {
       duration: 500,
       smooth: true,
-      offset: -navbarHeight, // Ajustando el desplazamiento por la altura de la navbar
+      offset: -navbarHeight,
     });
-    setIsMenuOpen(false); // Cerrando el menú móvil al hacer clic en un enlace
+    setIsMenuOpen(false);
   };
 
   return (
@@ -70,20 +70,20 @@ function Header() {
               ></path>
             </svg>
           </button>
-          
           <nav className="hidden lg:flex space-x-6 font-normal">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
-                to={link.href.substring(1)} // Usando la id del enlace sin el #
+                to={link.href}
                 smooth={true}
                 duration={500}
-                offset={-navbarHeight} // Desplazamiento ajustado por la altura de la navbar
-                className={`relative text-lg text-gray-700 cursor-pointer ${activeSection === link.href.substring(1)
-                  ? 'after:content-[""] after:block after:w-full after:h-[3px] after:bg-primary after:transition-all after:duration-300 after:ease-in-out header-nav-link'
-                  : 'hover:after:content-[""] after:block after:w-0 after:h-[3px] after:bg-primary after:transition-all after:duration-300 after:ease-in-out hover:after:w-full header-nav-link'
+                offset={-navbarHeight}
+                className={`relative text-lg text-gray-700 cursor-pointer ${
+                  activeSection === link.href
+                    ? 'after:content-[""] after:block after:w-full after:h-[3px] after:bg-primary after:transition-all after:duration-300 after:ease-in-out header-nav-link'
+                    : 'hover:after:content-[""] after:block after:w-0 after:h-[3px] after:bg-primary after:transition-all after:duration-300 after:ease-in-out hover:after:w-full header-nav-link'
                 }`}
-                onSetActive={handleSetActive} // Estableciendo la sección activa
+                onSetActive={handleSetActive}
               >
                 {link.label}
               </Link>
@@ -91,8 +91,6 @@ function Header() {
           </nav>
         </div>
       </div>
-
-      {/* Menú desplegable para dispositivos móviles */}
       {isMenuOpen && (
         <div className="fixed inset-0 z-40 flex">
           <div
@@ -104,12 +102,13 @@ function Header() {
               {navLinks.map((link) => (
                 <a
                   key={link.href}
-                  href={link.href}
-                  className={`block relative text-lg text-gray-700 after:content-[''] after:block after:h-[3px] after:bg-primary after:transition-all after:duration-300 after:ease-in-out ${activeSection === link.href.substring(1)
-                    ? 'after:w-full'
-                    : 'after:w-0 hover:after:w-full'
+                  href={`#${link.href}`}
+                  className={`block relative text-lg text-gray-700 after:content-[''] after:block after:h-[3px] after:bg-primary after:transition-all after:duration-300 after:ease-in-out ${
+                    activeSection === link.href
+                      ? 'after:w-full'
+                      : 'after:w-0 hover:after:w-full'
                   } px-4 py-2`}
-                  onClick={() => handleLinkClick(link.href.substring(1))} // Desplazamiento suave en el menú móvil
+                  onClick={() => handleLinkClick(link.href)}
                 >
                   {link.label}
                 </a>
