@@ -46,12 +46,12 @@ function AboutMe() {
   ];
 
   return (
-    <div className="flex flex-col mx-16">
+    <div className="flex flex-col md:mx-16">
       <div id="about" className="flex justify-center text-center py-8">
         <h2 className="am5-border p-3 text-3xl font-bold">Sobre Mí</h2>
       </div>
       <div className="flex flex-col md:flex-row flex-wrap">
-        <div className="flex justify-center md:w-1/3 w-full">
+        <div className="flex justify-center md:w-1/3 w-full px-10 md:px-0">
           <img src={aboutmePic} alt="Foto de Andrés Madariaga" className="object-contain w-full" />
         </div>
         <div className="px-10 md:pt-0 pt-10 md:w-2/3 w-full">

@@ -76,7 +76,7 @@ function ServiciosCarousel() {
         <h2 className="am5-border p-3 text-3xl font-bold">Servicios</h2>
       </div>
 
-      <div className='max-w-6xl mx-auto text-center'>
+      <div className='max-w-6xl mx-auto text-center px-10 md:px-0'>
         <div className='custom-border-box'>
 
           <div className="left-corner" />
