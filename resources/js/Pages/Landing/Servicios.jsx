@@ -12,11 +12,15 @@ import img4 from '../../../../public/images/img4.jpg';
 import img4filter from '../../../../public/images/img4filter.jpg';
 import img5 from '../../../../public/images/img5.jpg';
 import img5filter from '../../../../public/images/img5filter.jpg';
+import backgroundImage from '../../../../public/images/bg-services-section.webp';
 
 function ServiciosCarousel() {
   const [index, setIndex] = useState(0);
   const [hoveredCard, setHoveredCard] = useState(null);
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768);
+  const estilo = {
+    backgroundImage: `url(${backgroundImage})`,
+  };
 
   // Información de cada carta
   const services = [
@@ -106,6 +110,7 @@ function ServiciosCarousel() {
         <Carousel
           fade
           className='custom-carousel'
+          style={estilo}
           activeIndex={index}
           onSelect={setIndex}
           indicators={true}

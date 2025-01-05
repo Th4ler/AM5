@@ -445,7 +445,6 @@
 
 #services .carousel-container {
   position: relative; /* Necesario para contener el fondo */
-  background-image: url('./images/bg-services-section.webp');
   background-size: cover; /* Ajusta el tamaño del patrón */
   background-repeat: no-repeat; /* Evita que se repita */
   background-position: center; /* Centra el fondo */
