@@ -4,4 +4,4 @@
 rm -rf public/build
 
 # Ejecuta npm run build para generar una nueva versión de la aplicación
-npm run build
+/usr/bin/npm run build
