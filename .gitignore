@@ -1,5 +1,4 @@
 /.phpunit.cache
-/.git/logs/post-merge.log
 /node_modules
 /public/build
 /public/hot
