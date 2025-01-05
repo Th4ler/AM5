@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { Link, scroller, Events, scrollSpy } from 'react-scroll';
+import { Link, scroller } from 'react-scroll';
 import logo from '../../../../public/am5-logo.png';
 
 function Header() {
@@ -13,62 +13,30 @@ function Header() {
     { href: '#about', label: 'Sobre Mí' },
     { href: '#services', label: 'Servicios' },
     { href: '#media', label: 'Media' },
-    // { href: '#contact', label: 'Contacto' },
+    { href: '#contact', label: 'Contacto' },
   ];
 
   useEffect(() => {
     if (navbarRef.current) {
-      setNavbarHeight(navbarRef.current.offsetHeight);
+      setNavbarHeight(navbarRef.current.offsetHeight); // Calculando la altura de la navbar
     }
-
-    // Inicializar scrollspy
-    scrollSpy.update();
-
-    // Configurar el evento de scroll para actualizar la sección activa
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      
-      // Encontrar la sección actual basada en la posición del scroll
-      const sections = navLinks.map(link => link.href.substring(1));
-      
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (
-            scrollPosition >= offsetTop - navbarHeight - 5 && // 5px de margen para mejor detección
-            scrollPosition < offsetTop + offsetHeight - navbarHeight
-          ) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Llamada inicial
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [navbarHeight]);
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   const handleSetActive = (to) => {
-    setActiveSection(to);
+    setActiveSection(to); // Actualizando la sección activa
   };
 
   const handleLinkClick = (to) => {
     scroller.scrollTo(to, {
       duration: 500,
       smooth: true,
-      offset: -navbarHeight,
+      offset: -navbarHeight, // Ajustando el desplazamiento por la altura de la navbar
     });
-    setIsMenuOpen(false);
+    setIsMenuOpen(false); // Cerrando el menú móvil al hacer clic en un enlace
   };
 
   return (
@@ -107,16 +75,15 @@ function Header() {
             {navLinks.map((link) => (
               <Link
                 key={link.href}
-                to={link.href.substring(1)}
+                to={link.href.substring(1)} // Usando la id del enlace sin el #
                 smooth={true}
                 duration={500}
-                offset={-navbarHeight}
-                className={`relative text-lg text-gray-700 cursor-pointer ${
-                  activeSection === link.href.substring(1)
-                    ? 'after:content-[""] after:block after:w-full after:h-[3px] after:bg-primary after:transition-all after:duration-300 after:ease-in-out header-nav-link'
-                    : 'hover:after:content-[""] after:block after:w-0 after:h-[3px] after:bg-primary after:transition-all after:duration-300 after:ease-in-out hover:after:w-full header-nav-link'
+                offset={-navbarHeight} // Desplazamiento ajustado por la altura de la navbar
+                className={`relative text-lg text-gray-700 cursor-pointer ${activeSection === link.href.substring(1)
+                  ? 'after:content-[""] after:block after:w-full after:h-[3px] after:bg-primary after:transition-all after:duration-300 after:ease-in-out header-nav-link'
+                  : 'hover:after:content-[""] after:block after:w-0 after:h-[3px] after:bg-primary after:transition-all after:duration-300 after:ease-in-out hover:after:w-full header-nav-link'
                 }`}
-                onSetActive={handleSetActive}
+                onSetActive={handleSetActive} // Estableciendo la sección activa
               >
                 {link.label}
               </Link>
@@ -125,6 +92,7 @@ function Header() {
         </div>
       </div>
 
+      {/* Menú desplegable para dispositivos móviles */}
       {isMenuOpen && (
         <div className="fixed inset-0 z-40 flex">
           <div
@@ -137,12 +105,11 @@ function Header() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className={`block relative text-lg text-gray-700 after:content-[''] after:block after:h-[3px] after:bg-primary after:transition-all after:duration-300 after:ease-in-out ${
-                    activeSection === link.href.substring(1)
-                      ? 'after:w-full'
-                      : 'after:w-0 hover:after:w-full'
+                  className={`block relative text-lg text-gray-700 after:content-[''] after:block after:h-[3px] after:bg-primary after:transition-all after:duration-300 after:ease-in-out ${activeSection === link.href.substring(1)
+                    ? 'after:w-full'
+                    : 'after:w-0 hover:after:w-full'
                   } px-4 py-2`}
-                  onClick={() => handleLinkClick(link.href.substring(1))}
+                  onClick={() => handleLinkClick(link.href.substring(1))} // Desplazamiento suave en el menú móvil
                 >
                   {link.label}
                 </a>
