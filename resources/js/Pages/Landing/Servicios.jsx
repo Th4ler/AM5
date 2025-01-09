@@ -1,5 +1,6 @@
 //Home section - Servicios
 import { useState, useEffect } from 'react';
+import { Link } from '@inertiajs/react';
 import { Carousel } from 'react-bootstrap';
 import { BackwardIcon, ForwardIcon } from '@heroicons/react/24/solid';
 import img1 from '../../../../public/images/img1.jpg';
@@ -29,35 +30,35 @@ function ServiciosCarousel() {
       description: "Ofrecemos soluciones legales integrales para personas, inversores, startups y empresas de todos los tamaños y sectores.",
       imgDefault: img1filter,
       imgHover: img1,
-      link: "/legales"
+      route: "legales"
     },
     {
       title: "Soluciones de negocio y backoffice.",
       description: "Ofrecemos soluciones de negocio y backoffice diseñadas para impulsar el crecimiento diario de tu empresa, optimizando operaciones y fortaleciendo cada área clave para tu éxito.",
       imgDefault: img2filter,
       imgHover: img2,
-      link: "/negocios"
+      route: "negocios"
     },
     {
       title: "Comunicaciones estratégicas.",
       description: "Brindamos soluciones de comunicación estratégica que fortalecen tu imagen y marca, mejoran tu reputación y anticipan riesgos legales y regulatorios.",
       imgDefault: img3filter,
       imgHover: img3,
-      link: "/comunicaciones"
+      route: "comunicaciones"
     },
     {
       title: "Capacitación y coach empresarial.",
       description: "Ofrecemos capacitación y coaching empresarial personalizados para potenciar habilidades, mejorar la comunicación y transformar la cultura organizacional.",
       imgDefault: img4filter,
       imgHover: img4,
-      link: "/coach"
+      route: "coach"
     },
     {
       title: "Sostenibilidad y RCE.",
       description: "Potenciamos la sostenibilidad empresarial y el trabajo pro bono, impulsando un impacto positivo en comunidades y promoviendo prácticas responsables.",
       imgDefault: img5filter,
       imgHover: img5,
-      link: "/sostenibilidad"
+      route: "sostenibilidad"
     }
   ];
 
@@ -140,9 +141,15 @@ function ServiciosCarousel() {
                           alt={service.title}
                         />
                         <div className="p-4">
-                          <h5 className ="text-xl text-gray-900 mb-2">{service.title}</h5>
+                          <h5 className="text-xl text-gray-900 mb-2">{service.title}</h5>
                           <p className="text-gray-600 text-sm leading-relaxed">{service.description}</p>
-                          <button className="custom-btn-carousel px-3 py-1.5 text-white bg-blue-500 rounded hover:bg-blue-600" href={service.link}>Ver más</button>
+                          {/* <button className="custom-btn-carousel px-3 py-1.5 text-white bg-blue-500 rounded hover:bg-blue-600" href={service.link}>Ver más</button> */}
+                          <Link
+                            href={route(service.route)}
+                            className="custom-btn-carousel px-3 py-1.5 text-white bg-blue-500 rounded hover:bg-blue-600"
+                          >
+                            Ver más
+                          </Link>
                         </div>
                       </div>
                     );

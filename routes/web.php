@@ -19,6 +19,26 @@ Route::get('/landing', function () {
     return inertia('Landing/LandingPage'); // Esto renderiza la landing page usando Inertia
 })->name('landing');
 
+Route::get('/soluciones-legales', function () {
+    return inertia('Services/Legales');
+})->name('legales');
+
+Route::get('/soluciones-negocios-y-backoffice', function () {
+    return inertia('Services/Negocios');
+})->name('negocios');
+
+Route::get('/comunicaciones-estrategicas', function () {
+    return inertia('Services/Comunicaciones');
+})->name('comunicaciones');
+
+Route::get('/capacitacion-y-coach-empresarial', function () {
+    return inertia('Services/Capacitaciones');
+})->name('coach');
+
+Route::get('/sostenibilidad-y-rce', function () {
+    return inertia('Services/Sostenibilidad');
+})->name('sostenibilidad');
+
 // Rutas de otros componentes/subpáginas
 Route::get('/blogs', function () {
     return inertia('Subpages/Blog');

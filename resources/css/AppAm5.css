@@ -460,6 +460,18 @@
   color: var(--primary-color);
 }
 
+
+/* ============= */
+/* FLIP CARDS CUSTOM CSS */
+/* ============= */
+
+:where(.ReactFlipCard__container) {
+  width: auto !important;
+  height: auto !important;
+}
+
+/* ============= */
+
 /* MEDIA */
 
 
