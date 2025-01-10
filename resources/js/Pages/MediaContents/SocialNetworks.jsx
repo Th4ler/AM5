@@ -9,7 +9,7 @@ import aboutmePic from '../../../../public/images/aboutmePic.webp';
 import BackgroundImage from '../../../../public/images/soluciones-legales.webp';
 import CorporateImage from '../../../../public/images/corporate-building.jpg';
 
-const LegalCard = ({ title, description, image }) => {
+const BlogCard = ({ title, description, button, href, image }) => {
     const cardStyles = {
         front: {
             background: `url(${image}) no-repeat center center / cover`,
@@ -54,6 +54,9 @@ const LegalCard = ({ title, description, image }) => {
                         <div className="right-corner" />
                         <h3 className="text-lg font-bold z-10 text-center">{title}</h3>
                         <p className="text-gray-600 text-sm text-center z-10 mt-2">{description}</p>
+                        <button className="bg-transparent hover:bg-primary text-dark font-bold py-2 px-4 border border-primary border-opacity-100 rounded-full shadow-lg transition duration-300 ease-in-out text-decoration-none">
+                            <a href={href}>{button}</a>
+                        </button>
                     </div>
                 </div>
             }
@@ -67,10 +70,10 @@ const ServiceIntro = ({ showDescription, toggleDescription }) => (
             <img src={BackgroundImage} alt="Imagen de cabecera de la sección Soluciones legales" className="w-full max-h-96" />
         </div>
         <div className="w-full md:w-1/3 px-6 flex flex-col items-start">
-            <h1 className="text-3xl font-semibold underline decoration-primary mb-4">Comunicaciones estratégicas</h1>
+            <h1 className="text-3xl font-semibold underline decoration-primary mb-4">Nuestras redes sociales</h1>
             {showDescription && (
                 <p className="text-gray-700 mb-4">
-                    Brindamos soluciones de comunicación estratégica que fortalecen tu imagen y marca, mejoran tu reputación y anticipan riesgos legales y regulatorios.
+                    Conéctate conmigo en mis redes sociales y sé parte de mi comunidad de AM5. En AM5, te brindo contenido exclusivo, consejos y trucos para mejorar tus habilidades y alcanzar tus objetivos. ¡Sigue mis redes sociales para estar al día de mis últimas publicaciones y conectarte conmigo en Instagram, Facebook, TikTok y LinkedIn!
                 </p>
             )}
             <button
@@ -87,28 +90,20 @@ const ServiceIntro = ({ showDescription, toggleDescription }) => (
 );
 
 const LEGAL_SOLUTIONS = [
-    { id: 1, title: 'Corporativo & MA', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: CorporateImage },
-    { id: 2, title: 'Venture Capital', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: aboutmePic },
-    { id: 3, title: 'Laboral y Migración', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: aboutmePic },
-    { id: 4, title: 'Inmobiliario', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: aboutmePic },
-    { id: 5, title: 'Impuestos', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: aboutmePic },
-    { id: 6, title: 'Litigios y Arbitrajes', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: aboutmePic },
-    { id: 7, title: 'Insolvencia y Reorganización', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: aboutmePic },
-    { id: 8, title: 'Compliance', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: aboutmePic },
-    { id: 9, title: 'Consumo y Publicidad', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: aboutmePic },
-    { id: 10, title: 'Propiedad industrial e Intelectual', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: aboutmePic },
-    { id: 11, title: 'Bancario Financiero y Fintech', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: aboutmePic },
-    { id: 12, title: 'Protección de Datos', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: aboutmePic },
+    { id: 1, title: 'Instagram', description: 'Descubre mis consejos y trucos para mejorar tus habilidades y alcanzar tus objetivos!', button: 'Sigue mis consejos', href:'https://instagram.com/andresmadariaga_', image: CorporateImage },
+    { id: 2, title: 'Facebook', description: 'Únete a mi comunidad y obtén acceso a mis consejos y recursos para mejorar tus habilidades y alcanzar tus objetivos!', button: 'Únete a mi comunidad - Próximamente', href:'', image: aboutmePic },
+    { id: 3, title: 'TikTok', description: 'Ve mis consejos y trucos para mejorar tus habilidades y alcanzar tus objetivos en mis videos!', button: 'Ve mis videos', href:'https://tiktok.com/@andresmadariaga_', image: aboutmePic },
+    { id: 4, title: 'LinkedIn', description: 'Conecta conmigo y obtén acceso a mis consejos y recursos para mejorar tus habilidades y alcanzar tus objetivos en la industria!', button: 'Conecta conmigo', href:'https://www.linkedin.com/in/andrés-madariaga', image: aboutmePic },
 ];
 
-const SolucionesLegales = () => {
+const Blogs = () => {
     const [showDescription, setShowDescription] = useState(false);
 
     return (
-        <div id="legales">
+        <div id="blogs">
 
             <Header />
-            
+
             <ServiceIntro
                 showDescription={showDescription}
                 toggleDescription={() => setShowDescription(!showDescription)}
@@ -116,10 +111,12 @@ const SolucionesLegales = () => {
 
             <div className="flex justify-center items-center gap-6 py-10 text-center flex-wrap">
                 {LEGAL_SOLUTIONS.map(solution => (
-                    <LegalCard
+                    <BlogCard
                         key={solution.id}
                         title={solution.title}
                         description={solution.description}
+                        button={solution.button}
+                        href={solution.href}
                         image={solution.image}
                     />
                 ))}
@@ -128,4 +125,4 @@ const SolucionesLegales = () => {
     );
 };
 
-export default SolucionesLegales;
+export default Blogs;

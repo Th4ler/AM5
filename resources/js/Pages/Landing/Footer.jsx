@@ -75,7 +75,7 @@ function Footer() {
               <ul className="w-1/2 space-y-2">
                 <li>
                   <a 
-                    href="https://linkedin.com" 
+                    href="https://www.linkedin.com/in/andrés-madariaga" 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="flex items-center text-gray-600 hover:underline decoration-primary"

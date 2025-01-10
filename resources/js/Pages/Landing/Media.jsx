@@ -24,19 +24,19 @@ function Media() {
       title: "Noticias",
       imgDefault: mediaNews,
       imgHover: mediaNews,
-      link: "/noticias",
+      route: "noticias",
     },
     {
       title: "Contenidos",
       imgDefault: mediaContenidos,
       imgHover: mediaContenidos,
-      link: "/contenidos",
+      route: "blogs.published",
     },
     {
       title: "Redes Sociales",
       imgDefault: mediaRedes,
       imgHover: mediaRedes,
-      link: "/rrss",
+      route: "rrss",
     },
   ];
 
@@ -96,12 +96,12 @@ function Media() {
                       />
                       {/* Botón superpuesto */}
                       <div className="media-card-overlay">
-                        <a
-                          href={item.link}
+                        <Link
+                          href={route(item.route)}
                           className="media-card-btn"
                         >
                           {item.title}
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   ))}

@@ -9,7 +9,7 @@ import aboutmePic from '../../../../public/images/aboutmePic.webp';
 import BackgroundImage from '../../../../public/images/soluciones-legales.webp';
 import CorporateImage from '../../../../public/images/corporate-building.jpg';
 
-const LegalCard = ({ title, description, image }) => {
+const BlogCard = ({ title, description, image }) => {
     const cardStyles = {
         front: {
             background: `url(${image}) no-repeat center center / cover`,
@@ -67,10 +67,10 @@ const ServiceIntro = ({ showDescription, toggleDescription }) => (
             <img src={BackgroundImage} alt="Imagen de cabecera de la sección Soluciones legales" className="w-full max-h-96" />
         </div>
         <div className="w-full md:w-1/3 px-6 flex flex-col items-start">
-            <h1 className="text-3xl font-semibold underline decoration-primary mb-4">Comunicaciones estratégicas</h1>
+            <h1 className="text-3xl font-semibold underline decoration-primary mb-4">Noticias</h1>
             {showDescription && (
                 <p className="text-gray-700 mb-4">
-                    Brindamos soluciones de comunicación estratégica que fortalecen tu imagen y marca, mejoran tu reputación y anticipan riesgos legales y regulatorios.
+                    Ofrecemos capacitación y coaching empresarial personalizados para potenciar habilidades, mejorar la comunicación y transformar la cultura organizacional.
                 </p>
             )}
             <button
@@ -101,11 +101,11 @@ const LEGAL_SOLUTIONS = [
     { id: 12, title: 'Protección de Datos', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: aboutmePic },
 ];
 
-const SolucionesLegales = () => {
+const Blogs = () => {
     const [showDescription, setShowDescription] = useState(false);
 
     return (
-        <div id="legales">
+        <div id="blogs">
 
             <Header />
             
@@ -116,7 +116,7 @@ const SolucionesLegales = () => {
 
             <div className="flex justify-center items-center gap-6 py-10 text-center flex-wrap">
                 {LEGAL_SOLUTIONS.map(solution => (
-                    <LegalCard
+                    <BlogCard
                         key={solution.id}
                         title={solution.title}
                         description={solution.description}
@@ -128,4 +128,4 @@ const SolucionesLegales = () => {
     );
 };
 
-export default SolucionesLegales;
+export default Blogs;

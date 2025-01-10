@@ -43,8 +43,8 @@ const LegalCard = ({ title, description, image }) => {
             backStyle={cardStyles.back}
             frontComponent={
                 <div className="bg-gray-200 text-center flex flex-row items-center justify-center gap-2 p-2">
-                    <img src={logo} alt="Logo" className="w-10 h-10 mb-2 logo" />
-                    <p className="text-gray-700 font-semibold">{title}</p>
+                    <img src={logo} alt="Logo" className="w-10 h-10 logo" />
+                    <p className="text-gray-700 font-semibold m-0">{title}</p>
                 </div>
             }
             backComponent={

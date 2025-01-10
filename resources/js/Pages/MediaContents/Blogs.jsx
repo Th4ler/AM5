@@ -8,11 +8,12 @@ import logo from '../../../../public/am5-logo.png';
 import aboutmePic from '../../../../public/images/aboutmePic.webp';
 import BackgroundImage from '../../../../public/images/soluciones-legales.webp';
 import CorporateImage from '../../../../public/images/corporate-building.jpg';
+import { usePage } from '@inertiajs/react';
 
-const LegalCard = ({ title, description, image }) => {
+const BlogCard = ({ title, description, image_path }) => {
     const cardStyles = {
         front: {
-            background: `url(${image}) no-repeat center center / cover`,
+            background: `url(${image_path || '/images/default-blog-image.jpg'}) no-repeat center center / cover`,
             borderRadius: '12px',
             width: '400px',
             height: '225px',
@@ -67,10 +68,10 @@ const ServiceIntro = ({ showDescription, toggleDescription }) => (
             <img src={BackgroundImage} alt="Imagen de cabecera de la sección Soluciones legales" className="w-full max-h-96" />
         </div>
         <div className="w-full md:w-1/3 px-6 flex flex-col items-start">
-            <h1 className="text-3xl font-semibold underline decoration-primary mb-4">Comunicaciones estratégicas</h1>
+            <h1 className="text-3xl font-semibold underline decoration-primary mb-4">Blogs</h1>
             {showDescription && (
                 <p className="text-gray-700 mb-4">
-                    Brindamos soluciones de comunicación estratégica que fortalecen tu imagen y marca, mejoran tu reputación y anticipan riesgos legales y regulatorios.
+                    Explora mis blogs y descubre cómo puedes mejorar tus habilidades y alcanzar tus objetivos en Derecho, Negocios y más. ¡Lee mis últimas publicaciones y descubre cómo puedes superar los desafíos y lograr el éxito!
                 </p>
             )}
             <button
@@ -86,46 +87,41 @@ const ServiceIntro = ({ showDescription, toggleDescription }) => (
     </div>
 );
 
-const LEGAL_SOLUTIONS = [
-    { id: 1, title: 'Corporativo & MA', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: CorporateImage },
-    { id: 2, title: 'Venture Capital', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: aboutmePic },
-    { id: 3, title: 'Laboral y Migración', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: aboutmePic },
-    { id: 4, title: 'Inmobiliario', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: aboutmePic },
-    { id: 5, title: 'Impuestos', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: aboutmePic },
-    { id: 6, title: 'Litigios y Arbitrajes', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: aboutmePic },
-    { id: 7, title: 'Insolvencia y Reorganización', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: aboutmePic },
-    { id: 8, title: 'Compliance', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: aboutmePic },
-    { id: 9, title: 'Consumo y Publicidad', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: aboutmePic },
-    { id: 10, title: 'Propiedad industrial e Intelectual', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: aboutmePic },
-    { id: 11, title: 'Bancario Financiero y Fintech', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: aboutmePic },
-    { id: 12, title: 'Protección de Datos', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: aboutmePic },
-];
-
-const SolucionesLegales = () => {
+const Blogs = () => {
     const [showDescription, setShowDescription] = useState(false);
+    const { blogs } = usePage().props;
+
+    console.log('Blogs prop recibido directamente:', blogs);
+
+    // Verifica si hay blogs y si tienen la propiedad data
+    const blogItems = blogs?.data || blogs || [];
 
     return (
-        <div id="legales">
+        <div id="blogs">
 
             <Header />
-            
+
             <ServiceIntro
                 showDescription={showDescription}
                 toggleDescription={() => setShowDescription(!showDescription)}
             />
 
             <div className="flex justify-center items-center gap-6 py-10 text-center flex-wrap">
-                {LEGAL_SOLUTIONS.map(solution => (
-                    <LegalCard
-                        key={solution.id}
-                        title={solution.title}
-                        description={solution.description}
-                        image={solution.image}
-                    />
-                ))}
+                {blogItems.length > 0 ? (
+                    blogItems.map(blog => (
+                        <BlogCard
+                            key={blog.id}
+                            title={blog.title}
+                            description={blog.content}
+                            image_path={blog.image_path}
+                        />
+                    ))
+                ) : (
+                    <p className="text-gray-500 text-lg">No hay blogs publicados disponibles.</p>
+                )}
             </div>
         </div>
     );
 };
 
-export default SolucionesLegales;
+export default Blogs;

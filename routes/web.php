@@ -39,10 +39,33 @@ Route::get('/sostenibilidad-y-rce', function () {
     return inertia('Services/Sostenibilidad');
 })->name('sostenibilidad');
 
-// Rutas de otros componentes/subpáginas
-Route::get('/blogs', function () {
-    return inertia('Subpages/Blog');
-})->name('blogs');
+// Rutas de contenido de Media
+Route::get('/noticias', function () {
+    return inertia('MediaContents/Noticias');
+})->name('noticias');
+
+Route::get('/rrss', function () {
+    return inertia('MediaContents/SocialNetworks');
+})->name('rrss');
+
+// // Rutas de otros componentes/subpáginas
+// Route::get('/blog', function () {
+//     return inertia('Subpages/Blog');
+// })->name('blog');
+
+// Rutas para mostrar los Blogs publicados
+Route::get('/blogs/publicados', [BlogController::class, 'getPublishedBlogs'])
+    ->name('blogs.published');
+Route::get('/blogs/publicados/{blog}', [BlogController::class, 'getPublishedBlog'])
+    ->name('blogs.published.show');
+
+// En routes/api.php eventualmente se crearan rutas para acceso API
+Route::get('/api/blogs/published', [BlogController::class, 'getPublishedBlogs']);
+Route::get('/api/blogs/published/{blog}', [BlogController::class, 'getPublishedBlog']);
+
+// =================
+// Rutas por defecto
+// =================
 
 Route::resource('blogs', BlogController::class);
 
