@@ -6,7 +6,6 @@ import LazyLoad from 'react-lazy-load';
 import ReactFlipCard from 'reactjs-flip-card';
 import Header from '../Landing/Header';
 import logo from '../../../../public/am5-logo.png';
-import aboutmePic from '../../../../public/images/aboutmePic.webp';
 import BackgroundImage from '../../../../public/images/Negocios.webp';
 import Image1 from '../../../../public/images/adultWorking.webp';
 import Image2 from '../../../../public/images/businessWomen.webp';
