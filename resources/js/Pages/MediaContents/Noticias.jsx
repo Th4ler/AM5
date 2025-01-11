@@ -7,9 +7,9 @@ import Header from '../Landing/Header';
 import logo from '../../../../public/am5-logo.png';
 import aboutmePic from '../../../../public/images/aboutmePic.webp';
 import BackgroundImage from '../../../../public/images/soluciones-legales.webp';
-import CorporateImage from '../../../../public/images/corporate-building.jpg';
+import CorporateImage from '../../../../public/images/corporate-building.webp';
 
-const BlogCard = ({ title, description, image }) => {
+const NoticesCards = ({ title, description, image }) => {
     const cardStyles = {
         front: {
             background: `url(${image}) no-repeat center center / cover`,
@@ -93,12 +93,6 @@ const LEGAL_SOLUTIONS = [
     { id: 4, title: 'Inmobiliario', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: aboutmePic },
     { id: 5, title: 'Impuestos', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: aboutmePic },
     { id: 6, title: 'Litigios y Arbitrajes', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: aboutmePic },
-    { id: 7, title: 'Insolvencia y Reorganización', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: aboutmePic },
-    { id: 8, title: 'Compliance', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: aboutmePic },
-    { id: 9, title: 'Consumo y Publicidad', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: aboutmePic },
-    { id: 10, title: 'Propiedad industrial e Intelectual', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: aboutmePic },
-    { id: 11, title: 'Bancario Financiero y Fintech', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: aboutmePic },
-    { id: 12, title: 'Protección de Datos', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: aboutmePic },
 ];
 
 const Blogs = () => {
@@ -116,7 +110,7 @@ const Blogs = () => {
 
             <div className="flex justify-center items-center gap-6 py-10 text-center flex-wrap">
                 {LEGAL_SOLUTIONS.map(solution => (
-                    <BlogCard
+                    <NoticesCards
                         key={solution.id}
                         title={solution.title}
                         description={solution.description}

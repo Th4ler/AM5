@@ -7,9 +7,9 @@ import Header from '../Landing/Header';
 import logo from '../../../../public/am5-logo.png';
 import aboutmePic from '../../../../public/images/aboutmePic.webp';
 import BackgroundImage from '../../../../public/images/soluciones-legales.webp';
-import CorporateImage from '../../../../public/images/corporate-building.jpg';
+import CorporateImage from '../../../../public/images/corporate-building.webp';
 
-const BlogCard = ({ title, description, button, href, image }) => {
+const SocialCards = ({ title, description, button, href, image }) => {
     const cardStyles = {
         front: {
             background: `url(${image}) no-repeat center center / cover`,
@@ -111,7 +111,7 @@ const Blogs = () => {
 
             <div className="flex justify-center items-center gap-6 py-10 text-center flex-wrap">
                 {LEGAL_SOLUTIONS.map(solution => (
-                    <BlogCard
+                    <SocialCards
                         key={solution.id}
                         title={solution.title}
                         description={solution.description}

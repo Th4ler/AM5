@@ -7,7 +7,7 @@ import Header from '../Landing/Header';
 import logo from '../../../../public/am5-logo.png';
 import aboutmePic from '../../../../public/images/aboutmePic.webp';
 import BackgroundImage from '../../../../public/images/soluciones-legales.webp';
-import CorporateImage from '../../../../public/images/corporate-building.jpg';
+import CorporateImage from '../../../../public/images/corporate-building.webp';
 import { usePage } from '@inertiajs/react';
 
 const BlogCard = ({ title, description, image_path }) => {
