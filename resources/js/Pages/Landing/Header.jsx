@@ -41,7 +41,7 @@ function Header() {
 
   return (
     <header ref={navbarRef} className="sticky top-0 bg-white shadow-md z-50">
-      <div className="max-w-screen-xl mx-auto px-4 py-4">
+      <div className="max-w-screen-xl lg:me-60 sm:me-20 me-16 ps-12 py-4">
         <div className="flex justify-between items-center logo">
           <a href="/" className="flex items-center space-x-2">
             <img
@@ -70,7 +70,7 @@ function Header() {
               ></path>
             </svg>
           </button>
-          <nav className="hidden lg:flex space-x-6 font-normal">
+          <nav className="hidden lg:flex space-x-10 font-normal">
             {navLinks.map((link) => (
               <Link
                 key={link.href}

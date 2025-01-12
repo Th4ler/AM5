@@ -48,7 +48,7 @@ function Media() {
     <div id="media" className="flex flex-col mx-16">
 
       <div className="flex justify-center text-center py-4">
-        <h2 className="am5-border p-3 text-3xl font-bold">Media</h2>
+        <h2 className="am5-border p-3 text-3xl text-gray-600">Media</h2>
       </div>
 
       {/* Botones de navegación */}
