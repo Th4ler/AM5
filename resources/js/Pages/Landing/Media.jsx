@@ -24,19 +24,19 @@ function Media() {
       title: "Noticias",
       imgDefault: mediaNews,
       imgHover: mediaNews,
-      link: "/noticias",
+      route: "noticias",
     },
     {
       title: "Contenidos",
       imgDefault: mediaContenidos,
       imgHover: mediaContenidos,
-      link: "/contenidos",
+      route: "blogs.published",
     },
     {
       title: "Redes Sociales",
       imgDefault: mediaRedes,
       imgHover: mediaRedes,
-      link: "/rrss",
+      route: "rrss",
     },
   ];
 
@@ -48,7 +48,7 @@ function Media() {
     <div id="media" className="flex flex-col mx-16">
 
       <div className="flex justify-center text-center py-4">
-        <h2 className="am5-border p-3 text-3xl font-bold">Media</h2>
+        <h2 className="am5-border p-3 text-3xl text-gray-600">Media</h2>
       </div>
 
       {/* Botones de navegación */}
@@ -96,12 +96,12 @@ function Media() {
                       />
                       {/* Botón superpuesto */}
                       <div className="media-card-overlay">
-                        <a
-                          href={item.link}
+                        <Link
+                          href={route(item.route)}
                           className="media-card-btn"
                         >
                           {item.title}
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   ))}
