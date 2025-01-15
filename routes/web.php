@@ -8,6 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\BlogController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactController;
 use Inertia\Inertia;
 
 // Route::redirect('/', '/dashboard');
@@ -62,6 +63,10 @@ Route::get('/blogs/publicados/{blog}', [BlogController::class, 'getPublishedBlog
 // En routes/api.php eventualmente se crearan rutas para acceso API
 Route::get('/api/blogs/published', [BlogController::class, 'getPublishedBlogs']);
 Route::get('/api/blogs/published/{blog}', [BlogController::class, 'getPublishedBlog']);
+
+// Rutas del mail de Contacto
+
+Route::post('/contacto', [ContactController::class, 'store'])->name('contact.store');
 
 // =================
 // Rutas por defecto
