@@ -22,7 +22,10 @@ class ContactController extends Controller
         ]);
 
         // Opcional: Enviar email
-        Mail::to('ronald.toro@claimy.cl')->send(new ContactFormMail($validated));
+        Mail::to(['andres.madariaga@am5.cl', 'ronald.toro@claimy.cl'])
+            ->send(new ContactFormMail($validated));
+            // ->cc(['copia1@example.com', 'copia2@example.com'])
+            // ->bcc(['oculto1@example.com'])
 
         return redirect()->back()->with('success', 'Mensaje enviado correctamente');
     }

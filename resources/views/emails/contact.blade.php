@@ -1,14 +1,16 @@
 <x-mail::message>
 # Nuevo Mensaje de Contacto
 
-Se ha recibido un nuevo mensaje a través del formulario de contacto:
+Hola equipo,<br>
+
+Hemos recibido un nuevo mensaje a través del formulario de contacto de {{ config('app.name') }}. A continuación, se detallan los datos proporcionados:
 
 <x-mail::panel>
 **Detalles del contacto:**
 
-Nombre: {{ $data['nombre'] }} {{ $data['apellido'] }}
-Email: {{ $data['email'] }}
-Teléfono: {{ $data['telefono'] }}
+- **Nombre:** {{ $data['nombre'] }} {{ $data['apellido'] }} <br>
+- **Email:** {{ $data['email'] }} <br>
+- **Teléfono:** {{ $data['telefono'] }}
 </x-mail::panel>
 
 <x-mail::panel>
@@ -23,6 +25,9 @@ Teléfono: {{ $data['telefono'] }}
 | IP | {{ request()->ip() }} |
 </x-mail::table>
 
-Gracias,<br>
-{{ config('app.name') }}
+Gracias por su atención.<br>
+
+Saludos,<br>
+
+El equipo de {{ config('app.name') }}.
 </x-mail::message>
