@@ -22,7 +22,7 @@ class ContactController extends Controller
         ]);
 
         // Opcional: Enviar email
-        Mail::to('thaler.toro@gmail.com')->send(new ContactFormMail($validated));
+        Mail::to('ronald.toro@claimy.cl')->send(new ContactFormMail($validated));
 
         return redirect()->back()->with('success', 'Mensaje enviado correctamente');
     }
