@@ -125,19 +125,20 @@ function ServiciosCarousel() {
                   .slice(index, index + (isSmallScreen ? 1 : 3)) //Medidas pantalla
                   .concat(services.slice(0, Math.max(0, index + (isSmallScreen ? 1 : 3) - services.length))) //Medidas pantalla
                   .map((service, subIdx) => {
+                    const isHovered = !isSmallScreen && hoveredCard === subIdx; // Hover solo en pantallas grandes
 
                     return (
                       <div
                         className={`carousel-card bg-white rounded shadow-md text-center mb-12 ${hoveredCard === subIdx ? 'hovered' : ''}`} //Correcting slider trial
                         key={subIdx}
                         style={{ width: '25rem', transition: 'transform 0.3s' }}
-                        onMouseEnter={() => setHoveredCard(subIdx)} // Marca la carta en hover
+                        onMouseEnter={() => !isSmallScreen && setHoveredCard(subIdx)} // Marca la carta en hover
                         onMouseLeave={() => setHoveredCard(null)}  // Restablece el estado
                       >
                         <img
                           className="card-img-top w-full h-full object-cover"
                           variant="top"
-                          src={hoveredCard === subIdx ? service.imgHover : service.imgDefault}
+                          src={isSmallScreen ? service.imgHover : (isHovered ? service.imgHover : service.imgDefault)}
                           alt={service.title}
                         />
                         <div className="p-4">
