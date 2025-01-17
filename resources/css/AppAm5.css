@@ -42,13 +42,14 @@
 .custom-underline-color .nav-link {
   font-size: 1.3rem;
 }
+
 .header-nav-link {
   font-size: 1.2rem;
 }
 
 @media (min-width: 1200px) {
   .custom-underline-color .nav-link {
-      font-size: clamp(0.9rem, 1.5vw, 1.8rem);
+    font-size: clamp(0.9rem, 1.5vw, 1.8rem);
   }
 }
 
@@ -111,6 +112,8 @@
   background-position: center;
   background-size: cover;
   background-position: center;
+  mask-image: linear-gradient(black 80%,
+      transparent)
 }
 
 .cabecera .content-wrapper {
@@ -127,12 +130,14 @@
 
 @media (max-width: 767px) {
   .cabecera .box-cabecera {
-    background: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
+    background: rgba(255, 255, 255, 0.8);
+    /* Fondo blanco semitransparente */
   }
 }
 
 .cabecera h1 {
-  font-size: clamp(1.2rem, 1.5vw, 1.8rem); /* Ajusta el tamaño según la pantalla */
+  font-size: clamp(1.2rem, 1.5vw, 1.8rem);
+  /* Ajusta el tamaño según la pantalla */
   line-height: 1.4;
   margin-top: 15px;
 }
@@ -140,7 +145,7 @@
 /* Para pantallas más grandes */
 @media (min-width: 1200px) {
   .cabecera h1 {
-      font-size: clamp(1.1rem, 2vw, 3rem);
+    font-size: clamp(1.1rem, 2vw, 3rem);
   }
 }
 
@@ -173,8 +178,10 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  height: 7%; /* Ancho de la línea */
-  width: 20%; /* Longitud del borde inferior */  
+  height: 7%;
+  /* Ancho de la línea */
+  width: 20%;
+  /* Longitud del borde inferior */
   background-color: var(--primary-color);
 }
 
@@ -183,8 +190,10 @@
   bottom: 0;
   padding: 0;
   right: 0;
-  width: 3%; /* Ancho de la línea */
-  height: 50%; /* Longitud del borde derecho */
+  width: 3%;
+  /* Ancho de la línea */
+  height: 50%;
+  /* Longitud del borde derecho */
   background-color: var(--primary-color);
 }
 
@@ -225,45 +234,8 @@
   background-repeat: no-repeat;
 }
 
-.accordion-button:not(.collapsed)::after{
+.accordion-button:not(.collapsed)::after {
   transform: rotate(-180deg);
-}
-
-.aboutme-button button {
-  font-size: 2rem !important;
-  padding: 0;
-  width: auto;
-  gap: 10px;
-  box-shadow: none;
-  outline: none;
-}
-
-.aboutme-button .accordion-button::after {
-  content: "";
-  background-color: rgba(33,37,41,1) !important; /* Color pantano */
-  border-radius: 50%;
-  width: 25px !important;
-  height: 25px !important;
-  background-image: url('../../public/assets/flecha.svg') !important;
-  background-size: 1.25rem;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.aboutme-button .accordion-button:not(.collapsed)::after{
-  transform: rotate(-180deg);
-}
-
-.aboutme-button .accordion-button:not(.collapsed) {
-  background-color: transparent !important;
-  box-shadow: none !important;
-}
-.aboutme-button .accordion-button:not(.collapsed)::after {
-  background-image: url('../../public/assets/flecha.svg') !important;
-}
-
-.aboutme-button .accordion-button:focus {
-  box-shadow: none;
 }
 
 /* Acordeón personalizado */
@@ -306,8 +278,10 @@
 }
 
 .custom-accordion .accordion-button:not(.collapsed) {
-  background-color: var(--background-color);   /* Fondo blanco cuando el acordeón está abierto */
-  border-color: var(--primary-color);   /* Borde amarillo */
+  background-color: var(--background-color);
+  /* Fondo blanco cuando el acordeón está abierto */
+  border-color: var(--primary-color);
+  /* Borde amarillo */
   color: #4A4A4A;
 }
 
@@ -316,8 +290,10 @@
 }
 
 .custom-accordion ul {
-  list-style: none;   /* Quitar los puntos de las listas */
-  padding-left: 0;   /* Quitar espacio del lado izquierdo */
+  list-style: none;
+  /* Quitar los puntos de las listas */
+  padding-left: 0;
+  /* Quitar espacio del lado izquierdo */
 }
 
 .custom-accordion li {
@@ -328,8 +304,10 @@
 .custom-hr {
   width: 70%;
   height: 5px;
-  color: var(--light-grey);   /* old IE */
-  background-color: var(--light-grey);   /* Modern Browsers */
+  color: var(--light-grey);
+  /* old IE */
+  background-color: var(--light-grey);
+  /* Modern Browsers */
   left: 0;
   right: 0;
 }
@@ -358,16 +336,20 @@
 .custom-border-box::before {
   top: 0;
   left: 0;
-  height: 5px; /* Ancho de la línea */
-  width: 25%; /* Longitud del borde superior */
+  height: 5px;
+  /* Ancho de la línea */
+  width: 25%;
+  /* Longitud del borde superior */
 }
 
 /* Bottom Border (último 25%) */
 .custom-border-box::after {
   bottom: 0;
   right: 0;
-  height: 5px; /* Ancho de la línea */
-  width: 25%; /* Longitud del borde inferior */  
+  height: 5px;
+  /* Ancho de la línea */
+  width: 25%;
+  /* Longitud del borde inferior */
 }
 
 /* Left Top Corner (primer 25% del borde izquierdo) */
@@ -375,8 +357,10 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 5px; /* Ancho de la línea */  
-  height: 50%; /* Longitud del borde izquierdo */  
+  width: 5px;
+  /* Ancho de la línea */
+  height: 50%;
+  /* Longitud del borde izquierdo */
   background-color: var(--primary-color);
 }
 
@@ -385,12 +369,15 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 5px; /* Ancho de la línea */  
-  height: 50%; /* Longitud del borde derecho */  
+  width: 5px;
+  /* Ancho de la línea */
+  height: 50%;
+  /* Longitud del borde derecho */
   background-color: var(--primary-color);
 }
 
-#services div.custom-carousel, div.carousel-item {
+#services div.custom-carousel,
+div.carousel-item {
   padding-top: 10px;
   overflow: visible;
 }
@@ -443,12 +430,15 @@
 }
 
 #services .carousel-container {
-  position: relative; /* Necesario para contener el fondo */
-  background-size: cover; /* Ajusta el tamaño del patrón */
-  background-repeat: no-repeat; /* Evita que se repita */
-  background-position: center; /* Centra el fondo */
-  padding: 20px; /* Espaciado alrededor del carrusel */
-} 
+  position: relative;
+  /* Necesario para contener el fondo */
+  background-size: cover;
+  /* Ajusta el tamaño del patrón */
+  background-repeat: no-repeat;
+  /* Evita que se repita */
+  background-position: center;
+  /* Centra el fondo */
+}
 
 /* Botones next/back carousel */
 #carousel-btn-back i {
@@ -494,20 +484,24 @@
 /* Superposición para el botón */
 .media-card-overlay {
   position: absolute;
-  top: 0; /* Parte superior de la carta */
+  top: 0;
+  /* Parte superior de la carta */
   left: 0;
   width: 100%;
   height: 100%;
   display: flex;
   align-items: start;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.3); /* Oscurece ligeramente el fondo */
-  opacity: 0; /* Oculta inicialmente */
+  background-color: rgba(0, 0, 0, 0.3);
+  /* Oscurece ligeramente el fondo */
+  opacity: 0;
+  /* Oculta inicialmente */
   transition: opacity 0.3s ease;
 }
 
 .media-card:hover .media-card-overlay {
-  opacity: 1; /* Muestra el overlay en hover */
+  opacity: 1;
+  /* Muestra el overlay en hover */
 }
 
 /* Botón superpuesto */
@@ -537,6 +531,7 @@
   position: relative;
   overflow: hidden;
 }
+
 .zoom-img {
   position: absolute;
   top: 50%;
@@ -621,10 +616,13 @@
 /* CONTACTO */
 
 .form-container {
-  background-color: var(--light-grey); /* Gris claro */
-  border-radius: 15px; /* Bordes redondeados */
+  background-color: var(--light-grey);
+  /* Gris claro */
+  border-radius: 15px;
+  /* Bordes redondeados */
   padding: 30px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  /* Sombra */
 }
 
 /* Personalización bordes formulario */
@@ -644,16 +642,20 @@
 .custom-form-border::before {
   top: 0;
   left: 0;
-  height: 5px; /* Ancho de la línea */
-  width: 10%; /* Longitud del borde superior */
+  height: 5px;
+  /* Ancho de la línea */
+  width: 10%;
+  /* Longitud del borde superior */
 }
 
 /* Bottom Border (último 25%) */
 .custom-form-border::after {
   bottom: 0;
   right: 0;
-  height: 5px; /* Ancho de la línea */
-  width: 10%; /* Longitud del borde inferior */ 
+  height: 5px;
+  /* Ancho de la línea */
+  width: 10%;
+  /* Longitud del borde inferior */
 }
 
 /* Left Top Corner (primer 25% del borde izquierdo) */
@@ -661,8 +663,10 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 5px; /* Ancho de la línea */  
-  height: 20%; /* Longitud del borde izquierdo */  
+  width: 5px;
+  /* Ancho de la línea */
+  height: 20%;
+  /* Longitud del borde izquierdo */
   background-color: var(--primary-color);
 }
 
@@ -671,8 +675,10 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 5px; /* Ancho de la línea */  
-  height: 20%; /* Longitud del borde derecho */  
+  width: 5px;
+  /* Ancho de la línea */
+  height: 20%;
+  /* Longitud del borde derecho */
   background-color: var(--primary-color);
 }
 
@@ -693,9 +699,12 @@
 }
 
 #contact .form-container textarea.form-control {
-  border: 3px solid var(--primary-color); /* Borde amarillo */
-  border-radius: 10px; /* Bordes redondeados */
-  padding: 10px; /* Espaciado interno */
+  border: 3px solid var(--primary-color);
+  /* Borde amarillo */
+  border-radius: 10px;
+  /* Bordes redondeados */
+  padding: 10px;
+  /* Espaciado interno */
 }
 
 #contact .form-container .form-control::placeholder {
@@ -706,15 +715,19 @@
 #contact .form-container .custom-icon {
   background-color: white;
   color: black;
-  border: 3px solid var(--primary-color); /* Borde amarillo */
+  border: 3px solid var(--primary-color);
+  /* Borde amarillo */
   border-left: none;
   border-radius: 5px 0 0 5px;
-  padding: 5px 10px; /* Espaciado interno */
+  padding: 5px 10px;
+  /* Espaciado interno */
 }
 
 #contact .submit-btn {
-  background-color: var(--primary-color); /* Fondo amarillo */
-  color: var(--dark-grey); /* Texto negro */
+  background-color: var(--primary-color);
+  /* Fondo amarillo */
+  color: var(--dark-grey);
+  /* Texto negro */
   font-weight: 600;
   border: none;
   width: 10rem;
@@ -724,7 +737,8 @@
 }
 
 #contact .submit-btn:hover {
-  background-color: #e6e600; /* Amarillo más oscuro */
+  background-color: #e6e600;
+  /* Amarillo más oscuro */
   color: black;
 }
 
@@ -774,27 +788,32 @@
 }
 
 .pulse-icon:hover {
-  text-shadow: 
-    0 0 5px #BABABA,       /* Sombra gris claro */
-    0 0 10px #FFFF29;      /* Sombra amarilla */
-  animation: pulse 1s infinite; /* Aplica la animación pulse */
+  text-shadow:
+    0 0 5px #BABABA,
+    /* Sombra gris claro */
+    0 0 10px #FFFF29;
+  /* Sombra amarilla */
+  animation: pulse 1s infinite;
+  /* Aplica la animación pulse */
 }
 
 /* Animación de pulsación */
 @keyframes pulse {
   0% {
-    text-shadow: 
-      0 0 5px #BABABA, 
+    text-shadow:
+      0 0 5px #BABABA,
       0 0 10px #FFFF29;
   }
+
   50% {
-    text-shadow: 
-      0 0 10px #BABABA, 
+    text-shadow:
+      0 0 10px #BABABA,
       0 0 20px #FFFF29;
   }
+
   100% {
-    text-shadow: 
-      0 0 5px #BABABA, 
+    text-shadow:
+      0 0 5px #BABABA,
       0 0 10px #FFFF29;
   }
 }

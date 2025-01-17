@@ -61,30 +61,39 @@ const NoticesCards = ({ title, description, image }) => {
     );
 };
 
-const ServiceIntro = ({ showDescription, toggleDescription }) => (
-    <div className="flex flex-wrap md:flex-nowrap items-center bg-white">
-        <div className="w-full md:w-2/3">
-            <img src={BackgroundImage} alt="Imagen de cabecera de la sección Soluciones legales" className="w-full max-h-96" />
+const ServiceIntro = ({ showDescription, toggleDescription }) => {
+    const [iconDirection, setIconDirection] = useState('down');
+
+    const handleToggleDescription = () => {
+        toggleDescription();
+        setIconDirection(iconDirection === 'down' ? 'up' : 'down');
+    };
+
+    return (
+        <div className="flex flex-wrap md:flex-nowrap items-center bg-white">
+            <div className="w-full md:w-2/3">
+                <img src={BackgroundImage} alt="Imagen de cabecera de la sección Noticias" className="w-full max-h-96" />
+            </div>
+            <div className="w-full md:w-1/3 px-6 flex flex-col items-start">
+                <h1 className="text-3xl font-semibold underline decoration-primary mb-4">Noticias</h1>
+                {showDescription && (
+                    <p className="text-gray-700 mb-4">
+                        Ofrecemos capacitación y coaching empresarial personalizados para potenciar habilidades, mejorar la comunicación y transformar la cultura organizacional.
+                    </p>
+                )}
+                <button
+                    className="bg-dark-grey text-primary py-2 px-4 rounded-full flex items-center gap-2 hover:bg-black"
+                    onClick={handleToggleDescription}
+                >
+                    Ver más
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={`size-6 ${iconDirection === 'down' ? 'rotate-180' : 'rotate-0'}`}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+                    </svg>
+                </button>
+            </div>
         </div>
-        <div className="w-full md:w-1/3 px-6 flex flex-col items-start">
-            <h1 className="text-3xl font-semibold underline decoration-primary mb-4">Noticias</h1>
-            {showDescription && (
-                <p className="text-gray-700 mb-4">
-                    Ofrecemos capacitación y coaching empresarial personalizados para potenciar habilidades, mejorar la comunicación y transformar la cultura organizacional.
-                </p>
-            )}
-            <button
-                className="bg-dark-grey text-primary py-2 px-4 rounded-full flex items-center gap-2 hover:bg-black"
-                onClick={toggleDescription}
-            >
-                Ver más
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
-                </svg>
-            </button>
-        </div>
-    </div>
-);
+    );
+};
 
 const LEGAL_SOLUTIONS = [
     { id: 1, title: 'Corporativo & MA', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: CorporateImage },
@@ -102,7 +111,7 @@ const Blogs = () => {
         <div id="blogs">
 
             <Header />
-            
+
             <ServiceIntro
                 showDescription={showDescription}
                 toggleDescription={() => setShowDescription(!showDescription)}

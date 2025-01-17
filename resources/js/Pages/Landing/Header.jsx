@@ -10,7 +10,7 @@ function Header() {
 
   const navLinks = [
     { href: 'inicio', label: 'Inicio' },
-    { href: 'about', label: 'Sobre Mí' },
+    { href: 'about', label: 'Sobre mí' },
     { href: 'services', label: 'Servicios' },
     { href: 'media', label: 'Media' },
     // { href: 'contact', label: 'Contacto' },

@@ -59,10 +59,9 @@ function Cabecera() {
                     </div>
 
                 </div>
-                {/* <div className='cabecera-hr'></div> */}
 
             </section>
-            <div className='custom-hr rounded mx-auto'></div>
+            {/* <div className='custom-hr rounded mx-auto'></div> */}
         </>
     );
 }

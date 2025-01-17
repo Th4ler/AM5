@@ -29,7 +29,7 @@ const ContactForm = () => {
     <section id="contact" className="flex flex-col">
 
       <div className="flex justify-center text-center py-4">
-        <h2 className="am5-border p-3 text-center text-3xl text-gray-600 mb-6">Contacto</h2>
+        <h2 className="am5-border p-3 pe-5 text-center text-3xl text-gray-600 mb-6">Contacto</h2>
       </div>
 
       <div className="max-w-7xl md:mx-11 mx-auto px-4 pb-12">

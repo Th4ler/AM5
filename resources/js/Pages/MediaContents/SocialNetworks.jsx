@@ -64,30 +64,39 @@ const SocialCards = ({ title, description, button, href, image }) => {
     );
 };
 
-const ServiceIntro = ({ showDescription, toggleDescription }) => (
-    <div className="flex flex-wrap md:flex-nowrap items-center bg-white">
-        <div className="w-full md:w-2/3">
-            <img src={BackgroundImage} alt="Imagen de cabecera de la sección Soluciones legales" className="w-full max-h-96" />
+const ServiceIntro = ({ showDescription, toggleDescription }) => {
+    const [iconDirection, setIconDirection] = useState('down');
+
+    const handleToggleDescription = () => {
+        toggleDescription();
+        setIconDirection(iconDirection === 'down' ? 'up' : 'down');
+    };
+
+    return (
+        <div className="flex flex-wrap md:flex-nowrap items-center bg-white">
+            <div className="w-full md:w-2/3">
+                <img src={BackgroundImage} alt="Imagen de cabecera de la sección Redes Sociales" className="w-full max-h-96" />
+            </div>
+            <div className="w-full md:w-1/3 px-6 flex flex-col items-start">
+                <h1 className="text-3xl font-semibold underline decoration-primary mb-4">Nuestras redes sociales</h1>
+                {showDescription && (
+                    <p className="text-gray-700 mb-4">
+                        Conéctate conmigo en mis redes sociales y sé parte de mi comunidad de AM5. En AM5, te brindo contenido exclusivo, consejos y trucos para mejorar tus habilidades y alcanzar tus objetivos. ¡Sigue mis redes sociales para estar al día de mis últimas publicaciones y conectarte conmigo en Instagram, Facebook, TikTok y LinkedIn!
+                    </p>
+                )}
+                <button
+                    className="bg-dark-grey text-primary py-2 px-4 rounded-full flex items-center gap-2 hover:bg-black"
+                    onClick={handleToggleDescription}
+                >
+                    Ver más
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={`size-6 ${iconDirection === 'down' ? 'rotate-180' : 'rotate-0'}`}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+                    </svg>
+                </button>
+            </div>
         </div>
-        <div className="w-full md:w-1/3 px-6 flex flex-col items-start">
-            <h1 className="text-3xl font-semibold underline decoration-primary mb-4">Nuestras redes sociales</h1>
-            {showDescription && (
-                <p className="text-gray-700 mb-4">
-                    Conéctate conmigo en mis redes sociales y sé parte de mi comunidad de AM5. En AM5, te brindo contenido exclusivo, consejos y trucos para mejorar tus habilidades y alcanzar tus objetivos. ¡Sigue mis redes sociales para estar al día de mis últimas publicaciones y conectarte conmigo en Instagram, Facebook, TikTok y LinkedIn!
-                </p>
-            )}
-            <button
-                className="bg-dark-grey text-primary py-2 px-4 rounded-full flex items-center gap-2 hover:bg-black"
-                onClick={toggleDescription}
-            >
-                Ver más
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
-                </svg>
-            </button>
-        </div>
-    </div>
-);
+    );
+};
 
 const LEGAL_SOLUTIONS = [
     { id: 1, title: 'Instagram', description: 'Descubre mis consejos y trucos para mejorar tus habilidades y alcanzar tus objetivos!', button: 'Sigue mis consejos', href:'https://instagram.com/andresmadariaga_', image: CorporateImage },
