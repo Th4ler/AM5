@@ -523,6 +523,13 @@ div.carousel-item {
   color: var(--primary-color);
 }
 
+/* Mostrar el botón siempre en pantallas pequeñas */
+@media (max-width: 768px) {
+  .media-card-overlay {
+    opacity: 1; /* Siempre visible */
+  }
+}
+
 .yellow-box {
   background-color: var(--primary-color);
   width: 100%;
