@@ -21,7 +21,7 @@ function Footer() {
           <div className="w-full md:w-1/3 mb-6 md:mb-0">
             <h5 className="text-lg font-bold mb-4 text-left">Contacto</h5>
             <ul className="space-y-2">
-              <li className="flex items-start">
+              <li className="flex text-left items-start">
                 <i className="bi bi-geo text-[#FFFF29] mr-2 pulse-icon"></i>
                 <span>Antonio Bellet 193, Oficina 1210, Providencia, RM</span>
               </li>
