@@ -47,7 +47,7 @@ function Media() {
   return (
     <div id="media" className="flex flex-col px-10">
 
-      <div className="flex justify-center text-center py-4">
+      <div className="flex justify-center text-center pt-8 pb-10">
         <h2 className="am5-border py-3 ps-6 pe-8 text-3xl text-gray-600">Media</h2>
       </div>
 

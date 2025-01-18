@@ -12,7 +12,7 @@
 
 /* * {
   font-family: 'Montserrat', sans-serif;
-  color: var(--dark-grey);
+  color: var(--dark-grey);Antes #4A4A4A
 } */
 
 body {
@@ -50,11 +50,6 @@ body {
   border-left: 1px solid #cecece !important;
   text-align: start;
   font-size: 1.5rem;
-}
-
-p {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
 }
 
 @media (min-width: 1200px) {

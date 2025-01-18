@@ -405,7 +405,7 @@ div.carousel-item {
 #services div.carousel-card {
   border: 5px solid;
   border-color: var(--primary-color);
-  max-height: 700px;
+  max-height: 900px;
 }
 
 #services div.carousel-card .card-img-top {

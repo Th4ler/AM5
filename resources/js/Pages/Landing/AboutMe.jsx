@@ -4,11 +4,15 @@ import DynamicalTabs from '../../Components/DynamicalTabs';
 
 function AboutMe() {
   const [activeIndex, setActiveIndex] = useState(null);
+  const [isExpanded, setIsExpanded] = useState(false);
   // Para obtener una referencia al contenedor cuyo tamaño se va a animar
   const contentRefs = useRef([]);
 
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
+  };
+  const toggleButton = () => {
+    setIsExpanded(!isExpanded);
   };
 
   const tabsData = [
@@ -34,52 +38,84 @@ function AboutMe() {
       id: 'tab-2',
       label: 'Educación',
       content: [
-        <>
-            Abogado, Licenciado en Ciencias Jurídicas y Sociales.
-            <br />
-            <strong>Universidad Bernardo O'Higgins</strong> (2015).
-        </>,
-        <>
-            Master en Derecho de la Empresa y Negocios.
-            <br />
-            <strong>Pontificia Universidad Católica de Chile</strong> (2017).
-        </>
+        {
+          title: 'Abogado, Licenciado en Cs. Jurídicas - U. Bernardo O\'Higgins',
+          content: (
+            <p>
+              <strong>Periodo: </strong>
+              2015
+            </p>
+          )
+        },
+        {
+          title: 'Máster (LLM) en Derecho de la Empresa - Pontificia U. Católica de Chile',
+          content: (
+            <p>
+              <strong>Periodo: </strong>
+              2017
+            </p>
+          )
+        },
       ]
     },
     {
       id: 'tab-3',
       label: 'Experiencia',
       content: [
-        <>
-          Profesor de Derecho - <strong> Universidad Academia de Humanismo Cristiano</strong>
-          <br/>
-          (2023 - a la fecha)
-        </>,
-        <>
-          Profesor de Derecho - <strong>Universidad Autónoma de Chile</strong>
-          <br/>
-          (2021 - 2024)
-        </>,
-        <>
-          Jefe Legal - <strong>Dafiti</strong>
-          <br/>
-          (2022 - 2023)
-        </>,
-        <>
-          Coordinador Legal - <strong>Consejo Nacional de Televisión</strong>
-          <br/>
-          (2021 - 2022)
-        </>,
-        <>
-          Jefe Legal - <strong>Axity</strong>
-          <br/>
-          (2017 - 2019)
-        </>,
-        <>
-          Abogado corporativo - <strong>VTR</strong>
-          <br/>
-          (2015 - 2017)
-        </>,
+        {
+          title: 'Profesor de Derecho - U. Academia de Humanismo Cristiano',
+          content: (
+            <p>
+              <strong>Periodo: </strong>
+              2023 - a la fecha
+            </p>
+          )
+        },
+        {
+          title: 'Profesor de Derecho - U. Autónoma de Chile',
+          content: (
+            <p>
+              <strong>Periodo: </strong>
+              2021 - 2024
+            </p>
+          )
+        },
+        {
+          title: 'Jefe Legal - Dafiti',
+          content: (
+            <p>
+              <strong>Periodo: </strong>
+              2022 - 2023
+            </p>
+          )
+        },
+        {
+          title: 'Coordinador Legal - Consejo Nacional de Televisión',
+          content: (
+            <p>
+              <strong>Periodo: </strong>
+              2021 - 2022
+            </p>
+          )
+        },
+        {
+          title: 'Jefe Legal - Axity',
+          content: (
+            <p>
+              <strong>Periodo: </strong>
+              2017 - 2019
+            </p>
+          )
+        },
+        {
+          title: 'Abogado corporativo - VTR',
+          content: (
+            <p>
+              <strong>Periodo: </strong>
+              2015 - 2017
+            </p>
+          )
+        }
       ]
     },
   ];
@@ -121,7 +157,7 @@ function AboutMe() {
 
   return (
     <div className="flex flex-col md:mx-16">
-      <div id="about" className="flex justify-center text-center py-8">
+      <div id="about" className="flex justify-center text-center pt-8 pb-10">
         <h2 className="am5-border p-3 pe-5 text-3xl text-gray-600">Sobre mí</h2>
       </div>
       <div className="flex flex-col md:flex-row flex-wrap">
@@ -130,32 +166,42 @@ function AboutMe() {
         </div>
         <div className="md:pe-0 px-10 md:pt-0 pt-10 md:w-2/3 w-full">
           <div className="mb-4 custom-card">
-            <h3
-              className={`text-2xl w-full text-left text-gray-600`}
+            <button
+              onClick={() => toggleAccordion(0)}
+              className={`flex text-2xl text-left border-0 focus:outline-none ${activeIndex !== 0 ? 'collapsed' : ''
+                }`}
             >
-              Andrés Madariaga
-            </h3>
-
-            <p className="text-gray-500">
-              <span className="me-2">
-                <i className="bi bi-person-circle"></i>
+              <span className="text-gray-600">Andrés Madariaga</span>
+              <span className="flex justify-center items-center ms-2 h-8 w-8 bg-gray-600 rounded-full shadow-md p-1 text-[#FFFF29] transform transition-transform duration-300 ease-in-out">
+                {activeIndex === 0 ? '−' : '+'}
               </span>
-              Director ejecutivo
+            </button>
+            <div
+              ref={(el) => (contentRefs.current[0] = el)}
+              className={`mt-2 overflow-hidden transition-[max-height] duration-500 ease-in-out`}
+              style={{
+                maxHeight:
+                  activeIndex === 0
+                    ? `${contentRefs.current[0]?.scrollHeight}px`
+                    : '0px',
+              }}
+            >
+              <div className="text-gray-500 space-y-1">
+                <p>
+                  <i className="bi bi-person-circle me-2"></i>
+                  Director ejecutivo
+                </p>
+                <p>
+                  <i className="bi bi-envelope me-2"></i>
+                  andres.madariaga@am5.cl
+                </p>
+                <p>
+                  <i className="bi bi-telephone me-2"></i>
+                  +56963441988
+                </p>
+              </div>
+            </div>
 
-              <br />
-
-              <span className="me-2">
-                <i className="bi bi-envelope"></i>
-              </span>
-              andres.madariaga@am5.cl
-
-              <br />
-
-              <span className="me-2">
-                <i className="bi bi-telephone"></i>
-              </span>
-              +56963441988
-            </p>
           </div>
 
           <div className="max-w-4xl mx-auto">
@@ -170,8 +216,6 @@ function AboutMe() {
 
         </div>
       </div>
-      {/* <div className="w-3/4 mx-auto mt-6 border-t-2 border-gray-300"></div> */}
-      <div className='custom-hr rounded mx-auto mt-3'></div>
     </div>
   );
 }

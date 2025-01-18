@@ -26,14 +26,18 @@ const DynamicalTabs = ({
                                 className="w-full px-4 py-2 text-left font-medium flex justify-between items-center hover:bg-gray-50"
                                 onClick={() => toggleAccordion(index)}
                             >
-                                <span className="pr-2">{item.title}</span>
+                                <span className="pr-2 text-gray-600">{item.title}</span>
                                 <span className="transform transition-transform duration-200 flex-shrink-0">
                                     {expandedItem === index ? '−' : '+'}
                                 </span>
                             </button>
                             {expandedItem === index && (
-                                <div className="px-4 py-2 bg-gray-50">
-                                    <p className="text-gray-500">{item.content}</p>
+                                <div className="px-4 py-2 bg-gray-50 text-gray-500">
+                                    {React.isValidElement(item.content) ? (
+                                        item.content
+                                    ) : (
+                                        <p className="text-gray-500">{item.content}</p>
+                                    )}
                                 </div>
                             )}
                         </div>
@@ -61,21 +65,44 @@ const DynamicalTabs = ({
                         ))}
                     </ul>
                 );
-            } else if (Array.isArray(content)) {
-                // Render bullet list if content is a simple array
+            } else {
+                // Render bullet list if content is a simple array (without accordion)
                 return (
-                    <ul className="pl-5 space-y-2">
+                    <ul className="space-y-2">
                         {content.map((item, index) => (
-                            <li key={index} className="text-gray-700 text-justify">{item}</li>
+                            <li key={index} className="text-gray-700 text-justify">
+                                {Array.isArray(item) ? (
+                                    // Para arrays de objetos con formato {text, bold}
+                                    item.map((segment, i) => (
+                                        <React.Fragment key={i}>
+                                            {segment.bold ? (
+                                                <strong>{segment.text}</strong>
+                                            ) : (
+                                                segment.text
+                                            )}
+                                            {i !== item.length - 1 && <br />}
+                                        </React.Fragment>
+                                    ))
+                                ) : (
+                                    // Para strings o elementos JSX
+                                    typeof item === 'string' ? (
+                                        item.split('\n').map((line, i) => (
+                                            <React.Fragment key={i}>
+                                                {line}
+                                                {i !== item.split('\n').length - 1 && <br />}
+                                            </React.Fragment>
+                                        ))
+                                    ) : (
+                                        item
+                                    )
+                                )}
+                            </li>
                         ))}
                     </ul>
                 );
-            } else {
-                // Render simple content
-                return <div className="text-gray-700">{content}</div>;
             }
         } else {
-            // Render simple content
+            // Para contenido simple
             return <div className="text-gray-700">{content}</div>;
         }
     };
@@ -91,8 +118,8 @@ const DynamicalTabs = ({
                             <button
                                 key={tab.id}
                                 className={`w-full px-4 py-3 text-left font-medium transition-all duration-200 border-l-4 ${activeTab === tab.id
-                                        ? 'bg-yellow-50 text-gray-500 border-[#FFFF29]'
-                                        : 'text-gray-600 border-transparent hover:bg-gray-50 hover:border-gray-300'
+                                    ? 'bg-gray-600 text-[#FFFF29] border-[#FFFF29]'
+                                    : 'text-gray-600 border-transparent hover:bg-gray-50 hover:border-gray-300'
                                     } ${tabClassName}`}
                                 onClick={() => setActiveTab(tab.id)}
                             >
@@ -123,8 +150,8 @@ const DynamicalTabs = ({
                             <li key={tab.id} className="flex-1">
                                 <button
                                     className={`w-full h-full px-4 py-3 transition-colors duration-200 ${activeTab === tab.id
-                                            ? 'bg-white border-t-8 border-x-8 border-[#FFFF29] text-gray-500 border-b-8 font-bold'
-                                            : 'bg-gray-100 text-gray-600 hover:text-gray-800 hover:bg-gray-50'
+                                        ? 'bg-gray-600 border-t-2 border-x-2 border-gray-200 text-[#FFFF29] border-b-2 font-bold'
+                                        : 'bg-gray-100 text-gray-600 hover:text-gray-800 hover:bg-gray-50'
                                         } ${tab.id === tabs[0].id ? 'rounded-tl-lg' : ''
                                         } ${tab.id === tabs[tabs.length - 1].id ? 'rounded-tr-lg' : ''
                                         } ${tabClassName}`}

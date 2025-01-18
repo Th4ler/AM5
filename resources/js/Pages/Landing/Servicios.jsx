@@ -77,7 +77,7 @@ function ServiciosCarousel() {
   return (
     <div id='services' className="flex flex-col">
 
-      <div className="flex justify-center text-center py-4">
+      <div className="flex justify-center text-center pt-8 pb-10">
         <h2 className="am5-border p-3 pe-5 text-3xl text-gray-600">Servicios</h2>
       </div>
 
@@ -129,7 +129,7 @@ function ServiciosCarousel() {
 
                     return (
                       <div
-                        className={`carousel-card bg-white rounded shadow-md text-center mb-12 ${hoveredCard === subIdx ? 'hovered' : ''}`} //Correcting slider trial
+                        className={`carousel-card md:h-auto h-full bg-white rounded shadow-md text-center mb-12 ${hoveredCard === subIdx ? 'hovered' : ''}`} //Correcting slider trial
                         key={subIdx}
                         style={{ width: '25rem', transition: 'transform 0.3s' }}
                         onMouseEnter={() => !isSmallScreen && setHoveredCard(subIdx)} // Marca la carta en hover
@@ -143,7 +143,7 @@ function ServiciosCarousel() {
                         />
                         <div className="p-4">
                           <h5 className="text-xl text-gray-900 mb-2">{service.title}</h5>
-                          <p className="text-gray-600 text-sm leading-relaxed">{service.description}</p>
+                          <p className="text-gray-600 text-sm leading-relaxed mb-6">{service.description}</p>
                           {/* <button className="custom-btn-carousel px-3 py-1.5 text-white bg-blue-500 rounded hover:bg-blue-600" href={service.link}>Ver más</button> */}
                           <Link
                             href={route(service.route)}
