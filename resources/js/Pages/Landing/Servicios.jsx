@@ -107,7 +107,7 @@ function ServiciosCarousel() {
       </div>
 
       {/* Slider */}
-      <div className='carousel-container'>
+      <div className='carousel-container md:px-0 px-10'>
         <Carousel
           fade
           className='custom-carousel'
@@ -160,7 +160,7 @@ function ServiciosCarousel() {
           ))}
         </Carousel>
       </div>
-      <div className='custom-hr rounded mx-auto'></div>
+      {/* <div className='custom-hr rounded mx-auto'></div> */}
       {/* Animación para elevar la carta central */}
       <style>{`
         .hovered {

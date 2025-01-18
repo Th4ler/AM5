@@ -5,7 +5,7 @@
 
 :root {
   --primary-color: #FFFF29;
-  --dark-grey: #4A4A4A;
+  --dark-grey: rgb(75 85 99 / var(1, 1));
   --light-grey: #B9B9B9;
   --background-color: #f8f8f8;
 }
@@ -40,13 +40,12 @@ body {
 }
 
 /* h3 {
-  color: var(--dark-gray);
+  color: var(--dark-grey);
   border: 5px solid var(--primary-color);
   text-align: center;
 } */
 
 [data-component="cabecera"] h1 {
-  color: inherit;
   position: inherit;
   border-left: 1px solid #cecece !important;
   text-align: start;
@@ -65,7 +64,7 @@ p {
 }
 
 h1 {
-  color: var(--dark-gray);
+  color: var(--dark-grey);
   text-align: center;
 }
 
@@ -76,7 +75,6 @@ h1 {
 }
 
 .am5-border {
-  color: var(--dark-gray);
   border: 10px solid var(--primary-color);
   border-right: inherit; 
   text-align: center;

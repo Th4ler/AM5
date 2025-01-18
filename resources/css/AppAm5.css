@@ -19,6 +19,15 @@
 ]
 */
 
+:root {
+  --dark-grey: #4A4A4A;
+}
+
+.gradientEffect {
+  mask-image: linear-gradient(black 90%,
+      transparent)
+}
+
 /* HEADER: LOGO + NAVBAR */
 .logo {
   font-size: 1.5rem;
@@ -314,6 +323,11 @@
 
 /* SERVICIOS */
 
+/* .service-section {
+  border-bottom: 4px solid #ffcc00;
+  transform: skewY(-3deg);
+} */
+
 .class-container h2 {
   margin: 0;
   padding: 0;
@@ -559,7 +573,7 @@ div.carousel-item {
   border: 2px solid var(--primary-color);
   border-radius: 20px;
   padding: 10px 20px;
-  color: var(--dark-gray);
+  color: var(--dark-grey);
   text-decoration: none;
   font-size: 1.2rem;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -572,10 +586,10 @@ div.carousel-item {
 
 .vertical-btn {
   background-color: transparent;
-  border: 2px solid var(--dark-gray);
+  border: 2px solid var(--dark-grey);
   border-radius: 20px;
   padding: 10px;
-  color: var(--dark-gray);
+  color: var(--dark-grey);
   text-align: center;
   display: block;
   width: 80%;
@@ -588,7 +602,7 @@ div.carousel-item {
 }
 
 .vertical-btn:hover {
-  background-color: var(--dark-gray);
+  background-color: var(--dark-grey);
   color: #fff;
 }
 

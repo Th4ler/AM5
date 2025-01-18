@@ -32,7 +32,7 @@ const ContactForm = () => {
         <h2 className="am5-border p-3 pe-5 text-center text-3xl text-gray-600 mb-6">Contacto</h2>
       </div>
 
-      <div className="max-w-7xl md:mx-11 mx-auto px-4 pb-12">
+      <div className="max-w-7xl md:mx-16 md:px-0 px-10 md:pt-0 pb-12">
         <div className="bg-white shadow-md rounded-lg p-6">
           <form onSubmit={handleSubmit}>
             <h3 className="text-xl font-semibold mb-4">¡Hablemos!</h3>

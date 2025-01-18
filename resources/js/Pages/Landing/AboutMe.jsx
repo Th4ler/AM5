@@ -18,7 +18,7 @@ function AboutMe() {
     //   content: [
     //     {
     //       title: 'Lorem ipsum...',
-    //       content: 'Lorem ipsum...'
+    //       content: 'Lorem ipsum...↳'
     //     },
     //     // ... más items con formato de acordeón
     //   ]
@@ -27,27 +27,59 @@ function AboutMe() {
       id: 'tab-1',
       label: 'Historia',
       content: [
-        'Abogado, profesor de derecho. Tras más de 10 años liderando áreas legales en empresas, entendí que el derecho no basta si no se conecta con los negocios. Hoy ayudo a empresas y emprendedores a tomar decisiones estratégicas que impulsen su crecimiento, combinando lo legal y lo empresarial.'
+        'Tras más de 10 años liderando áreas legales en empresas, entendí que el derecho solo funciona cuando se conecta con los negocios. Hoy ayudo a empresas y emprendedores a tomar decisiones estratégicas que protejan y potencien su crecimiento.'
       ]
     },
     {
       id: 'tab-2',
       label: 'Educación',
       content: [
-        'Abogado, Licenciado en Ciencias Jurídicas y Sociales.\n↳ Universidad Bernardo O\'Higgins (2015).',
-        'Master en Derecho de la Empresa y Negocios.\n↳ Pontificia Universidad Católica de Chile (2017).'
+        <>
+            Abogado, Licenciado en Ciencias Jurídicas y Sociales.
+            <br />
+            <strong>Universidad Bernardo O'Higgins</strong> (2015).
+        </>,
+        <>
+            Master en Derecho de la Empresa y Negocios.
+            <br />
+            <strong>Pontificia Universidad Católica de Chile</strong> (2017).
+        </>
       ]
     },
     {
       id: 'tab-3',
       label: 'Experiencia',
       content: [
-        'Profesor de Derecho en Universidad Academia de Humanismo Cristiano.\n↳ (2023 - a la fecha).',
-        'Profesor de Derecho en Universidad Autónoma de Chile.\n↳ (2021 - a la fecha).',
-        'Jefe Legal en Dafiti.\n↳ (2022 - 2023).',
-        'Coordinador Legal en CNTV.\n↳ (2021 - 2022).',
-        'Jefe Legal en Axity.\n↳ (2017 - 2019).',
-        'Abogado en VTR.\n↳ (2015 - 2017).',
+        <>
+          Profesor de Derecho - <strong> Universidad Academia de Humanismo Cristiano</strong>
+          <br/>
+          (2023 - a la fecha)
+        </>,
+        <>
+          Profesor de Derecho - <strong>Universidad Autónoma de Chile</strong>
+          <br/>
+          (2021 - 2024)
+        </>,
+        <>
+          Jefe Legal - <strong>Dafiti</strong>
+          <br/>
+          (2022 - 2023)
+        </>,
+        <>
+          Coordinador Legal - <strong>Consejo Nacional de Televisión</strong>
+          <br/>
+          (2021 - 2022)
+        </>,
+        <>
+          Jefe Legal - <strong>Axity</strong>
+          <br/>
+          (2017 - 2019)
+        </>,
+        <>
+          Abogado corporativo - <strong>VTR</strong>
+          <br/>
+          (2015 - 2017)
+        </>,
       ]
     },
   ];
@@ -99,10 +131,31 @@ function AboutMe() {
         <div className="md:pe-0 px-10 md:pt-0 pt-10 md:w-2/3 w-full">
           <div className="mb-4 custom-card">
             <h3
-              className={`text-2xl w-full text-left text-gray-800`}
+              className={`text-2xl w-full text-left text-gray-600`}
             >
               Andrés Madariaga
             </h3>
+
+            <p className="text-gray-500">
+              <span className="me-2">
+                <i className="bi bi-person-circle"></i>
+              </span>
+              Director ejecutivo
+
+              <br />
+
+              <span className="me-2">
+                <i className="bi bi-envelope"></i>
+              </span>
+              andres.madariaga@am5.cl
+
+              <br />
+
+              <span className="me-2">
+                <i className="bi bi-telephone"></i>
+              </span>
+              +56963441988
+            </p>
           </div>
 
           <div className="max-w-4xl mx-auto">
@@ -114,7 +167,7 @@ function AboutMe() {
               contentClassName="custom-content-class"
             />
           </div>
-          
+
         </div>
       </div>
       {/* <div className="w-3/4 mx-auto mt-6 border-t-2 border-gray-300"></div> */}

@@ -47,12 +47,16 @@ const DynamicalTabs = ({
                     <ul className="list-['-_'] pl-5 space-y-2">
                         {content.map((item, index) => (
                             <li key={index} className="text-gray-700 md:text-justify">
-                                {item.split('\n').map((line, i) => (
-                                    <React.Fragment key={i}>
-                                        {line}
-                                        {i !== item.split('\n').length - 1 && <br />}
-                                    </React.Fragment>
-                                ))}
+                                {typeof item === 'string' ? (
+                                    item.split('\n').map((line, i) => (
+                                        <React.Fragment key={i}>
+                                            {line}
+                                            {i !== item.split('\n').length - 1 && <br />}
+                                        </React.Fragment>
+                                    ))
+                                ) : (
+                                    item
+                                )}
                             </li>
                         ))}
                     </ul>

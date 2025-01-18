@@ -45,7 +45,7 @@ function Media() {
   // const handleNext = () => setIndex((prev) => (prev === mediaItems.length - 1 ? 0 : prev + 1));
 
   return (
-    <div id="media" className="flex flex-col mx-16">
+    <div id="media" className="flex flex-col px-10">
 
       <div className="flex justify-center text-center py-4">
         <h2 className="am5-border py-3 ps-6 pe-8 text-3xl text-gray-600">Media</h2>
@@ -110,7 +110,7 @@ function Media() {
           ))}
         </Carousel>
       </div>
-      <div className='custom-hr rounded mx-auto mt-3'></div>
+      {/* <div className='custom-hr rounded mx-auto mt-3'></div> */}
     </div>
   );
 };
