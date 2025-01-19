@@ -75,10 +75,10 @@ function ServiciosCarousel() {
 
 
   return (
-    <div id='services' className="flex flex-col">
+    <div id='services' className="flex flex-col px-10" style={estilo}>
 
       <div className="flex justify-center text-center pt-8 pb-10">
-        <h2 className="am5-border p-3 pe-5 text-3xl text-gray-600">Servicios</h2>
+        <h2 className="am5-border p-3 pe-5 2xl:text-3xl text-2xl text-gray-600">Servicios</h2>
       </div>
 
       <div className='max-w-6xl mx-auto text-center px-10 md:px-0'>
@@ -110,8 +110,7 @@ function ServiciosCarousel() {
       <div className='carousel-container md:px-0 px-10'>
         <Carousel
           fade
-          className='custom-carousel'
-          style={estilo}
+          className='custom-carousel'          
           activeIndex={index}
           onSelect={setIndex}
           indicators={true}
@@ -120,7 +119,7 @@ function ServiciosCarousel() {
         >
           {services.map((_, idx) => (
             <Carousel.Item key={idx}>
-              <div className="flex justify-center gap-4">
+              <div className="flex justify-center gap-4 max-w-screen-2xl mx-auto">
                 {services
                   .slice(index, index + (isSmallScreen ? 1 : 3)) //Medidas pantalla
                   .concat(services.slice(0, Math.max(0, index + (isSmallScreen ? 1 : 3) - services.length))) //Medidas pantalla

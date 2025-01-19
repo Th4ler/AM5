@@ -63,11 +63,11 @@ h1 {
   text-align: center;
 }
 
-@media (min-width: 1200px) {
+/* @media (min-width: 1200px) {
   .h2, h2 {
     font-size: clamp(1.3rem, 1.2vw, 2.2rem) !important;
   }
-}
+} */
 
 .am5-border {
   border: 10px solid var(--primary-color);

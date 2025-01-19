@@ -156,11 +156,13 @@ function AboutMe() {
   ];
 
   return (
-    <div className="flex flex-col md:mx-16">
+    <section className="flex flex-col px-10">
+
       <div id="about" className="flex justify-center text-center pt-8 pb-10">
-        <h2 className="am5-border p-3 pe-5 text-3xl text-gray-600">Sobre mí</h2>
+        <h2 className="am5-border p-3 pe-5 2xl:text-3xl text-2xl text-gray-600">Sobre mí</h2>
       </div>
-      <div className="flex flex-col md:flex-row flex-wrap">
+
+      <div className="flex justify-center md:flex-row md:flex-row flex-wrap flex-wrap flex-col max-w-screen-2xl mx-auto">
         <div className="flex justify-center md:w-1/3 w-full px-10 md:px-0">
           <img src={aboutmePic} alt="Foto de Andrés Madariaga" className="object-contain w-full" />
         </div>
@@ -168,7 +170,7 @@ function AboutMe() {
           <div className="mb-4 custom-card">
             <button
               onClick={() => toggleAccordion(0)}
-              className={`flex text-2xl text-left border-0 focus:outline-none ${activeIndex !== 0 ? 'collapsed' : ''
+              className={`flex 2xl:text-3xl text-2xl text-left border-0 focus:outline-none ${activeIndex !== 0 ? 'collapsed' : ''
                 }`}
             >
               <span className="text-gray-600">Andrés Madariaga</span>
@@ -204,7 +206,7 @@ function AboutMe() {
 
           </div>
 
-          <div className="max-w-4xl mx-auto">
+          <div className="flex w-full mx-auto">
             <DynamicalTabs
               tabs={tabsData}
               defaultActiveTab="tab-1"
@@ -216,7 +218,7 @@ function AboutMe() {
 
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

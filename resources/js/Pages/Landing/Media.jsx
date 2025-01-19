@@ -48,7 +48,7 @@ function Media() {
     <div id="media" className="flex flex-col px-10">
 
       <div className="flex justify-center text-center pt-8 pb-10">
-        <h2 className="am5-border py-3 ps-6 pe-8 text-3xl text-gray-600">Media</h2>
+        <h2 className="am5-border py-3 ps-6 pe-8 2xl:text-3xl text-2xl text-gray-600">Media</h2>
       </div>
 
       {/* Botones de navegación */}
@@ -75,7 +75,7 @@ function Media() {
         >
           {mediaItems.map((_, idx) => (
             <Carousel.Item key={idx}>
-              <div className="flex justify-center gap-4">
+              <div className="flex justify-center gap-4 max-w-screen-2xl mx-auto">
                 {mediaItems
                   .slice(index, index + (isSmallScreen ? 1 : 3))
                   .concat(

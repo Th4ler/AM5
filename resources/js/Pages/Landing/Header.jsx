@@ -46,7 +46,7 @@ function Header() {
           <a href="/" className="flex items-center space-x-2">
             <img
               src={logo}
-              alt="Imagen del logo de la start-up AM5 con su característico toque de color amarillo"
+              alt="Logo AM5"
               className="h-12"
             />
           </a>
@@ -78,7 +78,7 @@ function Header() {
                 smooth={true}
                 duration={500}
                 offset={-navbarHeight}
-                className={`relative text-lg text-gray-700 cursor-pointer ${
+                className={`relative 2xl:text-2xl text-xl text-gray-700 cursor-pointer ${
                   activeSection === link.href
                     ? 'after:content-[""] after:block after:w-full after:h-[3px] after:bg-primary after:transition-all after:duration-300 after:ease-in-out header-nav-link'
                     : 'hover:after:content-[""] after:block after:w-0 after:h-[3px] after:bg-primary after:transition-all after:duration-300 after:ease-in-out hover:after:w-full header-nav-link'

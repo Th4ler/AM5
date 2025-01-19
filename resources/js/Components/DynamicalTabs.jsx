@@ -23,7 +23,7 @@ const DynamicalTabs = ({
                     {content.map((item, index) => (
                         <div key={index} className="border rounded">
                             <button
-                                className="w-full px-4 py-2 text-left font-medium flex justify-between items-center hover:bg-gray-50"
+                                className="2xl:text-2xl w-full px-4 py-2 text-left font-medium flex justify-between items-center hover:bg-gray-50"
                                 onClick={() => toggleAccordion(index)}
                             >
                                 <span className="pr-2 text-gray-600">{item.title}</span>
@@ -48,7 +48,7 @@ const DynamicalTabs = ({
             if (Array.isArray(content) && content.length > 1) {
                 // Render bullet list if content is an array with more than one item
                 return (
-                    <ul className="list-['-_'] pl-5 space-y-2">
+                    <ul className="list-['-_'] pl-5 space-y-2 2xl:text-2xl">
                         {content.map((item, index) => (
                             <li key={index} className="text-gray-700 md:text-justify">
                                 {typeof item === 'string' ? (
@@ -68,7 +68,7 @@ const DynamicalTabs = ({
             } else {
                 // Render bullet list if content is a simple array (without accordion)
                 return (
-                    <ul className="space-y-2">
+                    <ul className="space-y-2 2xl:text-2xl">
                         {content.map((item, index) => (
                             <li key={index} className="text-gray-700 text-justify">
                                 {Array.isArray(item) ? (
@@ -108,7 +108,7 @@ const DynamicalTabs = ({
     };
 
     return (
-        <div className={`bg-white rounded-lg shadow-lg ${className}`}>
+        <div className={`flex w-full bg-white rounded-lg shadow-lg ${className}`}>
             {/* Mobile Layout */}
             <div className="md:hidden">
                 <div className="flex flex-col">
@@ -142,14 +142,14 @@ const DynamicalTabs = ({
             </div>
 
             {/* Desktop Layout */}
-            <div className="hidden md:block">
+            <div className="flex w-full hidden md:block">
                 {/* Horizontal Tabs */}
                 <div className="border-b">
                     <ul className="flex w-full">
                         {tabs.map((tab) => (
                             <li key={tab.id} className="flex-1">
                                 <button
-                                    className={`w-full h-full px-4 py-3 transition-colors duration-200 ${activeTab === tab.id
+                                    className={`2xl:text-2xl w-full h-full px-4 py-3 transition-colors duration-200 ${activeTab === tab.id
                                         ? 'bg-gray-600 border-t-2 border-x-2 border-gray-200 text-[#FFFF29] border-b-2 font-bold'
                                         : 'bg-gray-100 text-gray-600 hover:text-gray-800 hover:bg-gray-50'
                                         } ${tab.id === tabs[0].id ? 'rounded-tl-lg' : ''

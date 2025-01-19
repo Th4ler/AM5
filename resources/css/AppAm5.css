@@ -52,10 +52,6 @@
   font-size: 1.3rem;
 }
 
-.header-nav-link {
-  font-size: 1.2rem;
-}
-
 @media (min-width: 1200px) {
   .custom-underline-color .nav-link {
     font-size: clamp(0.9rem, 1.5vw, 1.8rem);
