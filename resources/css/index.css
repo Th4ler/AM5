@@ -92,7 +92,6 @@ h1 {
     var(--primary-color) 75%,
     var(--primary-color) 100%
   ); /* Degradado para mostrar solo el primer y último 25% */
-  z-index: -1; /* Asegúrate de que quede detrás del texto */
 }
 
 /*

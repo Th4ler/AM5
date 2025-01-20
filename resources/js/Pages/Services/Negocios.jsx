@@ -118,7 +118,7 @@ const ServiceIntro = ({ showDescription, toggleDescription }) => {
                 <h1 className="text-3xl font-semibold underline decoration-primary mb-4">Soluciones de Negocio y BackOffice</h1>
                 {showDescription && (
                     <p className="text-gray-700 mb-4">
-                        Ofrecemos soluciones de negocio y backoffice diseñadas para impulsar el crecimiento diario de tu empresa, optimizando operaciones y fortaleciendo cada área clave para tu éxito.
+                        Ofrecemos soluciones de negocio diseñadas para impulsar el crecimiento diario de tu empresa, optimizando operaciones y fortaleciendo cada área clave para tu éxito.
                     </p>
                 )}
                 <button

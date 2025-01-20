@@ -33,21 +33,21 @@ function ServiciosCarousel() {
       route: "legales"
     },
     {
-      title: "Soluciones de negocio y backoffice.",
-      description: "Ofrecemos soluciones de negocio y backoffice diseñadas para impulsar el crecimiento diario de tu empresa, optimizando operaciones y fortaleciendo cada área clave para tu éxito.",
+      title: "Soluciones de negocio",
+      description: "Ofrecemos soluciones de negocio diseñadas para impulsar el crecimiento diario de tu empresa, optimizando operaciones y fortaleciendo cada área clave para tu éxito.",
       imgDefault: img2filter,
       imgHover: img2,
       route: "negocios"
     },
     {
-      title: "Comunicaciones estratégicas.",
+      title: "Asuntos Públicos.",
       description: "Brindamos soluciones de comunicación estratégica que fortalecen tu imagen y marca, mejoran tu reputación y anticipan riesgos legales y regulatorios.",
       imgDefault: img3filter,
       imgHover: img3,
       route: "comunicaciones"
     },
     {
-      title: "Capacitación y coach empresarial.",
+      title: "Capacitaciones",
       description: "Ofrecemos capacitación y coaching empresarial personalizados para potenciar habilidades, mejorar la comunicación y transformar la cultura organizacional.",
       imgDefault: img4filter,
       imgHover: img4,
@@ -75,91 +75,111 @@ function ServiciosCarousel() {
 
 
   return (
-    <div id='services' className="flex flex-col px-10" style={estilo}>
+    <div id='services' className="bg-white flex flex-col px-10">
 
       <div className="flex justify-center text-center pt-8 pb-10">
         <h2 className="am5-border p-3 pe-5 2xl:text-3xl text-2xl text-gray-600">Servicios</h2>
       </div>
 
-      <div className='max-w-6xl mx-auto text-center px-10 md:px-0'>
-        <div className='custom-border-box'>
+      <div className='self-center max-w-4xl text-center px-0 pb-10'>
+        <div className="overflow-hidden relative p-10 bg-white">
+          {/* Esquina superior izquierda */}
+          <div className="absolute top-0 left-0 md:w-1/12 w-1/4 h-4 bg-gray-600"></div>
+          {/* Esquina inferior derecha */}
+          <div className="absolute bottom-0 right-0 md:w-1/12 w-1/4 h-4 bg-gray-600"></div>
+          {/* Línea vertical en el lado izquierdo */}
+          <div className="absolute top-0 left-0 top-0 md:h-1/2 h-1/4 w-4 bg-gray-600"></div>
+          {/* Línea vertical en el lado derecho */}
+          <div className="absolute bottom-0 right-0 md:h-1/2 h-1/4 w-4 bg-gray-600"></div>
 
-          <div className="left-corner" />
-          <div className="right-corner" />
-
-          <p className='text-muted'>
-            En AM5 ofrecemos soluciones estratégicas para personas, startups y empresas que buscan
+          <p className="text-gray-700 md:text-center text-justify">
+            En AM5 nos enfocamos en brindar soluciones para personas y empresas que buscan
             apoyo integral en el mundo legal, de negocios y comunicación pública. Nos especializamos en:
           </p>
-
         </div>
       </div>
 
-      {/* Botones de navegación con iconos */}
-      <div className="flex justify-center items-center gap-3 mb-4">
-        <button onClick={handlePrev} className="rounded-full p-2 inline-block bg-gray-900" id='carousel-btn-back'>
-          <BackwardIcon className="h-6 w-6 text-[#FFFF29]" />
-        </button>
-        <div className='rounded-full border border-black px-4 py-2 font-semibold'>Desliza</div>
-        <button onClick={handleNext} className="rounded-full p-2 inline-block bg-gray-900" id='carousel-btn-next'>
-          <ForwardIcon className="h-6 w-6 text-[#FFFF29]" />
-        </button>
-      </div>
-
-      {/* Slider */}
-      <div className='carousel-container md:px-0 px-10'>
-        <Carousel
-          fade
-          className='custom-carousel'          
-          activeIndex={index}
-          onSelect={setIndex}
-          indicators={true}
-          controls={false} // Oculta controles prev y next por defecto
-          interval={null} // Desactiva el autoplay (para hacer pruebas, luego volver a habilitar)
+      {/* Contenedor principal del carousel y botones */}
+      <div className="relative max-w-screen-2xl mx-auto w-full">
+        {/* Botón previo */}
+        <button
+          onClick={handlePrev}
+          className="absolute left-0 top-1/2 -translate-y-full md:-translate-x-1/3 -translate-x-1/2 z-10 rounded-full p-2 bg-gray-600 hover:bg-gray-800 transition-colors md:flex"
+          id='carousel-btn-back'
         >
-          {services.map((_, idx) => (
-            <Carousel.Item key={idx}>
-              <div className="flex justify-center gap-4 max-w-screen-2xl mx-auto">
-                {services
-                  .slice(index, index + (isSmallScreen ? 1 : 3)) //Medidas pantalla
-                  .concat(services.slice(0, Math.max(0, index + (isSmallScreen ? 1 : 3) - services.length))) //Medidas pantalla
-                  .map((service, subIdx) => {
-                    const isHovered = !isSmallScreen && hoveredCard === subIdx; // Hover solo en pantallas grandes
+          {/* ChevronLeftIcon */}
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={4} stroke="currentColor" className="md:size-8 size-6 text-[#FFFF29]">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+          </svg>
+        </button>
 
-                    return (
-                      <div
-                        className={`carousel-card md:h-auto h-full bg-white rounded shadow-md text-center mb-12 ${hoveredCard === subIdx ? 'hovered' : ''}`} //Correcting slider trial
-                        key={subIdx}
-                        style={{ width: '25rem', transition: 'transform 0.3s' }}
-                        onMouseEnter={() => !isSmallScreen && setHoveredCard(subIdx)} // Marca la carta en hover
-                        onMouseLeave={() => setHoveredCard(null)}  // Restablece el estado
-                      >
-                        <img
-                          className="card-img-top w-full h-full object-cover"
-                          variant="top"
-                          src={isSmallScreen ? service.imgHover : (isHovered ? service.imgHover : service.imgDefault)}
-                          alt={service.title}
-                        />
-                        <div className="p-4">
-                          <h5 className="text-xl text-gray-900 mb-2">{service.title}</h5>
-                          <p className="text-gray-600 text-sm leading-relaxed mb-6">{service.description}</p>
-                          {/* <button className="custom-btn-carousel px-3 py-1.5 text-white bg-blue-500 rounded hover:bg-blue-600" href={service.link}>Ver más</button> */}
-                          <Link
-                            href={route(service.route)}
-                            className="custom-btn-carousel px-3 py-1.5 text-white bg-blue-500 rounded hover:bg-blue-600"
-                          >
-                            Ver más
-                          </Link>
+        {/* Carousel */}
+        <div className='carousel-container px-6 md:px-12'>
+          <Carousel
+            fade
+            className='custom-carousel'
+            activeIndex={index}
+            onSelect={setIndex}
+            indicators={true}
+            controls={false}
+            interval={null}
+          >
+            {services.map((_, idx) => (
+              <Carousel.Item key={idx}>
+                <div className="flex justify-center gap-12 max-w-screen-2xl mx-auto">
+                  {services
+                    .slice(index, index + (isSmallScreen ? 1 : 3))
+                    .concat(services.slice(0, Math.max(0, index + (isSmallScreen ? 1 : 3) - services.length)))
+                    .map((service, subIdx) => {
+                      const isHovered = !isSmallScreen && hoveredCard === subIdx;
+
+                      return (
+                        <div
+                          className={`carousel-card md:h-auto h-full bg-white rounded-3xl overflow-hidden shadow-xl text-center mb-12 ${hoveredCard === subIdx ? 'hovered' : ''
+                            }`}
+                          key={subIdx}
+                          style={{ width: '25rem', transition: 'transform 0.3s' }}
+                          onMouseEnter={() => !isSmallScreen && setHoveredCard(subIdx)}
+                          onMouseLeave={() => setHoveredCard(null)}
+                        >
+                          <img
+                            className="card-img-top w-full h-full object-cover"
+                            variant="top"
+                            src={isSmallScreen ? service.imgHover : (isHovered ? service.imgHover : service.imgDefault)}
+                            alt={service.title}
+                          />
+                          <div className="p-4">
+                            <h5 className="text-xl text-gray-900 mb-4">{service.title}</h5>
+                            {/* <p className="text-gray-600 text-sm leading-relaxed mb-6">{service.description}</p> */}
+                            <Link
+                              href={route(service.route)}
+                              className="custom-btn-carousel px-3 py-2 text-white bg-blue-500 rounded hover:bg-blue-600 font-bold"
+                            >
+                              Ver
+                            </Link>
+                          </div>
                         </div>
-                      </div>
-                    );
-                  })}
-              </div>
-            </Carousel.Item>
-          ))}
-        </Carousel>
+                      );
+                    })}
+                </div>
+              </Carousel.Item>
+            ))}
+          </Carousel>
+        </div>
+
+        {/* Botón siguiente */}
+        <button
+          onClick={handleNext}
+          className="absolute right-0 top-1/2 -translate-y-full md:translate-x-1/3 translate-x-1/2 z-10 rounded-full p-2 bg-gray-600 hover:bg-gray-800 transition-colors md:flex"
+          id='carousel-btn-next'
+        >
+          {/* ChevronRightIcon */}
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={4} stroke="currentColor" className="md:size-8 size-6 text-[#FFFF29]">
+            <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+          </svg>
+
+        </button>
       </div>
-      {/* <div className='custom-hr rounded mx-auto'></div> */}
       {/* Animación para elevar la carta central */}
       <style>{`
         .hovered {

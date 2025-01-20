@@ -324,6 +324,10 @@
   transform: skewY(-3deg);
 } */
 
+/* .services {
+  mask-image: linear-gradient(to top, black 92%, transparent);
+} */
+
 .class-container h2 {
   margin: 0;
   padding: 0;
@@ -399,8 +403,6 @@ div.carousel-item {
 
 /* Ajustar  cartas carousel */
 #services div.carousel-card {
-  border: 5px solid;
-  border-color: var(--primary-color);
   max-height: 900px;
 }
 
@@ -424,7 +426,7 @@ div.carousel-item {
   height: 12px;
   border-radius: 50%;
   /* Forma redonda */
-  border: 2px solid black;
+  border: 2px solid rgb(75 85 99 / var(--tw-bg-opacity, 1));
   /* Borde negro */
   background-color: white;
   /* Fondo blanco (inactivo) */
@@ -433,9 +435,9 @@ div.carousel-item {
 }
 
 .custom-carousel .carousel-indicators .active {
-  background-color: black;
+  background-color: rgb(75 85 99 / var(--tw-bg-opacity, 1));
   /* Fondo negro (activo) */
-  border-color: black;
+  border-color: rgb(75 85 99 / var(--tw-bg-opacity, 1));
   /* Borde negro (activo) */
 }
 

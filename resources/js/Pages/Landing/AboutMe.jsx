@@ -163,10 +163,10 @@ function AboutMe() {
       </div>
 
       <div className="flex justify-center md:flex-row md:flex-row flex-wrap flex-wrap flex-col max-w-screen-2xl">
-        <div className="flex justify-center md:w-1/3 w-full px-10 md:px-0">
+        <div className="flex justify-center md:w-1/3 w-full md:px-10 md:px-0">
           <img src={aboutmePic} alt="Foto de Andrés Madariaga" className="object-contain w-full" />
         </div>
-        <div className="md:pe-0 px-10 md:pt-0 pt-10 md:w-2/3 w-full">
+        <div className="md:pe-0 md:px-10 md:pt-0 pt-10 md:w-2/3 w-full">
           <div className="mb-4 custom-card">
             <button
               onClick={() => toggleAccordion(0)}
