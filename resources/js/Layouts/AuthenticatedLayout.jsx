@@ -13,23 +13,40 @@ export default function AuthenticatedLayout({ user, header, children }) {
   // ==========================================================
   // Funciones para cambiar modo oscuro
   // ==========================================================
-  
-  const [darkMode, setDarkMode] = useState(false); // Declaración del estado para manejar el modo oscuro
 
-  const toggleDarkMode = () => setDarkMode((prev) => !prev);
+  const [darkMode, setDarkMode] = useState(() => {
+    const savedMode = localStorage.getItem('darkMode');
+    return savedMode ? JSON.parse(savedMode) : false;
+  }); // Declaración del estado para manejar el modo oscuro
+
+  const toggleDarkMode = () => {
+    setDarkMode((prev) => {
+      const newMode = !prev;
+      localStorage.setItem('darkMode', JSON.stringify(newMode));
+      return newMode;
+    });
+  };
 
   const ThemeSwitch = ({ darkMode, toggleDarkMode }) => (
-    <div
+    <button
       onClick={toggleDarkMode}
-      className="cursor-pointer flex items-center space-x-2 p-2 bg-gray-200 dark:bg-gray-600"
+      className="w-full flex items-center px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors duration-200"
     >
-      {darkMode ? <MoonIcon className="h-5 w-5" /> : <SunIcon className="h-5 w-5" />}
+      {darkMode ? (
+        <MoonIcon className="h-5 w-5 mr-2 text-indigo-500" />
+      ) : (
+        <SunIcon className="h-5 w-5 mr-2 text-yellow-500" />
+      )}
       <span>{darkMode ? "Modo Oscuro" : "Modo Claro"}</span>
-    </div>
+    </button>
   );
 
   useEffect(() => {
-    document.documentElement.classList.toggle("dark", darkMode);
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
   }, [darkMode]);
 
   // ==========================================================
@@ -46,7 +63,7 @@ export default function AuthenticatedLayout({ user, header, children }) {
                 </Link>
               </div>
 
-              <div className="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+              <div className="hidden space-x-6 lg:-my-px lg:ms-10 lg:flex">
                 <NavLink
                   href={route("dashboard")}
                   active={route().current("dashboard")}
@@ -88,7 +105,7 @@ export default function AuthenticatedLayout({ user, header, children }) {
               </div>
             </div>
 
-            <div className="hidden sm:flex sm:items-center sm:ms-6">
+            <div className="hidden space-x-6 lg:-my-px lg:ms-10 lg:flex sm:items-center">
               <div className="ms-3 relative">
                 <Dropdown>
                   <Dropdown.Trigger>
@@ -132,13 +149,9 @@ export default function AuthenticatedLayout({ user, header, children }) {
               </div>
             </div>
 
-            <div className="-me-2 flex items-center sm:hidden">
+            <div className="-me-2 flex items-center lg:hidden">
               <button
-                onClick={() =>
-                  setShowingNavigationDropdown(
-                    (previousState) => !previousState
-                  )
-                }
+                onClick={() => setShowingNavigationDropdown((prev) => !prev)}
                 className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 dark:text-gray-500 hover:text-gray-500 dark:hover:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-900 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-900 focus:text-gray-500 dark:focus:text-gray-400 transition duration-150 ease-in-out"
               >
                 <svg
@@ -173,7 +186,7 @@ export default function AuthenticatedLayout({ user, header, children }) {
 
         <div
           className={
-            (showingNavigationDropdown ? "block" : "hidden") + " sm:hidden"
+            (showingNavigationDropdown ? "block" : "hidden") + " lg:hidden"
           }
         >
           <div className="pt-2 pb-3 space-y-1">
@@ -182,6 +195,38 @@ export default function AuthenticatedLayout({ user, header, children }) {
               active={route().current("dashboard")}
             >
               Dashboard
+            </ResponsiveNavLink>
+            <ResponsiveNavLink
+              href={route("project.index")}
+              active={route().current("project.index")}
+            >
+              Proyectos
+            </ResponsiveNavLink>
+
+            <ResponsiveNavLink
+              href={route("blog.index")}
+              active={route().current("blog.index")}
+            >
+              Blogs
+            </ResponsiveNavLink>
+
+            <ResponsiveNavLink
+              href={route("task.index")}
+              active={route().current("task.index")}
+            >
+              Todas las publicaciones
+            </ResponsiveNavLink>
+            <ResponsiveNavLink
+              href={route("user.index")}
+              active={route().current("user.index")}
+            >
+              Usuarios
+            </ResponsiveNavLink>
+            <ResponsiveNavLink
+              href={route("task.myTasks")}
+              active={route().current("task.myTasks")}
+            >
+              Mis publicaciones
             </ResponsiveNavLink>
           </div>
 

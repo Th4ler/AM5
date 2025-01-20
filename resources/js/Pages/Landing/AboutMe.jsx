@@ -162,7 +162,7 @@ function AboutMe() {
         <h2 className="am5-border p-3 pe-5 2xl:text-3xl text-2xl text-gray-600">Sobre mí</h2>
       </div>
 
-      <div className="flex justify-center md:flex-row md:flex-row flex-wrap flex-wrap flex-col max-w-screen-2xl mx-auto">
+      <div className="flex justify-center md:flex-row md:flex-row flex-wrap flex-wrap flex-col max-w-screen-2xl">
         <div className="flex justify-center md:w-1/3 w-full px-10 md:px-0">
           <img src={aboutmePic} alt="Foto de Andrés Madariaga" className="object-contain w-full" />
         </div>
