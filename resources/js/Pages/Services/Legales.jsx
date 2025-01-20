@@ -34,6 +34,7 @@ const LegalCard = ({ title, description, image }) => {
             justifyContent: 'flex-end',
             border: '3px solid #ccc',
             overflow: 'hidden',
+            boxShadow: '4px 4px 7px rgba(0, 0, 0, 0.4)',
         },
         back: {
             background: '#fff',
@@ -64,8 +65,8 @@ const LegalCard = ({ title, description, image }) => {
             backStyle={cardStyles.back}
             frontComponent={
                 <div className="h-full w-full">
-                    <LazyLoad 
-                        height={225}
+                    <LazyLoad
+                        height={155}
                         offset={300}
                         threshold={0.95}
                         onContentVisible={handleImagePreload}
@@ -73,12 +74,11 @@ const LegalCard = ({ title, description, image }) => {
                         <div className="relative w-full h-full">
                             {/* Spinner que se muestra mientras la imagen no está cargada */}
                             {!imageLoaded && <Spinner />}
-                            
+
                             {/* Imagen de fondo con fade in cuando carga */}
-                            <div 
-                                className={`absolute inset-0 w-full h-full transition-opacity duration-500 ${
-                                    imageLoaded ? 'opacity-100' : 'opacity-0'
-                                }`}
+                            <div
+                                className={`absolute inset-0 w-full h-full transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'
+                                    }`}
                                 style={{
                                     backgroundImage: `url(${image})`,
                                     backgroundPosition: 'center',
@@ -88,8 +88,8 @@ const LegalCard = ({ title, description, image }) => {
                             />
                         </div>
                     </LazyLoad>
-                    <div className="bg-gray-200 text-center flex flex-row items-center justify-center gap-2 p-2 absolute bottom-0 w-full z-10">
-                        <img src={logo} alt="Logo" className="w-10 h-10 logo" />
+                    <div className="bg-white text-center flex flex-row items-center justify-center gap-2 px-2 py-6 absolute bottom-0 w-full z-10">
+                        {/* <img src={logo} alt="Logo" className="w-10 h-10 logo" /> */}
                         <p className="text-gray-700 font-semibold m-0">{title}</p>
                     </div>
                 </div>
@@ -99,8 +99,8 @@ const LegalCard = ({ title, description, image }) => {
                     <div className="custom-border-box">
                         <div className="left-corner" />
                         <div className="right-corner" />
-                        <h3 className="text-lg font-bold z-10 text-center">{title}</h3>
-                        <p className="text-gray-600 text-sm text-center z-10 mt-2">{description}</p>
+                        <h3 className="text-lg text-gray-600 font-bold z-10 text-center">{title}</h3>
+                        <p className="text-gray-600 text-sm text-justify z-10 mt-2 px-10">{description}</p>
                     </div>
                 </div>
             }
@@ -118,10 +118,10 @@ const ServiceIntro = ({ showDescription, toggleDescription }) => {
 
     return (
         <div className="flex flex-wrap md:flex-nowrap items-center bg-white">
-            <div className="w-full md:w-2/3">
+            <div className="w-full md:w-2/3 order-1 md:order-2">
                 <img src={BackgroundImage} alt="Imagen de cabecera de la sección Soluciones legales" className="w-full max-h-96" />
             </div>
-            <div className="w-full md:w-1/3 px-6 flex flex-col items-start">
+            <div className="w-full md:w-1/3 md:ps-12 px-6 flex flex-col items-start order-2 md:order-1">
                 <h1 className="text-3xl font-semibold underline decoration-primary mb-4">Soluciones Legales</h1>
                 {showDescription && (
                     <p className="text-gray-700 mb-4">
@@ -129,13 +129,13 @@ const ServiceIntro = ({ showDescription, toggleDescription }) => {
                     </p>
                 )}
                 <button
-                    className="bg-dark-grey text-primary py-2 px-4 rounded-full flex items-center gap-2 hover:bg-black"
+                    className="bg-gray-600 text-primary font-bold py-2 px-4 rounded-full flex items-center gap-2 hover:bg-gray-500"
                     onClick={handleToggleDescription}
                 >
                     Ver más
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={`size-6 ${iconDirection === 'down' ? 'rotate-180' : 'rotate-0'}`}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
-                    </svg>
+                    <span className="flex justify-center items-center ms-2 text-3xl text-[#FFFF29] transform transition-transform duration-300 ease-in-out">
+                        {iconDirection === 'down' ? '−' : '+'}
+                    </span>
                 </button>
             </div>
         </div>
@@ -143,18 +143,18 @@ const ServiceIntro = ({ showDescription, toggleDescription }) => {
 };
 
 const LEGAL_SOLUTIONS = [
-    { id: 1, title: 'Corporativo & MA', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: CorporateImage },
-    { id: 2, title: 'Venture Capital', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: VentureImage },
-    { id: 3, title: 'Laboral y Migración', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: MigracionImage },
-    { id: 4, title: 'Inmobiliario', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: InmobiliarioImage },
-    { id: 5, title: 'Impuestos', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: ImpuestosImage },
-    { id: 6, title: 'Litigios y Arbitrajes', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: LitigiosImage },
-    { id: 7, title: 'Insolvencia y Reorganización', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: InsolvenciaImage },
-    { id: 8, title: 'Compliance', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: ComplianceImage },
-    { id: 9, title: 'Consumo y Publicidad', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: ConsumoImage },
-    { id: 10, title: 'Propiedad industrial e Intelectual', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: PropIntelectImage },
-    { id: 11, title: 'Bancario Financiero y Fintech', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: FintechImage },
-    { id: 12, title: 'Protección de Datos', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: DatosImage },
+    { id: 1, title: 'Corporativo y M&A', description: 'Asesoría en asuntos corporativos, fusiones y adquisiciones, creación y modificación de sociedades, pacto de socios y venta de negocios.', image: CorporateImage },
+    { id: 2, title: 'Venture Capital', description: 'Asesoría a startups e inversionistas en todas las etapas: creación, desarrollo, financiamiento y crecimiento de negocios.', image: VentureImage },
+    { id: 3, title: 'Laboral y Migración', description: 'Asesoría en materia laboral, extranjería, contratación, despidos, políticas e investigaciones internas, negociaciones y litigios.', image: MigracionImage },
+    { id: 4, title: 'Inmobiliario', description: 'Asesoría legal en la planificación, compra, financiamiento, permisos y comercialización de proyectos habitacionales, comerciales e infraestructurales.', image: InmobiliarioImage },
+    { id: 5, title: 'Impuestos', description: 'Asesoría legal en la planificación tributaria de personas, empresas e inversionistas, representando ante el SII y tribunales tributarios.', image: ImpuestosImage },
+    { id: 6, title: 'Litigios y Arbitrajes', description: 'Asesoría a clientes en conflictos civiles, comerciales, de consumo, regulatorios y arbitrajes nacionales.', image: LitigiosImage },
+    { id: 7, title: 'Insolvencia y Reorganización', description: 'Asesoría en materias de insolvencia y reorganización de personas y empresas.', image: InsolvenciaImage },
+    { id: 8, title: 'Compliance', description: 'Asesoría legal en cumplimiento normativo, diseñando estructuras y programas que mitigan riesgos y favorecen el crecimiento de los negocios.', image: ComplianceImage },
+    { id: 9, title: 'Consumo y Publicidad', description: 'Asesoría legal en la revisión de contratos, cláusulas abusivas, publicidad, comercio electrónico, reclamos, fiscalizaciones y litigios.', image: ConsumoImage },
+    { id: 10, title: 'Propiedad industrial e Intelectual', description: 'Asesoría legal en la revisión de contratos, registro de marcas, patentes, derechos de autor, fiscalizaciones y litigios.', image: PropIntelectImage },
+    { id: 11, title: 'Bancario Financiero y Fintech', description: 'Asesoría en financiamientos, fondos de inversión, regulación financiera, mercado de capitales, seguros, banca y fintech.', image: FintechImage },
+    { id: 12, title: 'Tecnologías y Privacidad', description: 'Asesoría en negociación y cierre de negocios con nuevas tecnologías, incluyendo contratos de software, Cloud, protección de datos y proyectos tecnológicos.', image: DatosImage },
 ];
 
 const SolucionesLegales = () => {
@@ -164,7 +164,7 @@ const SolucionesLegales = () => {
         <div id="legales">
 
             <Header />
-            
+
             <ServiceIntro
                 showDescription={showDescription}
                 toggleDescription={() => setShowDescription(!showDescription)}

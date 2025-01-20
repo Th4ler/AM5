@@ -52,11 +52,11 @@ body {
   font-size: 1.5rem;
 }
 
-@media (min-width: 1200px) {
+/* @media (min-width: 1200px) {
   p {
     font-size: clamp(0.9rem, 1.2vw, 1.5rem) !important;
   }
-}
+} */
 
 h1 {
   color: var(--dark-grey);

@@ -106,10 +106,10 @@ const ServiceIntro = ({ showDescription, toggleDescription }) => {
 
     return (
         <div className="flex flex-wrap md:flex-nowrap items-center bg-white">
-            <div className="w-full md:w-2/3">
+            <div className="w-full md:w-2/3 order-1 md:order-2">
                 <img src={BackgroundImage} alt="Imagen de cabecera de la sección Capacitación y coach empresarial" className="w-full max-h-96" />
             </div>
-            <div className="w-full md:w-1/3 px-6 flex flex-col items-start">
+            <div className="w-full md:w-1/3 px-6 flex flex-col items-start order-2 md:order-1">
                 <h1 className="text-3xl font-semibold underline decoration-primary mb-4">Capacitación y coach empresarial</h1>
                 {showDescription && (
                     <p className="text-gray-700 mb-4">
@@ -117,13 +117,13 @@ const ServiceIntro = ({ showDescription, toggleDescription }) => {
                     </p>
                 )}
                 <button
-                    className="bg-dark-grey text-primary py-2 px-4 rounded-full flex items-center gap-2 hover:bg-black"
+                    className="bg-gray-600 text-primary font-bold py-2 px-4 rounded-full flex items-center gap-2 hover:bg-gray-500"
                     onClick={handleToggleDescription}
                 >
                     Ver más
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={`size-6 ${iconDirection === 'down' ? 'rotate-180' : 'rotate-0'}`}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
-                    </svg>
+                    <span className="flex justify-center items-center ms-2 text-3xl text-[#FFFF29] transform transition-transform duration-300 ease-in-out">
+                        {iconDirection === 'down' ? '−' : '+'}
+                    </span>
                 </button>
             </div>
         </div>

@@ -332,7 +332,7 @@
 /* Personalización bordes descripción servicio */
 .custom-border-box {
   position: relative;
-  padding: 20px;
+  padding: 0px 20px 15px 20px;
 }
 
 .custom-border-box::before,
@@ -344,32 +344,32 @@
 
 /* Top Border (primer 25%) */
 .custom-border-box::before {
-  top: 0;
+  top: -17px;
   left: 0;
-  height: 5px;
+  height: 10px;
   /* Ancho de la línea */
-  width: 25%;
+  width: 20%;
   /* Longitud del borde superior */
 }
 
 /* Bottom Border (último 25%) */
 .custom-border-box::after {
-  bottom: 0;
+  bottom: -17px;
   right: 0;
-  height: 5px;
+  height: 10px;
   /* Ancho de la línea */
-  width: 25%;
+  width: 20%;
   /* Longitud del borde inferior */
 }
 
 /* Left Top Corner (primer 25% del borde izquierdo) */
 .custom-border-box .left-corner {
   position: absolute;
-  top: 0;
+  top: -17px;
   left: 0;
-  width: 5px;
+  width: 10px;
   /* Ancho de la línea */
-  height: 50%;
+  height: 40%;
   /* Longitud del borde izquierdo */
   background-color: var(--primary-color);
 }
@@ -377,11 +377,11 @@
 /* Right Bottom Corner (último 25% del borde derecho) */
 .custom-border-box .right-corner {
   position: absolute;
-  bottom: 0;
+  bottom: -17px;
   right: 0;
-  width: 5px;
+  width: 10px;
   /* Ancho de la línea */
-  height: 50%;
+  height: 40%;
   /* Longitud del borde derecho */
   background-color: var(--primary-color);
 }
